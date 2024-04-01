@@ -1,26 +1,43 @@
+import  { useState, useEffect } from 'react';
 import useSound from 'use-sound';
-import mozart from '/mozart.mp3';
+import polatoka from '/polatoka.mp3';
 import PlayCircleOutlineOutlinedIcon from '@mui/icons-material/PlayCircleOutlineOutlined';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { useState} from "react"
+
+import { LYRICS } from '../constants';
 
 export const Audio = () => {
-    
- const [play, { stop }] = useSound(mozart, { loop: true });
+  const [play] = useSound(polatoka, { loop: true });
   const [isVisible, setIsVisible] = useState(true);
+  const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible && !firstLoopCompleted) {
+      const interval = setInterval(() => {
+        setCurrentLineIndex((prevIndex) => {
+          if ((prevIndex + 1) % LYRICS.length === 0) {
+            setFirstLoopCompleted(true);
+          }
+          return (prevIndex + 1) % LYRICS.length;
+        });
+      }, 5000); // beat duration
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [isVisible, firstLoopCompleted]);
 
   const handleClick = () => {
-    if (isVisible) {
-      play();
-    } else {
-      stop();
-    }
-    setIsVisible(!isVisible);
+    play(); 
+    setIsVisible(false); 
   };
-return (
+
+  return (
     <>
       <CssBaseline />
       <Container
@@ -43,6 +60,9 @@ return (
               Music
             </Button>
           )}
+
+          {/* display the current line of lyrics if music is playing */}
+          {!isVisible && !firstLoopCompleted && <p key={currentLineIndex} className="tiro-bangla-regular">{LYRICS[currentLineIndex]}</p>}
         </Box>
       </Container>
     </>
