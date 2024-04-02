@@ -15,7 +15,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 
 const images = ["/sanam.jpg", "rp.jpg"];
-const avatarImage = "/rimjhim.jpg";
+const avatarImage = "/rimjhim.svg";
 
 export const Carousal: FC = () => {
   return (

@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { useState, useEffect } from "react";
-import useSound from "use-sound";
-import polatoka from "/polatoka.mp3";
+import { useNavigate } from "react-router-dom";
 import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,18 +10,22 @@ import Container from "@mui/material/Container";
 import { LYRICS } from "../constants";
 // import { Carousal } from "./Carousal";
 
-export const Audio: FC = () => {
-  const [play] = useSound(polatoka, { loop: true });
+interface AudioProps {
+  play: () => void;
+}
+
+export const Audio: FC<AudioProps> = ({ play }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!isVisible && !firstLoopCompleted) {
       const interval = setInterval(() => {
         setCurrentLineIndex((prevIndex) => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
+            navigate("/wish");
           }
           return (prevIndex + 1) % LYRICS.length;
         });
@@ -71,10 +74,6 @@ export const Audio: FC = () => {
           )}
         </Box>
       </Container>
-
-      {/* {
-            !isVisible && firstLoopCompleted && <Carousal/>
-          } */}
     </>
   );
 };

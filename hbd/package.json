@@ -16,10 +16,12 @@
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
     "@types/howler": "^2.2.11",
+    "@types/react-router-dom": "^5.3.3",
     "@types/swiper": "^6.0.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "swiper": "^11.1.0",
     "use-sound": "^4.0.1"
   },
