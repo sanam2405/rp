@@ -226,7 +226,7 @@ export const Messages: FC = () => {
         </p>
         <p className="idea-3">
           <span> Actually, I realised, I wanted to do something </span>
-          <br /> 
+          <br />
           <strong> special</strong>.
         </p>
         <p className="idea-4">Because</p>

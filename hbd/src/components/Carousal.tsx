@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -18,6 +19,14 @@ const images = ["/sanam.jpg", "rp.jpg"];
 const avatarImage = "/rimjhim.svg";
 
 export const Carousal: FC = () => {
+  const [click, setClick] = useState(true);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setClick(!click);
+    navigate("/");
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <Card className="w-full max-w-lg h-1/3 flex flex-col">
@@ -52,13 +61,13 @@ export const Carousal: FC = () => {
         </div>
         <CardActions disableSpacing>
           <IconButton>
-            <Favorite />
+            <Favorite onClick={handleClick} />
           </IconButton>
           <IconButton>
-            <CommentIcon />
+            <CommentIcon onClick={handleClick} />
           </IconButton>
           <IconButton>
-            <ShareIcon />
+            <ShareIcon onClick={handleClick} />
           </IconButton>
         </CardActions>
 
