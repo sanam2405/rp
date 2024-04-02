@@ -17,7 +17,7 @@ export const Messages: FC = () => {
       onComplete: () => {
         setTimeout(() => {
           navigate("/wish");
-        }, 10000);
+        }, 7000);
       },
     });
 
@@ -33,31 +33,58 @@ export const Messages: FC = () => {
         scale: 0,
         opacity: 0,
       })
-      .from(".fake-btn", { duration: 0.1, scale: 0, opacity: 0 })
+      .from(".fake-btn", {
+        visibility: "hidden",
+        duration: 0.1,
+        scale: 0,
+        opacity: 0,
+      })
       .to(".hbd-chatbox span", {
         visibility: "hidden",
         stagger: 0.05,
         duration: 0.1,
       })
-      .to(".fake-btn", { backgroundColor: "rgb(127, 206, 248)", duration: 0.1 })
-      .to(".four", { opacity: 0, duration: 0.01 }, "-=0.3")
-      .to(".four", { scale: 0.2, y: -150, duration: 0.001 }, "+=0.1")
-      .to(".four", { scale: 0.2, opacity: 0, y: -150, duration: 0.3 }, "+=0.1")
+      .to(".fake-btn", {
+        visibility: "hidden",
+        backgroundColor: "rgb(127, 206, 248)",
+        duration: 0.1,
+      })
+      .to(
+        ".four",
+        { visibility: "hidden", opacity: 0, duration: 0.01 },
+        "-=0.3",
+      )
+      .to(
+        ".four",
+        { visibility: "hidden", scale: 0.2, y: -150, duration: 0.001 },
+        "+=0.1",
+      )
+      .to(
+        ".four",
+        {
+          visibility: "hidden",
+          scale: 0.2,
+          opacity: 0,
+          y: -150,
+          duration: 0.3,
+        },
+        "+=0.1",
+      )
       .from(".idea-1", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-1",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=1.5",
+        "+=2.5",
       )
       .from(".idea-2", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-2",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=1.5",
+        "+=2.5",
       )
       .from(".idea-3", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(".idea-3 strong", {
-        scale: 1.2,
+        scale: 1.8,
         x: 10,
         backgroundColor: "rgb(21, 161, 237)",
         color: "#fff",
@@ -166,7 +193,7 @@ export const Messages: FC = () => {
         { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" },
         1.2,
       )
-      .to(".last-smile", { rotation: 90 }, "+=1");
+      .to(".last-smile", { rotation: 90 }, "+=2");
 
     return () => {};
   }, []);
@@ -191,10 +218,14 @@ export const Messages: FC = () => {
         </div>
       </div>
       <div className="five">
-        <p className="idea-1">I wish I spoke to you yesterday at the GB</p>
-        <p className="idea-2">But then I stopped.</p>
+        <p className="idea-1">
+          I so wished to speak to you yesterday at the GB
+        </p>
+        <p className="idea-2">
+          But then I fell down on the floor and stopped XD
+        </p>
         <p className="idea-3">
-          <span>I realised, I wanted to do something </span>
+          <span> Actually, I realised, I wanted to do something </span>
           <strong> special</strong>.
         </p>
         <p className="idea-4">Because</p>
