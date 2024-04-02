@@ -10,7 +10,7 @@ export const Messages: FC = () => {
   useEffect(() => {
     if (textBoxCharsRef.current) {
       const textBoxChars = textBoxCharsRef.current;
-      textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML.split("").join("</span><span>")}</span>`;
+      textBoxChars.innerHTML = `<span> Happy Birthday Rimjhim! </span>`;
     }
 
     const tl = gsap.timeline({
@@ -74,13 +74,13 @@ export const Messages: FC = () => {
       .to(
         ".idea-1",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=2.5",
+        "+=4",
       )
       .from(".idea-2", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-2",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=2.5",
+        "+=5",
       )
       .from(".idea-3", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(".idea-3 strong", {
@@ -92,13 +92,13 @@ export const Messages: FC = () => {
       .to(
         ".idea-3",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=1.5",
+        "+=2.5",
       )
       .from(".idea-4", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-4",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=1.5",
+        "+=2.5",
       )
       .from(
         ".idea-5",
@@ -110,7 +110,7 @@ export const Messages: FC = () => {
           z: 10,
           opacity: 0,
         },
-        "+=0.5",
+        "+=1.5",
       )
       .to(".idea-5 .smiley", { rotation: 90, x: 8 }, "+=0.4")
       .to(".idea-5", { scale: 0.2, opacity: 0 }, "+=2")
@@ -212,7 +212,7 @@ export const Messages: FC = () => {
       <div className="four">
         <div className="text-box">
           <p className="hbd-chatbox" ref={textBoxCharsRef}>
-            <span>Happy birthday to you!! Yeee! Many many happy blah...</span>
+            <span> Happy Birthday Rimjhim! </span>
           </p>
           <p className="fake-btn">Send</p>
         </div>
@@ -226,6 +226,7 @@ export const Messages: FC = () => {
         </p>
         <p className="idea-3">
           <span> Actually, I realised, I wanted to do something </span>
+          <br /> 
           <strong> special</strong>.
         </p>
         <p className="idea-4">Because</p>
