@@ -1,13 +1,14 @@
-import './App.css'
-import { Audio } from './components/Audio'
+import "./App.css";
+import { Audio } from "./components/Audio";
+// import { Carousal } from "./components/Carousal";
 
 function App() {
-  
   return (
     <>
-    <Audio/>
+      <Audio />
+      {/* <Carousal/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

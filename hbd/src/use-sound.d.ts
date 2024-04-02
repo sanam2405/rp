@@ -1,5 +1,5 @@
-declare module 'use-sound' {
-  import { Howl, Howler } from 'howler';
+declare module "use-sound" {
+  import { Howl, Howler } from "howler";
 
   interface HookOptions {
     volume?: number;
