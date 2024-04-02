@@ -166,7 +166,7 @@ export const Messages: FC = () => {
         { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" },
         1.2,
       )
-      .to(".last-smile", { rotation: 90 }, "+=2");
+      .to(".last-smile", { rotation: 90 }, "+=1");
 
     return () => {};
   }, []);

@@ -70,7 +70,8 @@ export const Carousal: FC = () => {
             className="tiro-bangla-regular"
           >
             Congratulations for your success in your debut GB <br />
-            And cheers that we both made it to intern and placements :)
+            And lastly, cheers that we both made it to internships and
+            placements :)
           </Typography>
         </CardContent>
       </Card>
