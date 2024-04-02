@@ -69,8 +69,8 @@ export const Carousal: FC = () => {
             component="p"
             className="tiro-bangla-regular"
           >
-            সে যে বসে আছে একা একা রঙিন স্বপ্ন তার বুনতে, <br />
-            সে যে চেয়ে আছে ভরা চোখে, জানালার ফাঁকে মেঘ ধরতে...
+            Congratulations for your success in your debut GB <br />
+            And cheers that we both made it to intern and placements :)
           </Typography>
         </CardContent>
       </Card>

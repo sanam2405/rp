@@ -13,14 +13,14 @@ function App() {
     <>
       {/* <Audio /> */}
       {/* <Carousal/> */}
-      <Messages />
-      {/* <BrowserRouter>
+      {/* <Messages /> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Audio play={play} />} />
           <Route path="/birthday" element={<Messages />} />
           <Route path="/wish" element={<Carousal />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   );
 }

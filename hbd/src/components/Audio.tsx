@@ -25,7 +25,7 @@ export const Audio: FC<AudioProps> = ({ play }) => {
         setCurrentLineIndex((prevIndex) => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
-            navigate("/wish");
+            navigate("/birthday");
           }
           return (prevIndex + 1) % LYRICS.length;
         });
