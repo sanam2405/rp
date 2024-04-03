@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
@@ -14,6 +14,7 @@ import { Avatar, IconButton, Typography } from "@mui/material";
 import { Favorite, MoreVert } from "@mui/icons-material";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
+import { useAudio } from "../context";
 
 const images = ["/sanam.jpg", "rp.jpg"];
 const avatarImage = "/rimjhim.svg";
@@ -21,11 +22,18 @@ const avatarImage = "/rimjhim.svg";
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
   const navigate = useNavigate();
+  const { play, isPlaying } = useAudio();
 
   const handleClick = () => {
     setClick(!click);
     navigate("/");
   };
+
+  useEffect(() => {
+    if (!isPlaying) {
+      play();
+    }
+  }, []);
 
   return (
     <div className="flex justify-center items-center min-h-screen">

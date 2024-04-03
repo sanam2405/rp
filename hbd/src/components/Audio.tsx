@@ -8,18 +8,16 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 import { LYRICS } from "../constants";
+import { useAudio } from "../context";
 
-interface AudioProps {
-  play: () => void;
-}
-
-export const Audio: FC<AudioProps> = ({ play }) => {
+export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [showSanamButton, setShowSanamButton] = useState(true); // Tracks if "Built by Sanam" button should be shown
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
   const navigate = useNavigate();
+  const { play, isPlaying } = useAudio();
 
   useEffect(() => {
     let wakeLock: any;
@@ -71,7 +69,9 @@ export const Audio: FC<AudioProps> = ({ play }) => {
   };
 
   const handleMusicClick = () => {
-    play(); // Start playing the audio
+    if (!isPlaying) {
+      play(); // Start playing the audio
+    }
     setIsVisible(true); // Show the lyrics
     setShowMusicButton(false); // Hide the music button
   };

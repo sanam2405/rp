@@ -3,10 +3,19 @@ import gsap from "gsap";
 import { Balloons } from "./Balloons";
 import { Spots } from "./Spots";
 import { useNavigate } from "react-router-dom";
+import { useAudio } from "../context";
 export const Messages: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
+  const { play, isPlaying } = useAudio();
+
+  useEffect(() => {
+    if (!isPlaying) {
+      play();
+    }
+  }, []);
+
   useEffect(() => {
     if (textBoxCharsRef.current) {
       const textBoxChars = textBoxCharsRef.current;
