@@ -23,6 +23,9 @@ export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const formattedDate = `April 3, ${year}`;
 
   const handleClick = () => {
     setClick(!click);
@@ -43,7 +46,7 @@ export const Carousal: FC = () => {
           <CardHeader
             avatar={<Avatar src={avatarImage} />}
             title="__bokaboka__"
-            subheader={new Date().toDateString()}
+            subheader={formattedDate}
             action={
               <IconButton>
                 <MoreVert />

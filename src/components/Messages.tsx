@@ -216,7 +216,7 @@ export const Messages: FC = () => {
         <p>Rimjhim, Roheena</p>
       </div>
       <div className="three">
-        <p >It's your Birthday! :D</p>
+        <p>It's your Birthday! :D</p>
       </div>
       <div className="four">
         <div className="text-box">
