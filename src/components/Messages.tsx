@@ -153,7 +153,7 @@ export const Messages: FC = () => {
         0.2,
       )
       .from(
-        ".lydia-dp",
+        ".rp-dp",
         { scale: 3.5, opacity: 0, x: 25, y: -25, rotationZ: -45 },
         "-=2",
       )
@@ -213,10 +213,10 @@ export const Messages: FC = () => {
         <h1> Hey RP! </h1>
       </div>
       <div className="two">
-        <p data-node-name="greetingText">Rimjhim, Roheena</p>
+        <p>Rimjhim, Roheena</p>
       </div>
       <div className="three">
-        <p data-node-name="text1">It's your Birthday! :D</p>
+        <p >It's your Birthday! :D</p>
       </div>
       <div className="four">
         <div className="text-box">
@@ -250,7 +250,7 @@ export const Messages: FC = () => {
         </p>
       </div>
       <div className="six">
-        <img src="/rpdp.png" alt="" className="lydia-dp" />
+        <img src="/rpdp.png" alt="" className="rp-dp" />
         <img src="/hat.svg" alt="" className="hat" />
         <div className="wish">
           <h3 className="wish-hbd">

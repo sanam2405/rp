@@ -26,6 +26,7 @@ export const Carousal: FC = () => {
 
   const handleClick = () => {
     setClick(!click);
+    play();
     navigate("/");
   };
 
