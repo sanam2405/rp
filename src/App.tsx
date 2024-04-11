@@ -4,6 +4,7 @@ import { Audio } from "./components/Audio";
 import { Carousal } from "./components/Carousal";
 import { Messages } from "./components/Messages";
 import { AudioProvider } from "./context";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AudioProvider>
+      <Analytics />
     </>
   );
 }
