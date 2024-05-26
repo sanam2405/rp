@@ -1,14 +1,14 @@
-import { FC, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import PlayCircleOutlineOutlinedIcon from '@mui/icons-material/PlayCircleOutlineOutlined';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
-import { LYRICS } from '../constants';
-import { useAudio } from '../context';
+import { LYRICS } from "../constants";
+import { useAudio } from "../context";
 
 export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,10 +24,10 @@ export const Audio: FC = () => {
 
     const requestWakeLock = async () => {
       try {
-        wakeLock = await navigator.wakeLock.request('screen');
-        console.log('Wake lock activated');
+        wakeLock = await navigator.wakeLock.request("screen");
+        console.log("Wake lock activated");
       } catch (error) {
-        console.error('Failed to activate wake lock:', error);
+        console.error("Failed to activate wake lock:", error);
       }
     };
 
@@ -35,7 +35,7 @@ export const Audio: FC = () => {
       if (wakeLock) {
         wakeLock.release();
         wakeLock = null;
-        console.log('Wake lock released');
+        console.log("Wake lock released");
       }
     };
 
@@ -46,7 +46,7 @@ export const Audio: FC = () => {
         setCurrentLineIndex((prevIndex) => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
-            navigate('/birthday');
+            navigate("/birthday");
           }
           return (prevIndex + 1) % LYRICS.length;
         });
@@ -80,19 +80,19 @@ export const Audio: FC = () => {
     <>
       <CssBaseline />
       <Container
-        maxWidth='sm'
+        maxWidth="sm"
         sx={{
-          display: 'flex',
-          minHeight: '100vh',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          minHeight: "100vh",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: "center" }}>
           {showSanamButton && (
             <Button
-              variant='outlined'
-              color='error'
+              variant="outlined"
+              color="error"
               endIcon={<FavoriteBorderIcon />}
               onClick={handleSanamClick}
             >
@@ -101,19 +101,16 @@ export const Audio: FC = () => {
           )}
           {showMusicButton && (
             <Button
-              variant='outlined'
+              variant="outlined"
               endIcon={<PlayCircleOutlineOutlinedIcon />}
               onClick={handleMusicClick}
-              sx={{ marginBottom: '1rem' }}
+              sx={{ marginBottom: "1rem" }}
             >
               Music
             </Button>
           )}
           {isVisible && !firstLoopCompleted && (
-            <p
-              key={currentLineIndex}
-              className='tiro-bangla-regular'
-            >
+            <p key={currentLineIndex} className="tiro-bangla-regular">
               {LYRICS[currentLineIndex]}
             </p>
           )}

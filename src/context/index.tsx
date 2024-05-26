@@ -4,6 +4,7 @@ import polatoka from "/polatoka.mp3";
 
 interface AudioContextType {
   play: () => void;
+  stopPlay: () => void;
   isPlaying: boolean;
 }
 
@@ -22,8 +23,14 @@ export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setIsPlaying(!isPlaying);
   };
 
+  const stopPlaying = () => {
+    stop();
+    setIsPlaying(false);
+  };
+
   const audioContextValue: AudioContextType = {
     play: togglePlay,
+    stopPlay: stopPlaying,
     isPlaying: isPlaying,
   };
 
