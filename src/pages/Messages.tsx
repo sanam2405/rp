@@ -247,10 +247,10 @@ export const Messages: FC = () => {
             overflowX: "hidden",
           }}
         >
-          <div className="one">
+          <div className="one mt-4">
             <h1> Hey RP! </h1>
           </div>
-          <div className="two mb-8">
+          <div className="two mb-12 mt-2">
             <p className="font-lvs text-5xl">&#xE069;imjhi&#xE168;</p>
           </div>
           <div className="three">
