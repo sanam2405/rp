@@ -8,7 +8,6 @@ import React, {
   ReactElement,
   RefObject,
 } from "react";
-// import PropTypes from 'prop-types';
 import ResizeObserver from "resize-observer-polyfill";
 
 interface Position {
@@ -32,26 +31,6 @@ interface FlashlightElement {
   light: RefObject<HTMLDivElement>;
   container: RefObject<HTMLDivElement>;
 }
-
-// const propTypes =
-//   {
-//     enabled: PropTypes.bool,
-//     children: PropTypes.node,
-//     showCursor: PropTypes.bool,
-//     size: PropTypes.number,
-//     initialPosition: PropTypes.shape({
-//       x: PropTypes.number,
-//       y: PropTypes.number,
-//     }),
-//     moveTo: PropTypes.shape({
-//       x: PropTypes.number,
-//       y: PropTypes.number,
-//     }),
-//     speed: PropTypes.number,
-//     contain: PropTypes.bool,
-//     enableMouse: PropTypes.bool,
-//     darkness: PropTypes.number,
-//   };
 
 const defaultProps = {
   enabled: true,
@@ -125,25 +104,39 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
       }
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           ticking = false;
-          elements.forEach((element) => {
-            const light = element.light.current;
-            const container = element.container.current;
-            if (light && container) {
-              const lightStyle = window.getComputedStyle(light);
-              const containerRect = container.getBoundingClientRect();
-              light.style.transition = `opacity ease-in-out ${speed}ms`;
-              light.style.left = `${e.clientX - containerRect.left - parseInt(lightStyle.width) / 2}px`;
-              light.style.top = `${e.clientY - containerRect.top - parseInt(lightStyle.height) / 2}px`;
-            }
-          });
+          updateLightPosition(e.clientX, e.clientY);
         });
         ticking = true;
       }
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!ticking && e.touches.length === 1) {
+        const touch = e.touches[0];
+        window.requestAnimationFrame(() => {
+          ticking = false;
+          updateLightPosition(touch.clientX, touch.clientY);
+        });
+        ticking = true;
+      }
+    };
+
+    const updateLightPosition = (x: number, y: number) => {
+      elements.forEach((element) => {
+        const light = element.light.current;
+        const container = element.container.current;
+        if (light && container) {
+          const lightStyle = window.getComputedStyle(light);
+          const containerRect = container.getBoundingClientRect();
+          light.style.transition = `opacity ease-in-out ${speed}ms`;
+          light.style.left = `${x - containerRect.left - parseInt(lightStyle.width) / 2}px`;
+          light.style.top = `${y - containerRect.top - parseInt(lightStyle.height) / 2}px`;
+        }
+      });
     };
 
     const handleScroll = () => {
@@ -181,6 +174,8 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("scroll", handleScroll);
     }
+
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
     window.addEventListener("resize", resizeLights);
 
     return () => {
@@ -188,6 +183,7 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("scroll", handleScroll);
       }
+      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("resize", resizeLights);
       resizeObservers.forEach((observer) => observer.disconnect());
     };
@@ -245,5 +241,4 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
   );
 };
 
-// Flashlight.propTypes = propTypes;
 Flashlight.defaultProps = defaultProps;
