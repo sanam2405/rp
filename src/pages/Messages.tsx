@@ -94,7 +94,7 @@ export const Messages: FC = () => {
       .to(".idea-3 strong", {
         scale: 1.8,
         x: 10,
-        backgroundColor: "rgb(21, 161, 237)",
+        backgroundColor: "#f43f5e",
         color: "#fff",
       })
       .to(
@@ -176,7 +176,7 @@ export const Messages: FC = () => {
         {
           scale: 1,
           rotationY: 0,
-          color: "#ff69b4",
+          color: "#ef4444",
           ease: "expoScale(1, 10, expo.out)",
         },
         0.1,
@@ -233,8 +233,8 @@ export const Messages: FC = () => {
           But then I fell down on the floor and stopped XD
         </p>
         <p className="idea-3">
-          <span> Actually, I realised, I wanted to do something </span>
-          <br />
+          <span> Actually, I realized, I wanted to do something </span>
+          <br /> <br />
           <strong> special</strong>.
         </p>
         <p className="idea-4">Because</p>
@@ -252,12 +252,12 @@ export const Messages: FC = () => {
         <img
           src="/rpdp.png"
           alt=""
-          className="rp-dp hover:grayscale-[90%]  hover:brightness-125"
+          className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
         />
         <img src="/hat.svg" alt="" className="hat" />
         <div className="wish">
           <h3 className="wish-hbd">
-            <span> Happy 21st Birthday! </span>
+            <span className="text-red-600"> Happy 21st Birthday! </span>
           </h3>
           <h5>May you always put on this pretty smile :)</h5>
         </div>
@@ -273,6 +273,7 @@ export const Messages: FC = () => {
       <div className="nine">
         <p>I hope things turn good between you and me some day</p>
         <p id="replay">Okay, I have something more for you...</p>
+        <br />
         <p className="last-smile"> :) </p>
       </div>
     </div>
