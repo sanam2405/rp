@@ -37,6 +37,14 @@
   font-style: italic;
 }
 
+#rimjhim {
+  color: #ef4444;
+}
+
+#heyRP {
+  color: #ef4444;
+}
+
 @media screen and (min-width: 786px) {
   .tiro-bangla-regular {
     font-size: xx-large;

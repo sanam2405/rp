@@ -248,43 +248,58 @@ export const Messages: FC = () => {
           }}
         >
           <div className="one mt-4">
-            <h1> Hey RP! </h1>
+            <h1 id="heyRP"> Hey RP! </h1>
           </div>
           <div className="two mb-12 mt-2">
-            <p className="font-lvs text-5xl">&#xE069;imjhi&#xE168;</p>
+            <p className="font-lvs text-5xl" id="rimjhim">
+              &#xE069;imjhi&#xE168;
+            </p>
           </div>
           <div className="three">
-            <p>It's your Birthday! :D</p>
+            <p className="text-red-500 hover:text-black">
+              It's your Birthday! :D
+            </p>
           </div>
           <div className="four">
             <div className="text-box">
               <p className="hbd-chatbox" ref={textBoxCharsRef}>
-                <span> Happy Birthday Rimjhim! </span>
+                <span className="text-red-500 hover:text-black">
+                  {" "}
+                  Happy Birthday Rimjhim!{" "}
+                </span>
               </p>
               <p className="fake-btn">Send</p>
             </div>
           </div>
           <div className="five">
-            <p className="idea-1">
+            <p className="idea-1 text-red-500 hover:text-black">
               I so wished to speak to you yesterday at the GB
             </p>
-            <p className="idea-2">
+            <p className="idea-2 text-red-500 hover:text-black">
               But then I fell down on the floor and stopped XD
             </p>
             <p className="idea-3">
-              <span> Actually, I realized, I wanted to do something </span>
+              <span className="text-red-500 hover:text-black">
+                {" "}
+                Actually, I realized, I wanted to do something{" "}
+              </span>
               <br /> <br />
               <strong> special</strong>.
             </p>
-            <p className="idea-4">Because</p>
+            <p className="idea-4 text-red-500 hover:text-black">Because</p>
             <p className="idea-5">
-              <span>You are Special </span>
+              <span className="text-red-500 hover:text-black">
+                You are Special{" "}
+              </span>
               <br />
-              <span className="smiley"> {"    "} :)</span>
+              <span className="smiley text-red-500 hover:text-black">
+                {" "}
+                {"    "} :)
+              </span>
             </p>
             <p className="idea-6">
-              <span>S</span>
-              <span>O</span>
+              <span className="text-red-500 hover:text-black">S</span>
+              <span className="text-red-500 hover:text-black">O</span>
             </p>
           </div>
           <div className="six">
@@ -298,7 +313,9 @@ export const Messages: FC = () => {
               <h3 className="wish-hbd">
                 <span className="text-red-600"> Happy 21st Birthday! </span>
               </h3>
-              <h5>May you always put on this pretty smile :)</h5>
+              <h5 className="text-red-500 hover:text-black">
+                May you always put on this pretty smile :)
+              </h5>
             </div>
           </div>
           <div className="seven">
@@ -310,10 +327,14 @@ export const Messages: FC = () => {
             <Spots />
           </div>
           <div className="nine">
-            <p>I hope things turn good between you and me some day</p>
-            <p id="replay">Okay, I have something more for you...</p>
+            <p className="text-red-500 hover:text-black">
+              I hope things turn good between you and me some day
+            </p>
+            <p id="replay" className="text-red-500 hover:text-black">
+              Okay, I have something more for you...
+            </p>
             <br />
-            <p className="last-smile"> :) </p>
+            <p className="last-smile text-red-500 hover:text-black"> :) </p>
           </div>
         </div>
         <div

@@ -123,7 +123,10 @@ export const Audio: FC = () => {
             </Button>
           )}
           {isVisible && !firstLoopCompleted && (
-            <p key={currentLineIndex} className="tiro-bangla-regular">
+            <p
+              key={currentLineIndex}
+              className="tiro-bangla-regular text-red-500 hover:text-black"
+            >
               {LYRICS[currentLineIndex]}
             </p>
           )}
@@ -137,7 +140,7 @@ export const Audio: FC = () => {
           }}
         >
           <p
-            className="font-lvs text-4xl mb-4 hover:text-red-500 hover: cursor-pointer"
+            className="font-lvs text-4xl mb-4 text-red-500 hover:text-black hover: cursor-pointer"
             onClick={() => {
               showMusicButton
                 ? setMusicAnimation("animate-bounce")
