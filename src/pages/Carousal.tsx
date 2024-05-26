@@ -29,13 +29,13 @@ export const Carousal: FC = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
   const [caption, setCaption] = useState(
-    "Congratulations for your success in your debut GB <br /> And lastly, cheers that we both made it to internships and placements :)",
+    "Congratulations on your success in your debut GB <br /> And lastly, cheers that we both made it to internships and placements :)",
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const handleClick = () => {
     setClick(!click);
-    // play();
+    stopPlay();
     navigate("/");
   };
 
@@ -101,7 +101,7 @@ export const Carousal: FC = () => {
                       <source src={item} type="video/mp4" />
                       Shey Je Boshe Ache Eka Eka
                     </video>
-                    <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                       <button
                         className="p-2 bg-white bg-opacity-75 rounded-full"
                         onClick={(e) => {

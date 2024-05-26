@@ -1,3 +1,4 @@
+@import "./fonts/fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,14 +24,25 @@
 
 .tiro-bangla-regular {
   font-family: "Tiro Bangla", serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  font-size: x-large;
 }
 
 .tiro-bangla-regular-italic {
   font-family: "Tiro Bangla", serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
+}
+
+@media screen and (min-width: 786px) {
+  .tiro-bangla-regular {
+    font-size: xx-large;
+  }
+
+  .tiro-bangla-regular-italic {
+    font-size: xx-large;
+  }
 }
 
 .container {

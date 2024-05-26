@@ -15,7 +15,9 @@ export const Audio: FC = () => {
   const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [showSanamButton, setShowSanamButton] = useState(true); // Tracks if "Built by Sanam" button should be shown
+  const [sanamAnimation, setSanamAnimation] = useState("animate-pulse"); // Tracks the animation of the Sanam button
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
+  const [musicAnimation, setMusicAnimation] = useState("animate-pulse"); // Tracks the animation of the Music button
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
 
@@ -86,15 +88,25 @@ export const Audio: FC = () => {
           minHeight: "100vh",
           justifyContent: "center",
           alignItems: "center",
+          position: "relative",
         }}
       >
-        <Box sx={{ textAlign: "center" }}>
+        <Box
+          sx={{
+            textAlign: "center",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center", // Center horizontally
+          }}
+        >
           {showSanamButton && (
             <Button
               variant="outlined"
               color="error"
               endIcon={<FavoriteBorderIcon />}
               onClick={handleSanamClick}
+              className={sanamAnimation}
             >
               Built by Sanam
             </Button>
@@ -105,6 +117,7 @@ export const Audio: FC = () => {
               endIcon={<PlayCircleOutlineOutlinedIcon />}
               onClick={handleMusicClick}
               sx={{ marginBottom: "1rem" }}
+              className={musicAnimation}
             >
               Music
             </Button>
@@ -114,6 +127,27 @@ export const Audio: FC = () => {
               {LYRICS[currentLineIndex]}
             </p>
           )}
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "0px",
+            left: "58%",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <p
+            className="font-lvs text-4xl mb-4 hover:text-red-500 hover: cursor-pointer"
+            onClick={() => {
+              showMusicButton
+                ? setMusicAnimation("animate-bounce")
+                : setSanamAnimation("animate-bounce");
+            }}
+          >
+            {" "}
+            {/* withlovebokaboka */}
+            &#xE126;&#x0069;&#x0074;&#xE638;&#x0062;&#x006F;&#x006B;&#x0061;&#x0062;&#x006F;&#x006B;&#xE078;{" "}
+          </p>
         </Box>
       </Container>
     </>

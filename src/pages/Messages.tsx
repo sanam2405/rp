@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Balloons, Spots } from "../components";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ export const Messages: FC = () => {
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
-
+  const [bokaopacity, setBokaOpacity] = useState<number>(1);
   useEffect(() => {
     if (!isPlaying) {
       play();
@@ -120,7 +120,17 @@ export const Messages: FC = () => {
         },
         "+=1.5",
       )
-      .to(".idea-5 .smiley", { rotation: 90, x: 8 }, "+=0.4")
+      .to(
+        ".idea-5 .smiley",
+        {
+          rotation: 90,
+          x: 8,
+          onComplete: () => {
+            setBokaOpacity(0);
+          },
+        },
+        "+=0.4",
+      )
       .to(".idea-5", { scale: 0.2, opacity: 0 }, "+=2")
       .staggerFrom(
         ".idea-6 span",
@@ -198,84 +208,137 @@ export const Messages: FC = () => {
       .staggerFrom(
         ".nine p",
         1,
-        { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" },
+        {
+          opacity: 0,
+          y: -20,
+          rotationX: 5,
+          skewX: "15deg",
+        },
         1.2,
       )
-      .to(".last-smile", { rotation: 90 }, "+=2");
+      .to(
+        ".last-smile",
+        {
+          rotation: 90,
+          onComplete: () => {
+            setBokaOpacity(1);
+          },
+        },
+        "+=2",
+      );
 
     return () => {};
   }, []);
 
   return (
-    <div ref={containerRef} className="container">
-      <div className="one">
-        <h1> Hey RP! </h1>
-      </div>
-      <div className="two">
-        <p>Rimjhim, Roheena</p>
-      </div>
-      <div className="three">
-        <p>It's your Birthday! :D</p>
-      </div>
-      <div className="four">
-        <div className="text-box">
-          <p className="hbd-chatbox" ref={textBoxCharsRef}>
-            <span> Happy Birthday Rimjhim! </span>
+    <>
+      <div style={{ display: "flex", maxWidth: "100vw", overflowX: "hidden" }}>
+        <div
+          ref={containerRef}
+          className="container"
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            minHeight: "100vh",
+            overflow: "hidden",
+            overflowX: "hidden",
+          }}
+        >
+          <div className="one">
+            <h1> Hey RP! </h1>
+          </div>
+          <div className="two mb-8">
+            <p className="font-lvs text-5xl">&#xE069;imjhi&#xE168;</p>
+          </div>
+          <div className="three">
+            <p>It's your Birthday! :D</p>
+          </div>
+          <div className="four">
+            <div className="text-box">
+              <p className="hbd-chatbox" ref={textBoxCharsRef}>
+                <span> Happy Birthday Rimjhim! </span>
+              </p>
+              <p className="fake-btn">Send</p>
+            </div>
+          </div>
+          <div className="five">
+            <p className="idea-1">
+              I so wished to speak to you yesterday at the GB
+            </p>
+            <p className="idea-2">
+              But then I fell down on the floor and stopped XD
+            </p>
+            <p className="idea-3">
+              <span> Actually, I realized, I wanted to do something </span>
+              <br /> <br />
+              <strong> special</strong>.
+            </p>
+            <p className="idea-4">Because</p>
+            <p className="idea-5">
+              <span>You are Special </span>
+              <br />
+              <span className="smiley"> {"    "} :)</span>
+            </p>
+            <p className="idea-6">
+              <span>S</span>
+              <span>O</span>
+            </p>
+          </div>
+          <div className="six">
+            <img
+              src="/rpdp.png"
+              alt=""
+              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
+            />
+            <img src="/hat.svg" alt="" className="hat" />
+            <div className="wish">
+              <h3 className="wish-hbd">
+                <span className="text-red-600"> Happy 21st Birthday! </span>
+              </h3>
+              <h5>May you always put on this pretty smile :)</h5>
+            </div>
+          </div>
+          <div className="seven">
+            <div className="baloons hover:brightness-125">
+              <Balloons />
+            </div>
+          </div>
+          <div className="eight">
+            <Spots />
+          </div>
+          <div className="nine">
+            <p>I hope things turn good between you and me some day</p>
+            <p id="replay">Okay, I have something more for you...</p>
+            <br />
+            <p className="last-smile"> :) </p>
+          </div>
+        </div>
+        <div
+          style={{
+            position: "fixed",
+            bottom: 0,
+            marginLeft: "33px",
+            padding: "1rem",
+            width: "100%",
+            overflow: "hidden",
+            opacity: bokaopacity,
+          }}
+        >
+          <p
+            className="font-lvs text-4xl mt-4 hover: text-red-500"
+            style={{
+              textAlign: "center",
+              opacity: bokaopacity,
+              transition: "opacity 1.5s ease-in-out",
+            }}
+          >
+            &#xE126;&#x0069;&#x0074;&#xE638;&#x0062;&#x006F;&#x006B;&#x0061;&#x0062;&#x006F;&#x006B;&#xE078;
           </p>
-          <p className="fake-btn">Send</p>
         </div>
       </div>
-      <div className="five">
-        <p className="idea-1">
-          I so wished to speak to you yesterday at the GB
-        </p>
-        <p className="idea-2">
-          But then I fell down on the floor and stopped XD
-        </p>
-        <p className="idea-3">
-          <span> Actually, I realized, I wanted to do something </span>
-          <br /> <br />
-          <strong> special</strong>.
-        </p>
-        <p className="idea-4">Because</p>
-        <p className="idea-5">
-          <span>You are Special </span>
-          <br />
-          <span className="smiley"> {"    "} :)</span>
-        </p>
-        <p className="idea-6">
-          <span>S</span>
-          <span>O</span>
-        </p>
-      </div>
-      <div className="six">
-        <img
-          src="/rpdp.png"
-          alt=""
-          className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
-        />
-        <img src="/hat.svg" alt="" className="hat" />
-        <div className="wish">
-          <h3 className="wish-hbd">
-            <span className="text-red-600"> Happy 21st Birthday! </span>
-          </h3>
-          <h5>May you always put on this pretty smile :)</h5>
-        </div>
-      </div>
-      <div className="seven">
-        <div className="baloons hover:brightness-125">
-          <Balloons />
-        </div>
-      </div>
-      <div className="eight">
-        <Spots />
-      </div>
-      <div className="nine">
-        <p>I hope things turn good between you and me some day</p>
-        <p id="replay">Okay, I have something more for you...</p>
-        <br />
-        <p className="last-smile"> :) </p>
-      </div>
-    </div>
+    </>
   );
 };
