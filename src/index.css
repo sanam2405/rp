@@ -5,6 +5,7 @@
 
 .bg-wallpaper {
   position: relative;
+  overflow: hidden;
 }
 
 .bg-wallpaper::before {
@@ -16,7 +17,8 @@
   height: 100%;
   background-image: url("/wordcloud.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  background-position: center top;
   z-index: -1;
   opacity: 0.15;
   filter: grayscale(100%) contrast(150%);
