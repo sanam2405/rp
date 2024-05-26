@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* disable scroll for mobile and smaller devices */
+@media (max-width: 785px) {
+  body {
+    overflow-y: hidden;
+  }
+}
+
 .bg-wallpaper {
   position: relative;
   overflow: hidden;
