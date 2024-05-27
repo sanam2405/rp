@@ -135,9 +135,10 @@ export const Audio: FC = () => {
         </Box>
         <Box
           sx={{
-            position: "absolute",
+            position: "fixed",
             bottom: "0px",
-            left: "58%",
+            left: "50%",
+            marginLeft: "33px",
             transform: "translateX(-50%)",
           }}
         >
