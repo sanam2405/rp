@@ -38,7 +38,7 @@ const defaultProps = {
   showCursor: false,
   size: 150,
   initialPosition: { x: 0, y: 0 },
-  moveTo: null,
+  moveTo: { x: 0, y: 0 },
   speed: 1000,
   enableMouse: true,
   darkness: 0.9,

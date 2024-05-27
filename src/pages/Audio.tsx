@@ -15,9 +15,9 @@ export const Audio: FC = () => {
   const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [showSanamButton, setShowSanamButton] = useState(true); // Tracks if "Built by Sanam" button should be shown
-  const [sanamAnimation, setSanamAnimation] = useState("animate-pulse"); // Tracks the animation of the Sanam button
+  const [sanamAnimation, setSanamAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Sanam button
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
-  const [musicAnimation, setMusicAnimation] = useState("animate-pulse"); // Tracks the animation of the Music button
+  const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
 

@@ -346,6 +346,7 @@ export const Messages: FC = () => {
             width: "100%",
             overflow: "hidden",
             opacity: bokaopacity,
+            transition: "opacity 3s ease-in-out",
           }}
         >
           <p
@@ -353,7 +354,7 @@ export const Messages: FC = () => {
             style={{
               textAlign: "center",
               opacity: bokaopacity,
-              transition: "opacity 1.5s ease-in-out",
+              transition: "opacity 3s ease-in-out",
             }}
           >
             &#xE126;&#x0069;&#x0074;&#xE638;&#x0062;&#x006F;&#x006B;&#x0061;&#x0062;&#x006F;&#x006B;&#xE078;

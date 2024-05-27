@@ -24,7 +24,7 @@
   height: 100%;
   background-image: url("/wordcloud.png");
   background-size: cover;
-  background-repeat: repeat-y;
+  background-repeat: repeat-x repeat-y;
   background-position: center top;
   z-index: -1;
   opacity: 0.15;
