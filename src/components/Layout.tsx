@@ -7,6 +7,19 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     y: 0,
   });
 
+  const [darkness, setDarkness] = useState(1);
+
+  const updateDarkness = () => {
+    const isLargeScreen = window.matchMedia("(min-width: 786px)").matches;
+    setDarkness(isLargeScreen ? 0.95 : 0.05);
+  };
+
+  useEffect(() => {
+    updateDarkness();
+    window.addEventListener("resize", updateDarkness);
+    return () => window.removeEventListener("resize", updateDarkness);
+  }, []);
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setPosition({ x: event.clientX, y: event.clientY });
@@ -27,7 +40,7 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         initialPosition={position}
         // moveTo={position}
         moveTo={{ x: 0, y: 0 }}
-        darkness={0.9}
+        darkness={darkness}
       >
         <div className="bg-wallpaper h-screen overflow-auto">{children}</div>
       </Flashlight>
