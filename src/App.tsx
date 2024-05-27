@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Audio, Messages, Carousal } from "./pages";
 import { Layout } from "./components";
 import { AudioProvider } from "./context";
@@ -39,6 +39,7 @@ function App() {
                 </Layout>
               }
             />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </BrowserRouter>
       </AudioProvider>
