@@ -58,8 +58,8 @@ export const Carousal: FC = () => {
   }, [play, isPlaying, isVideoPlaying]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen drop-shadow-xl">
-      <Card className="w-full max-w-lg h-1/3 flex flex-col shadow-2xl">
+    <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
+      <Card className="w-full max-w-lg h-auto flex flex-col shadow-2xl">
         <div className="flex-grow shadow-md">
           <CardHeader
             avatar={
@@ -76,7 +76,6 @@ export const Carousal: FC = () => {
               </IconButton>
             }
           />
-
           <Swiper
             modules={[Navigation, Pagination, Scrollbar]}
             spaceBetween={0}
@@ -85,7 +84,7 @@ export const Carousal: FC = () => {
             navigation
             pagination={{ clickable: true }}
             loop={false}
-            breakpoints={{}}
+            className="aspect-w-1 aspect-h-1 h-96"
           >
             {media.map((item, index) => (
               <SwiperSlide key={index}>
@@ -129,8 +128,9 @@ export const Carousal: FC = () => {
                 ) : (
                   <CardMedia
                     component="img"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain object-top"
                     image={item}
+                    style={{ aspectRatio: "1/1" }}
                   />
                 )}
               </SwiperSlide>
@@ -157,7 +157,6 @@ export const Carousal: FC = () => {
             />
           </IconButton>
         </CardActions>
-
         <CardContent>
           <Typography
             variant="body2"
