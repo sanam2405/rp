@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -97,18 +97,19 @@ export const Audio: FC = () => {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center", // Center horizontally
+            alignItems: "center",
           }}
         >
           {showSanamButton && (
             <Button
               variant="outlined"
               color="error"
-              endIcon={<FavoriteBorderIcon />}
+              endIcon={<FavoriteTwoToneIcon />}
               onClick={handleSanamClick}
               className={sanamAnimation}
             >
-              Built by Sanam
+              {/* Built by Sanam */}
+              <i> তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে </i>
             </Button>
           )}
           {showMusicButton && (
@@ -119,7 +120,8 @@ export const Audio: FC = () => {
               sx={{ marginBottom: "1rem" }}
               className={musicAnimation}
             >
-              Music
+              {/* Music */}
+              <i> পলাতকা প্লাবনের পরী প্রণয়নী </i>
             </Button>
           )}
           {isVisible && !firstLoopCompleted && (
