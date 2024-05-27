@@ -314,7 +314,7 @@ export const Messages: FC = () => {
                 <span className="text-red-600"> Happy 21st Birthday! </span>
               </h3>
               <h5 className="text-red-500 hover:text-black">
-                May you always put on this pretty smile :)
+                <strong> May you always put on this pretty smile :) </strong>
               </h5>
             </div>
           </div>
@@ -328,13 +328,19 @@ export const Messages: FC = () => {
           </div>
           <div className="nine">
             <p className="text-red-500 hover:text-black">
-              I hope things turn good between you and me some day
+              <strong>
+                {" "}
+                I hope things turn good between you and me some day{" "}
+              </strong>
             </p>
             <p id="replay" className="text-red-500 hover:text-black">
-              Okay, I have something more for you...
+              <strong> Okay, I have something more for you... </strong>
             </p>
             <br />
-            <p className="last-smile text-red-500 hover:text-black"> :) </p>
+            <p className="last-smile text-red-500 hover:text-black">
+              {" "}
+              <strong> :) </strong>{" "}
+            </p>
           </div>
         </div>
         <div
