@@ -18,8 +18,12 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "../context";
 
-const media = ["/sanam.jpg", "/rp.jpg", "/sheyje_arijit_square.mp4"];
-const avatarImage = "/rimjhim.svg";
+import sanamImage from "/sanam.jpg";
+import rpImage from "/rp.jpg";
+import ekaekaVideo from "/sheyje_arijit_square.mp4";
+
+const media = [sanamImage, rpImage, ekaekaVideo];
+import avatarImage from "/rimjhim.svg";
 
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
@@ -87,7 +91,7 @@ export const Carousal: FC = () => {
             className="aspect-w-1 aspect-h-1 h-96 relative"
           >
             {media.map((item, index) => (
-              <SwiperSlide key={index} className="absolute inset-0">
+              <SwiperSlide key={index} className="relative h-full">
                 <div className="relative group h-full">
                   {item.endsWith(".mp4") ? (
                     <div className="absolute inset-0">
@@ -129,8 +133,9 @@ export const Carousal: FC = () => {
                   ) : (
                     <CardMedia
                       component="img"
-                      className="w-full h-full object-contain object-top"
+                      className="w-full h-full object-cover object-top"
                       image={item}
+                      alt={`media-${index}`}
                       style={{ aspectRatio: "1/1" }}
                     />
                   )}
