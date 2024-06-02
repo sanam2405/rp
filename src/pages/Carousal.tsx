@@ -84,55 +84,57 @@ export const Carousal: FC = () => {
             navigation
             pagination={{ clickable: true }}
             loop={false}
-            className="aspect-w-1 aspect-h-1 h-96"
+            className="aspect-w-1 aspect-h-1 h-96 relative"
           >
             {media.map((item, index) => (
-              <SwiperSlide key={index}>
-                {item.endsWith(".mp4") ? (
-                  <div className="relative group">
-                    <video
-                      className="w-full h-full object-cover"
-                      loop
-                      controls
-                      onPlay={handleVideoPlay}
-                      onPause={handleVideoPause}
-                    >
-                      <source src={item} type="video/mp4" />
-                      Shey Je Boshe Ache Eka Eka
-                    </video>
-                    <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
-                      <button
-                        className="p-2 bg-white bg-opacity-75 rounded-full"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const video = e.currentTarget
-                            .closest(".group")
-                            ?.querySelector("video");
-                          if (video) {
-                            if (isVideoPlaying) {
-                              video.pause();
-                            } else {
-                              video.play();
-                            }
-                          }
-                        }}
+              <SwiperSlide key={index} className="absolute inset-0">
+                <div className="relative group h-full">
+                  {item.endsWith(".mp4") ? (
+                    <div className="absolute inset-0">
+                      <video
+                        className="w-full h-full object-cover"
+                        loop
+                        controls
+                        onPlay={handleVideoPlay}
+                        onPause={handleVideoPause}
                       >
-                        {isVideoPlaying ? (
-                          <PauseIcon className="text-gray-700" />
-                        ) : (
-                          <PlayArrowIcon className="text-gray-700" />
-                        )}
-                      </button>
+                        <source src={item} type="video/mp4" />
+                        Shey Je Boshe Ache Eka Eka
+                      </video>
+                      <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+                        <button
+                          className="p-2 bg-white bg-opacity-75 rounded-full"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const video = e.currentTarget
+                              .closest(".group")
+                              ?.querySelector("video");
+                            if (video) {
+                              if (isVideoPlaying) {
+                                video.pause();
+                              } else {
+                                video.play();
+                              }
+                            }
+                          }}
+                        >
+                          {isVideoPlaying ? (
+                            <PauseIcon className="text-gray-700" />
+                          ) : (
+                            <PlayArrowIcon className="text-gray-700" />
+                          )}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <CardMedia
-                    component="img"
-                    className="w-full h-full object-contain object-top"
-                    image={item}
-                    style={{ aspectRatio: "1/1" }}
-                  />
-                )}
+                  ) : (
+                    <CardMedia
+                      component="img"
+                      className="w-full h-full object-contain object-top"
+                      image={item}
+                      style={{ aspectRatio: "1/1" }}
+                    />
+                  )}
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
