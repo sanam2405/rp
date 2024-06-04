@@ -1,3 +1,6 @@
+import polatoka from "/polatoka.mp3";
+import dhandharthekeo from "/dhandharthekeo.mp3";
+
 export const LYRICS = [
   "👀",
   "পলাতকা প্লাবনের পরী প্রণয়নী",
@@ -19,3 +22,8 @@ export const LYRICS = [
   "গোপনে-গোপনে যতো শব্দেরা অবিরত",
   "তোমাকেই ডাকে, তুমি শোনোনা বোধহয়...",
 ];
+
+export const MUSIC = {
+  POLATOKA: polatoka,
+  DHANDHAR_THEKEO: dhandharthekeo,
+};
