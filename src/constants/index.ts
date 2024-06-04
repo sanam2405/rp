@@ -1,5 +1,9 @@
 import polatoka from "/polatoka.mp3";
 import dhandharthekeo from "/dhandharthekeo.mp3";
+import sanamImage from "/sanam.jpg";
+import rpImage from "/rp.jpg";
+import ekaekaVideo from "/sheyje_arijit_square.mp4";
+import avatarImage from "/rimjhim.svg";
 
 export const LYRICS = [
   "👀",
@@ -26,4 +30,11 @@ export const LYRICS = [
 export const MUSIC = {
   POLATOKA: polatoka,
   DHANDHAR_THEKEO: dhandharthekeo,
+};
+
+export const MEDIA = {
+  SANAM_IMG: sanamImage,
+  RP_IMG: rpImage,
+  AVATAR_IMG: avatarImage,
+  SHEY_JE_VID: ekaekaVideo,
 };
