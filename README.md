@@ -16,6 +16,18 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
    - Composition: _Shayan Chowdhury Arnob_ (Chaina Bhabish)
    - Rendition: _Arijit Singh_
 
+3. ধাঁধার থেকেও জটিল তুমি
+
+    - Lyrics: _Joyjit Lahiri_
+    - Composition: _Subrata Ghosh_
+    - Band: _Gorer Math_
+    - First released as part of _Mohiner Ghoraguli Sompadito_ (Compilation) Albums
+    - Rendition: 
+        - Dotara - _Shayan Sinha_
+        - Vocals & Ukulele - _Sayatya_
+
+- Note that this is not a song by Mohiner Ghoraguli but released as part of Mohiner Ghoraguli Sompadito Albums
+
 ## Setting up locally
 
 - Clone the rp repository
