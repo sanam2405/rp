@@ -1,6 +1,6 @@
 import { ReactNode, createContext, FC, useContext, useState } from "react";
 import useSound from "use-sound";
-import polatoka from "/polatoka.mp3";
+import { MUSIC } from "../constants";
 
 interface AudioContextType {
   play: () => void;
@@ -12,7 +12,7 @@ const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
 export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { stop }] = useSound(polatoka, { loop: true });
+  const [play, { stop }] = useSound(MUSIC.SANAM, { loop: true });
 
   const togglePlay = () => {
     if (isPlaying) {

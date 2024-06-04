@@ -1,3 +1,11 @@
+import polatoka from "/polatoka.mp3";
+import dhandharthekeo from "/dhandharthekeo.mp3";
+import sanamcomposition from "/sanamcomposition.mp3";
+import sanamImage from "/sanam.jpg";
+import rpImage from "/rp.jpg";
+import ekaekaVideo from "/sheyje_arijit_square.mp4";
+import avatarImage from "/rimjhim.svg";
+
 export const LYRICS = [
   "👀",
   "পলাতকা প্লাবনের পরী প্রণয়নী",
@@ -19,3 +27,16 @@ export const LYRICS = [
   "গোপনে-গোপনে যতো শব্দেরা অবিরত",
   "তোমাকেই ডাকে, তুমি শোনোনা বোধহয়...",
 ];
+
+export const MUSIC = {
+  POLATOKA: polatoka,
+  DHANDHAR_THEKEO: dhandharthekeo,
+  SANAM: sanamcomposition,
+};
+
+export const MEDIA = {
+  SANAM_IMG: sanamImage,
+  RP_IMG: rpImage,
+  AVATAR_IMG: avatarImage,
+  SHEY_JE_VID: ekaekaVideo,
+};

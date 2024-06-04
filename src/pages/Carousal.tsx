@@ -17,13 +17,9 @@ import ShareIcon from "@mui/icons-material/Share";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "../context";
+import { MEDIA } from "../constants";
 
-import sanamImage from "/sanam.jpg";
-import rpImage from "/rp.jpg";
-import ekaekaVideo from "/sheyje_arijit_square.mp4";
-
-const media = [sanamImage, rpImage, ekaekaVideo];
-import avatarImage from "/rimjhim.svg";
+const currentMedia = [MEDIA.SANAM_IMG, MEDIA.RP_IMG, MEDIA.SHEY_JE_VID];
 
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
@@ -68,7 +64,7 @@ export const Carousal: FC = () => {
           <CardHeader
             avatar={
               <Avatar
-                src={avatarImage}
+                src={MEDIA.AVATAR_IMG}
                 className="rounded-full cursor-pointer"
               />
             }
@@ -90,7 +86,7 @@ export const Carousal: FC = () => {
             loop={false}
             className="aspect-w-1 aspect-h-1 h-96 relative"
           >
-            {media.map((item, index) => (
+            {currentMedia.map((item, index) => (
               <SwiperSlide key={index} className="relative h-full">
                 <div className="relative group h-full">
                   {item.endsWith(".mp4") ? (

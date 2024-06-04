@@ -32,9 +32,9 @@ export const Messages: FC = () => {
     tl.to(containerRef.current, { visibility: "visible" })
       .from(".one", { opacity: 0, y: 10 })
       .from(".two", { opacity: 0, y: 10 }, "-=0.3")
-      .to([".one", ".two"], { opacity: 0, y: 10 }, "+=2.8")
+      .to([".one", ".two"], { opacity: 0, y: 10 }, "+=4.25")
       .from(".three", { opacity: 0, y: 10 })
-      .to(".three", { opacity: 0, y: 10 }, "+=3")
+      .to(".three", { opacity: 0, y: 10 }, "+=5.25")
       .from(".four", {
         visibility: "hidden",
         duration: 0.1,
@@ -82,13 +82,13 @@ export const Messages: FC = () => {
       .to(
         ".idea-1",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=4",
+        "+=5",
       )
       .from(".idea-2", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-2",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=5",
+        "+=6",
       )
       .from(".idea-3", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(".idea-3 strong", {
@@ -100,13 +100,13 @@ export const Messages: FC = () => {
       .to(
         ".idea-3",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=2.5",
+        "+=4.75",
       )
       .from(".idea-4", { opacity: 0, y: -20, rotationX: 5, skewX: "15deg" })
       .to(
         ".idea-4",
         { opacity: 0, y: 20, rotationY: 5, skewX: "-15deg" },
-        "+=2.5",
+        "+=4.75",
       )
       .from(
         ".idea-5",
@@ -118,7 +118,7 @@ export const Messages: FC = () => {
           z: 10,
           opacity: 0,
         },
-        "+=1.5",
+        "+=3.5",
       )
       .to(
         ".idea-5 .smiley",
@@ -156,7 +156,7 @@ export const Messages: FC = () => {
       )
       .staggerFromTo(
         ".baloons img",
-        2.5,
+        3.5,
         { opacity: 0.9, y: 1400 },
         { opacity: 1, y: -1000 },
         0.2,
@@ -169,7 +169,7 @@ export const Messages: FC = () => {
       .from(".hat", { x: -100, y: 350, rotation: -180, opacity: 0 })
       .staggerFrom(
         ".wish-hbd span",
-        0.7,
+        1.5,
         {
           opacity: 0,
           y: -50,
@@ -177,11 +177,11 @@ export const Messages: FC = () => {
           skewX: "30deg",
           ease: "elastic.out(0.6, 0.2)",
         },
-        0.1,
+        0.75,
       )
       .staggerFromTo(
         ".wish-hbd span",
-        0.7,
+        1.5,
         { scale: 1.4, rotationY: 150 },
         {
           scale: 1,
@@ -189,7 +189,7 @@ export const Messages: FC = () => {
           color: "#ef4444",
           ease: "expoScale(1, 10, expo.out)",
         },
-        0.1,
+        0.75,
       )
       .from(".wish h5", { opacity: 0, y: 10, skewX: "-15deg" }, "party")
       .staggerTo(
@@ -214,7 +214,7 @@ export const Messages: FC = () => {
           rotationX: 5,
           skewX: "15deg",
         },
-        1.2,
+        1.5,
       )
       .to(
         ".last-smile",
