@@ -10,13 +10,7 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
    - Composition: _Wolfgang Amadeus Mozart_ (Symphony No. 25 in G minor)
    - Vocals: _Sudhaborshy Chakraborty_ and _Chandosika_
 
-2. সে যে বসে আছে একা একা :
-
-   - Lyrics: _Shayan Chowdhury Arnob_
-   - Composition: _Shayan Chowdhury Arnob_ (Chaina Bhabish)
-   - Rendition: _Arijit Singh_
-
-3. ধাঁধার থেকেও জটিল তুমি
+2. ধাঁধার থেকেও জটিল তুমি
 
     - Lyrics: _Joyjit Lahiri_
     - Composition: _Subrata Ghosh_
@@ -27,6 +21,18 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
         - Vocals & Ukulele - _Sayatya_
 
 - Note that this is not a song by Mohiner Ghoraguli but released as part of Mohiner Ghoraguli Sompadito Albums
+
+3. গীতগোবিন্দ
+
+    - Lyrics: _Chandril Bhattacharya_
+    - Composition: _Chandrabindoo_ (Juju)
+
+4. সে যে বসে আছে একা একা :
+
+   - Lyrics: _Shayan Chowdhury Arnob_
+   - Composition: _Shayan Chowdhury Arnob_ (Chaina Bhabish)
+   - Rendition: _Arijit Singh_
+
 
 ## Setting up locally
 

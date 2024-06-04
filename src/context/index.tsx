@@ -12,7 +12,11 @@ const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
 export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { stop }] = useSound(MUSIC.SANAM, { loop: true, preload:true, html5: true });
+  const [play, { stop }] = useSound(MUSIC.SANAM, {
+    loop: true,
+    preload: true,
+    html5: true,
+  });
 
   const togglePlay = () => {
     if (isPlaying) {

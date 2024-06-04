@@ -40,3 +40,5 @@ export const MEDIA = {
   AVATAR_IMG: avatarImage,
   SHEY_JE_VID: ekaekaVideo,
 };
+
+export const GITHUB_URI = "https://github.com/sanam2405/rp";

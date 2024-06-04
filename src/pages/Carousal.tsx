@@ -11,13 +11,14 @@ import {
   CardActions,
 } from "@mui/material";
 import { Avatar, IconButton, Typography } from "@mui/material";
-import { Favorite, MoreVert } from "@mui/icons-material";
+import { Favorite } from "@mui/icons-material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "../context";
-import { MEDIA } from "../constants";
+import { GITHUB_URI, MEDIA } from "../constants";
 
 const currentMedia = [MEDIA.SANAM_IMG, MEDIA.RP_IMG, MEDIA.SHEY_JE_VID];
 
@@ -72,7 +73,12 @@ export const Carousal: FC = () => {
             subheader={formattedDate}
             action={
               <IconButton>
-                <MoreVert />
+                <GitHubIcon
+                  onClick={() => {
+                    window.location.href = `${GITHUB_URI}#readme`;
+                  }}
+                  className="text-gray-500 hover:text-gray-950"
+                />
               </IconButton>
             }
           />
