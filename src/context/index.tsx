@@ -12,8 +12,7 @@ const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
 export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentMusic] = useState(MUSIC.POLATOKA);
-  const [play, { stop }] = useSound(currentMusic, { loop: true });
+  const [play, { stop }] = useSound(MUSIC.SANAM, { loop: true });
 
   const togglePlay = () => {
     if (isPlaying) {
