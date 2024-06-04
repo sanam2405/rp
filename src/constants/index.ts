@@ -1,6 +1,6 @@
 import polatoka from "/polatoka.mp3";
 import dhandharthekeo from "/dhandharthekeo.mp3";
-import sanamcompositioncmp from "/sanamcompositioncmp.mp3";
+import sanamcomposition from "/sanamcomposition.mp3";
 import sanamImage from "/sanam.jpg";
 import rpImage from "/rp.jpg";
 import ekaekaVideo from "/sheyje_arijit_square.mp4";
@@ -31,7 +31,7 @@ export const LYRICS = [
 export const MUSIC = {
   POLATOKA: polatoka,
   DHANDHAR_THEKEO: dhandharthekeo,
-  SANAM: sanamcompositioncmp,
+  SANAM: sanamcomposition,
 };
 
 export const MEDIA = {

@@ -8,6 +8,8 @@ declare module "use-sound" {
     soundEnabled?: boolean;
     sprite?: { [key: string]: [number, number] };
     loop?: boolean;
+    preload?: boolean;
+    html5?: boolean;
     // You can add more properties as needed based on your use case
   }
 
