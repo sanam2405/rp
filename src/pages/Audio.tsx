@@ -102,6 +102,7 @@ export const Audio: FC = () => {
         >
           {showSanamButton && (
             <Button
+              id="sanamButton"
               variant="outlined"
               color="error"
               endIcon={<FavoriteTwoToneIcon />}
@@ -114,6 +115,7 @@ export const Audio: FC = () => {
           )}
           {showMusicButton && (
             <Button
+              id="musicButton"
               variant="outlined"
               endIcon={<PlayCircleOutlineOutlinedIcon />}
               onClick={handleMusicClick}

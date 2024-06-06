@@ -161,8 +161,13 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
     };
 
     const handleClick = (e: MouseEvent) => {
-      if (e.button === 0) {
-        setEnabled((prevEnabled) => !prevEnabled);
+      if (e.button === 0 && window.matchMedia("(min-width: 786px)").matches) {
+        const target = e.target as HTMLElement;
+        const isNotSanamButton = !target.closest("#sanamButton");
+        const isNotMusicButton = !target.closest("#musicButton");
+        if (isNotSanamButton && isNotMusicButton) {
+          setEnabled((prevEnabled) => !prevEnabled);
+        }
       }
     };
 
