@@ -38,8 +38,7 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         enableMouse={false}
         showCursor={true}
         initialPosition={position}
-        // moveTo={position}
-        moveTo={{ x: 0, y: 0 }}
+        moveTo={position}
         darkness={darkness}
       >
         <div className="bg-wallpaper h-screen overflow-auto">{children}</div>

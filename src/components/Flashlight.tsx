@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {
+  useState,
   useEffect,
   useRef,
   Children,
@@ -46,7 +47,7 @@ const defaultProps = {
 
 export const Flashlight: React.FC<FlashlightProps> = (props) => {
   const {
-    enabled,
+    enabled: initialEnabled,
     children,
     showCursor,
     size,
@@ -56,6 +57,8 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
     enableMouse,
     darkness,
   } = props;
+
+  const [enabled, setEnabled] = useState(initialEnabled);
 
   const lightStyle: CSSProperties = {
     position: "absolute",
@@ -157,6 +160,12 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
       }
     };
 
+    const handleClick = (e: MouseEvent) => {
+      if (e.button === 0) {
+        setEnabled((prevEnabled) => !prevEnabled);
+      }
+    };
+
     resizeLights();
 
     const resizeObservers = elements.map(
@@ -175,6 +184,7 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
       window.addEventListener("scroll", handleScroll);
     }
 
+    window.addEventListener("click", handleClick);
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
     window.addEventListener("resize", resizeLights);
 
@@ -183,6 +193,7 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("scroll", handleScroll);
       }
+      window.removeEventListener("click", handleClick);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("resize", resizeLights);
       resizeObservers.forEach((observer) => observer.disconnect());
