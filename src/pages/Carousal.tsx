@@ -30,7 +30,7 @@ export const Carousal: FC = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
   const [caption, setCaption] = useState(
-    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br /> তুমি অং-বং ভবজলধি নুলিয়া আ... <br /> বঁধু চোক্ষে এসো, অন্ধ হোক <br /> কক্ষে এসো নিন্দে হোক <br /> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
+    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br /> তুমি অং-বং ভবজলধি নুলিয়া আ... <br /> বধূ চোক্ষে এসো, অন্ধ হোক <br /> কক্ষে এসো নিন্দে হোক <br /> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
