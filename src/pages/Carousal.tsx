@@ -60,7 +60,10 @@ export const Carousal: FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
-      <Card className="w-full max-w-lg h-auto flex flex-col shadow-2xl">
+      <Card
+        className="w-full max-w-lg h-auto flex flex-col shadow-2xl"
+        id="sanamCarousal"
+      >
         <div className="flex-grow shadow-md">
           <CardHeader
             avatar={
