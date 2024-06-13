@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         lvs: ['lovelyvalentine', 'sans-serif'],
+        rwd: ['royalwedding', 'sans-serif'],
       },
     },
   },
