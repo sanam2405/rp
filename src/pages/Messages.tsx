@@ -94,7 +94,7 @@ export const Messages: FC = () => {
       .to(".idea-3 strong", {
         scale: 1.8,
         x: 10,
-        backgroundColor: "#f43f5e",
+        backgroundColor: "#ef4444",
         color: "#fff",
       })
       .to(
@@ -256,14 +256,20 @@ export const Messages: FC = () => {
             </p>
           </div>
           <div className="three">
-            <p className="text-red-500 hover:text-black">
-              It's your Birthday! :D
+            <p
+              className="text-red-500 hover:text-black font-rwd"
+              style={{ fontSize: "5rem", fontWeight: "300" }}
+            >
+              It's your Birthday ^.^
             </p>
           </div>
           <div className="four">
             <div className="text-box">
               <p className="hbd-chatbox" ref={textBoxCharsRef}>
-                <span className="text-red-500 hover:text-black">
+                <span
+                  className="text-red-500 hover:text-black font-rwd text-5xl"
+                  style={{ fontSize: "5rem", fontWeight: "300" }}
+                >
                   {" "}
                   Happy Birthday Rimjhim!{" "}
                 </span>
@@ -272,32 +278,56 @@ export const Messages: FC = () => {
             </div>
           </div>
           <div className="five">
-            <p className="idea-1 text-red-500 hover:text-black">
+            <p
+              className="idea-1 text-red-500 hover:text-black font-rwd"
+              style={{ fontSize: "5rem", fontWeight: "300" }}
+            >
               I so wished to speak to you yesterday at the GB
             </p>
-            <p className="idea-2 text-red-500 hover:text-black">
+            <p
+              className="idea-2 text-red-500 hover:text-black font-rwd"
+              style={{ fontSize: "5rem", fontWeight: "300" }}
+            >
               But then I fell down on the floor and stopped XD
             </p>
             <p className="idea-3">
-              <span className="text-red-500 hover:text-black">
+              <span
+                className="text-red-500 hover:text-red-500 font-rwd"
+                style={{ fontSize: "5rem", fontWeight: "300" }}
+              >
                 {" "}
                 Actually, I realized, I wanted to do something{" "}
               </span>
               <br /> <br />
-              <strong> special</strong>.
+              <strong className="text-red-500"> special</strong>.
             </p>
-            <p className="idea-4 text-red-500 hover:text-black">Because</p>
+            <p
+              className="idea-4 text-red-500 hover:text-black font-rwd"
+              style={{ fontSize: "5rem", fontWeight: "300" }}
+            >
+              Because
+            </p>
             <p className="idea-5">
-              <span className="text-red-500 hover:text-black">
+              <span
+                className="text-red-500 hover:text-black font-rwd"
+                style={{ fontSize: "5rem", fontWeight: "300" }}
+              >
                 You are Special{" "}
               </span>
               <br />
-              <span className="smiley text-red-500 hover:text-black">
+              <span
+                className="smiley text-red-500 hover:text-black font-rwd"
+                style={{ fontSize: "5rem", fontWeight: "300" }}
+              >
                 {" "}
                 {"    "} :)
               </span>
             </p>
-            <p className="idea-6">
+
+            <p
+              className="idea-6"
+              style={{ fontSize: "5rem", fontWeight: "300" }}
+            >
               <span className="text-red-500 hover:text-black">S</span>
               <span className="text-red-500 hover:text-black">O</span>
             </p>

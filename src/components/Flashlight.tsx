@@ -165,7 +165,8 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
         const target = e.target as HTMLElement;
         const isNotSanamButton = !target.closest("#sanamButton");
         const isNotMusicButton = !target.closest("#musicButton");
-        if (isNotSanamButton && isNotMusicButton) {
+        const isNotCarousal = !target.closest("#sanamCarousal");
+        if (isNotSanamButton && isNotMusicButton && isNotCarousal) {
           setEnabled((prevEnabled) => !prevEnabled);
         }
       }
