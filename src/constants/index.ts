@@ -2,7 +2,9 @@ import polatoka from "/polatoka.mp3";
 import dhandharthekeo from "/dhandharthekeo.mp3";
 import sanamcomposition from "/sanamcomposition.mp3";
 import sanamImage from "/sanam.jpg";
+import sanamVideo from "/sanam.mp4";
 import rpImage from "/rp.jpg";
+import rpVideo from "/rp.mp4";
 import ekaekaVideo from "/sheyje_arijit_square.mp4";
 import avatarImage from "/rimjhim.svg";
 
@@ -37,8 +39,10 @@ export const MUSIC = {
 export const MEDIA = {
   SANAM_IMG: sanamImage,
   RP_IMG: rpImage,
+  SANAM_VIDEO: sanamVideo,
+  RP_VIDEO: rpVideo,
   AVATAR_IMG: avatarImage,
-  SHEY_JE_VID: ekaekaVideo,
+  SHEY_JE_VIDEO: ekaekaVideo,
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";
