@@ -44,6 +44,24 @@
   font-style: italic;
 }
 
+.gradient-text-long {
+  background: linear-gradient(43deg, #ff0000 0%, #ef4444 70%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text {
+  background: linear-gradient(43deg, #ff0000 0%, #ef4444 45%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-rp {
+  background: linear-gradient(to bottom, #ff0000 0%, #ef4444 45%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
 #rimjhim {
   color: #ef4444;
 }

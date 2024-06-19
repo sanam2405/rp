@@ -10,6 +10,8 @@ import React, {
   RefObject,
 } from "react";
 import ResizeObserver from "resize-observer-polyfill";
+import { useDarkMode } from "../context";
+import { DARK_SCREEN, LIGHT_SCREEN } from "../constants";
 
 interface Position {
   x: number;
@@ -57,6 +59,8 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
     enableMouse,
     darkness,
   } = props;
+
+  const { setDarkMode, setDarkness } = useDarkMode();
 
   const [enabled, setEnabled] = useState(initialEnabled);
 
@@ -168,6 +172,11 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
         const isNotCarousal = !target.closest("#sanamCarousal");
         if (isNotSanamButton && isNotMusicButton && isNotCarousal) {
           setEnabled((prevEnabled) => !prevEnabled);
+          setDarkMode((prevDarkMode) => {
+            const newDarkMode = !prevDarkMode;
+            setDarkness(newDarkMode ? DARK_SCREEN : LIGHT_SCREEN);
+            return newDarkMode;
+          });
         }
       }
     };
