@@ -341,12 +341,12 @@ export const Messages: FC = () => {
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
               <span
-                className={`text-red-500 hover:text-black ${darkMode ? "gradient-text" : ""}`}
+                className={`text-red-500 hover:text-black ${darkMode ? "gradient-lyrics" : ""}`}
               >
                 S
               </span>
               <span
-                className={`text-red-500 hover:text-black ${darkMode ? "gradient-text" : ""}`}
+                className={`text-red-500 hover:text-black ${darkMode ? "gradient-lyrics" : ""}`}
               >
                 O
               </span>
