@@ -3,4 +3,5 @@ import { Spots } from "./Spots";
 import { Layout } from "./Layout";
 import { Flashlight } from "./Flashlight";
 import { Loader } from "./Loader";
-export { Balloons, Spots, Layout, Flashlight, Loader };
+import { Leaf } from "./Leaf";
+export { Balloons, Spots, Layout, Flashlight, Loader, Leaf };
