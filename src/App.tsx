@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Audio, Messages, Carousal } from "./pages";
-import { Layout, Loader } from "./components";
+import { Layout, Leaf, Loader } from "./components";
 import { AudioProvider, DarkModeProvider } from "./context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -42,7 +42,9 @@ function App() {
                 path="/"
                 element={
                   <Layout>
-                    <Audio />
+                    <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
+                      <Audio />
+                    </Leaf>
                   </Layout>
                 }
               />
@@ -58,7 +60,9 @@ function App() {
                 path="/wish"
                 element={
                   <Layout>
-                    <Carousal />
+                    <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
+                      <Carousal />
+                    </Leaf>
                   </Layout>
                 }
               />
