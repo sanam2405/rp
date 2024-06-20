@@ -46,3 +46,6 @@ export const MEDIA = {
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";
+
+export const DARK_SCREEN = 0.95;
+export const LIGHT_SCREEN = 0.05;

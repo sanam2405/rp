@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 import { LYRICS } from "../constants";
-import { useAudio } from "../context";
+import { useAudio, useDarkMode } from "../context";
 
 export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +20,7 @@ export const Audio: FC = () => {
   const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
+  const { darkMode } = useDarkMode();
 
   useEffect(() => {
     let wakeLock: WakeLockSentinel | null;
@@ -129,7 +130,7 @@ export const Audio: FC = () => {
           {isVisible && !firstLoopCompleted && (
             <p
               key={currentLineIndex}
-              className="tiro-bangla-regular text-red-500 hover:text-black"
+              className={`tiro-bangla-regular text-red-500 hover:text-black ${currentLineIndex !== 0 && darkMode ? "gradient-lyrics" : ""}`}
             >
               {LYRICS[currentLineIndex]}
             </p>

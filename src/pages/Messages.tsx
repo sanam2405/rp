@@ -2,12 +2,13 @@ import { FC, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Balloons, Spots } from "../components";
 import { useNavigate } from "react-router-dom";
-import { useAudio } from "../context";
+import { useAudio, useDarkMode } from "../context";
 export const Messages: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
+  const { darkMode } = useDarkMode();
   const [bokaopacity, setBokaOpacity] = useState<number>(1);
   useEffect(() => {
     if (!isPlaying) {
@@ -248,7 +249,18 @@ export const Messages: FC = () => {
           }}
         >
           <div className="one mt-4">
-            <h1 id="heyRP"> Hey RP! </h1>
+            <h1
+              id="heyRP"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #ff0000 0%, #ef4444 40%, #000000 100%)",
+                WebkitBackgroundClip: "text" as const, // 'as const' ensures the value is a string literal
+                color: "transparent",
+              }}
+            >
+              {" "}
+              Hey RP!{" "}
+            </h1>
           </div>
           <div className="two mb-12 mt-2">
             <p className="font-lvs text-5xl" id="rimjhim">
@@ -257,7 +269,7 @@ export const Messages: FC = () => {
           </div>
           <div className="three">
             <p
-              className="text-red-500 hover:text-black font-rwd"
+              className={`text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text" : ""} `}
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
               It's your Birthday ^.^
@@ -267,7 +279,7 @@ export const Messages: FC = () => {
             <div className="text-box">
               <p className="hbd-chatbox" ref={textBoxCharsRef}>
                 <span
-                  className="text-red-500 hover:text-black font-rwd text-5xl"
+                  className={`text-red-500 hover:text-black font-rwd text-5xl ${darkMode ? "gradient-text" : ""}`}
                   style={{ fontSize: "5rem", fontWeight: "300" }}
                 >
                   {" "}
@@ -279,20 +291,20 @@ export const Messages: FC = () => {
           </div>
           <div className="five">
             <p
-              className="idea-1 text-red-500 hover:text-black font-rwd"
+              className={`idea-1 text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text-long" : ""} `}
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
               I so wished to speak to you yesterday at the GB
             </p>
             <p
-              className="idea-2 text-red-500 hover:text-black font-rwd"
+              className={`idea-2 text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text-long" : ""}`}
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
               But then I fell down on the floor and stopped XD
             </p>
             <p className="idea-3">
               <span
-                className="text-red-500 hover:text-red-500 font-rwd"
+                className={`text-red-500 hover:text-red-500 font-rwd ${darkMode ? "gradient-text-long" : ""}`}
                 style={{ fontSize: "5rem", fontWeight: "300" }}
               >
                 {" "}
@@ -302,21 +314,21 @@ export const Messages: FC = () => {
               <strong className="text-red-500"> special</strong>.
             </p>
             <p
-              className="idea-4 text-red-500 hover:text-black font-rwd"
+              className={`idea-4 text-red-500 hover:text-black font-rwd gradient-text ${darkMode ? "gradient-text" : ""}`}
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
               Because
             </p>
             <p className="idea-5">
               <span
-                className="text-red-500 hover:text-black font-rwd"
+                className={`text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text" : ""}`}
                 style={{ fontSize: "5rem", fontWeight: "300" }}
               >
                 You are Special{" "}
               </span>
               <br />
               <span
-                className="smiley text-red-500 hover:text-black font-rwd"
+                className={`smiley text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text" : ""}`}
                 style={{ fontSize: "5rem", fontWeight: "300" }}
               >
                 {" "}
@@ -328,8 +340,16 @@ export const Messages: FC = () => {
               className="idea-6"
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
-              <span className="text-red-500 hover:text-black">S</span>
-              <span className="text-red-500 hover:text-black">O</span>
+              <span
+                className={`text-red-500 hover:text-black ${darkMode ? "gradient-lyrics" : ""}`}
+              >
+                S
+              </span>
+              <span
+                className={`text-red-500 hover:text-black ${darkMode ? "gradient-lyrics" : ""}`}
+              >
+                O
+              </span>
             </p>
           </div>
           <div className="six">
@@ -357,13 +377,18 @@ export const Messages: FC = () => {
             <Spots />
           </div>
           <div className="nine">
-            <p className="text-red-500 hover:text-black">
+            <p
+              className={`text-red-500 hover:text-black ${darkMode ? "gradient-text-long" : ""}`}
+            >
               <strong>
                 {" "}
                 I hope things turn good between you and me some day{" "}
               </strong>
             </p>
-            <p id="replay" className="text-red-500 hover:text-black">
+            <p
+              id="replay"
+              className={`text-red-500 hover:text-black ${darkMode ? "gradient-text-long" : ""}`}
+            >
               <strong> Okay, I have something more for you... </strong>
             </p>
             <br />
