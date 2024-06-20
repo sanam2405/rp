@@ -128,7 +128,7 @@ export const Carousal: FC = () => {
                       </video>
                       <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                         <button
-                          className="p-2 bg-white bg-opacity-75 rounded-full"
+                          // className='p-2 bg-white bg-opacity-75 rounded-full'
                           onClick={(e) => {
                             e.stopPropagation();
                             const video = e.currentTarget
