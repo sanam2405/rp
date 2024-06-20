@@ -60,7 +60,9 @@ function App() {
                 path="/wish"
                 element={
                   <Layout>
-                    <Carousal />
+                    <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
+                      <Carousal />
+                    </Leaf>
                   </Layout>
                 }
               />
