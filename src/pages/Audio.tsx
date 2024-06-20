@@ -130,7 +130,7 @@ export const Audio: FC = () => {
           {isVisible && !firstLoopCompleted && (
             <p
               key={currentLineIndex}
-              className={`tiro-bangla-regular text-red-500 hover:text-black ${currentLineIndex !== 0 && darkMode ? "gradient-rp" : ""}`}
+              className={`tiro-bangla-regular text-red-500 hover:text-black ${currentLineIndex !== 0 && darkMode ? "gradient-lyrics" : ""}`}
             >
               {LYRICS[currentLineIndex]}
             </p>
