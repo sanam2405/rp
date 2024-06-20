@@ -5,14 +5,14 @@ import { Layout, Loader } from "./components";
 import { AudioProvider, DarkModeProvider } from "./context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { CSSProperties } from "react";
 
-// Add the background image styles here
-const backgroundStyle = {
+const backgroundStyle: CSSProperties = {
   position: "relative",
   overflow: "hidden",
 };
 
-const backgroundOverlay = {
+const backgroundOverlay: CSSProperties = {
   content: "",
   position: "absolute",
   top: 0,
