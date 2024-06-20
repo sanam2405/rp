@@ -128,7 +128,7 @@ export const Carousal: FC = () => {
                       </video>
                       <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                         <button
-                          // className='p-2 bg-white bg-opacity-75 rounded-full'
+                          className="p-2 bg-slate-50 bg-opacity-100 rounded-full"
                           onClick={(e) => {
                             e.stopPropagation();
                             const video = e.currentTarget
@@ -144,9 +144,9 @@ export const Carousal: FC = () => {
                           }}
                         >
                           {isVideoPlaying ? (
-                            <PauseIcon className="text-gray-700" />
+                            <PauseIcon className="text-red-600" />
                           ) : (
-                            <PlayArrowIcon className="text-gray-700" />
+                            <PlayArrowIcon className="text-red-600" />
                           )}
                         </button>
                       </div>
