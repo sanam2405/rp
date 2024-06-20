@@ -1,24 +1,48 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Audio, Messages, Carousal } from "./pages";
-import { Layout } from "./components";
+import { Layout, Loader } from "./components";
 import { AudioProvider, DarkModeProvider } from "./context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+// Add the background image styles here
+const backgroundStyle = {
+  position: "relative",
+  overflow: "hidden",
+};
+
+const backgroundOverlay = {
+  content: "",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  backgroundImage: "url('/wordcloud.png')",
+  backgroundSize: "cover",
+  backgroundRepeat: "repeat-x repeat-y",
+  backgroundPosition: "center top",
+  zIndex: -1,
+  opacity: 0.15,
+  filter: "grayscale(100%) contrast(150%)",
+};
+
 function App() {
   return (
-    <>
+    <div className="bg-wallpaper" style={backgroundStyle}>
+      <div style={backgroundOverlay}></div>
+
       <DarkModeProvider>
         <AudioProvider>
           <BrowserRouter>
+            <Loader />
             <Routes>
               <Route
                 path="/"
                 element={
                   <Layout>
-                    {" "}
-                    <Audio />{" "}
+                    <Audio />
                   </Layout>
                 }
               />
@@ -26,8 +50,7 @@ function App() {
                 path="/birthday"
                 element={
                   <Layout>
-                    {" "}
-                    <Messages />{" "}
+                    <Messages />
                   </Layout>
                 }
               />
@@ -35,8 +58,7 @@ function App() {
                 path="/wish"
                 element={
                   <Layout>
-                    {" "}
-                    <Carousal />{" "}
+                    <Carousal />
                   </Layout>
                 }
               />
@@ -47,7 +69,7 @@ function App() {
       </DarkModeProvider>
       <Analytics />
       <SpeedInsights />
-    </>
+    </div>
   );
 }
 
