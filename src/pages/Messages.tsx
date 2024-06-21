@@ -356,7 +356,7 @@ export const Messages: FC = () => {
             <img
               src="/rpdp.png"
               alt=""
-              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
+              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125 blur-xl"
             />
             <img src="/hat.svg" alt="" className="hat" />
             <div className="wish">
