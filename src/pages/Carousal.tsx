@@ -74,6 +74,12 @@ export const Carousal: FC = () => {
     }
   }, [play, isPlaying, isVideoPlaying]);
 
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsLargeScreen(window.matchMedia("(min-width: 786px)").matches);
+  }, []);
+
   return (
     <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
       <Card
@@ -119,7 +125,7 @@ export const Carousal: FC = () => {
                       <video
                         className="w-full h-full object-cover"
                         loop
-                        controls
+                        // controls
                         onPlay={() => handleVideoPlay(item)}
                         onPause={handleVideoPause}
                       >
@@ -128,7 +134,7 @@ export const Carousal: FC = () => {
                       </video>
                       <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                         <button
-                          className="p-2 bg-slate-50 bg-opacity-100 rounded-full"
+                          className={` ${isLargeScreen ? "p-2 bg-slate-50 bg-opacity-100 rounded-full" : "p-2 opacity-0 bg-opacity-0 rounded-full"}`}
                           onClick={(e) => {
                             e.stopPropagation();
                             const video = e.currentTarget
@@ -143,11 +149,12 @@ export const Carousal: FC = () => {
                             }
                           }}
                         >
-                          {isVideoPlaying ? (
-                            <PauseIcon className="text-red-600" />
-                          ) : (
-                            <PlayArrowIcon className="text-red-600" />
-                          )}
+                          {isLargeScreen &&
+                            (isVideoPlaying ? (
+                              <PauseIcon className="text-red-600" />
+                            ) : (
+                              <PlayArrowIcon className="text-red-600" />
+                            ))}
                         </button>
                       </div>
                     </div>
