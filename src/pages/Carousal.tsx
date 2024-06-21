@@ -149,12 +149,11 @@ export const Carousal: FC = () => {
                             }
                           }}
                         >
-                          {isLargeScreen &&
-                            (isVideoPlaying ? (
-                              <PauseIcon className="text-red-600" />
-                            ) : (
-                              <PlayArrowIcon className="text-red-600" />
-                            ))}
+                          {isVideoPlaying ? (
+                            <PauseIcon className="text-red-600" />
+                          ) : (
+                            <PlayArrowIcon className="text-red-600" />
+                          )}
                         </button>
                       </div>
                     </div>
