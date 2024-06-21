@@ -33,6 +33,21 @@ export const Carousal: FC = () => {
     "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 786px)");
+    setIsLargeScreen(mediaQuery.matches);
+
+    const handleResize = () => {
+      setIsLargeScreen(mediaQuery.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   const handleClick = () => {
     setClick(!click);
@@ -73,12 +88,6 @@ export const Carousal: FC = () => {
       play();
     }
   }, [play, isPlaying, isVideoPlaying]);
-
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsLargeScreen(window.matchMedia("(min-width: 786px)").matches);
-  }, []);
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
@@ -125,16 +134,17 @@ export const Carousal: FC = () => {
                       <video
                         className="w-full h-full object-cover"
                         loop
-                        // controls
                         onPlay={() => handleVideoPlay(item)}
                         onPause={handleVideoPause}
                       >
                         <source src={item} type="video/mp4" />
                         Shey Je Boshe Ache Eka Eka
                       </video>
-                      <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+                      <div
+                        className={`absolute inset-0 flex justify-center items-center transition-opacity cursor-pointer ${isLargeScreen ? "opacity-0 group-hover:opacity-100" : "group-hover:opacity-100"}`}
+                      >
                         <button
-                          className={` ${isLargeScreen ? "p-2 bg-slate-50 bg-opacity-100 rounded-full" : "p-2 opacity-0 bg-opacity-0 rounded-full"}`}
+                          className="p-2 bg-slate-50 bg-opacity-100 rounded-full"
                           onClick={(e) => {
                             e.stopPropagation();
                             const video = e.currentTarget
