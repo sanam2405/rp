@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { Balloons, Spots } from "../components";
 import { useNavigate } from "react-router-dom";
 import { useAudio, useDarkMode } from "../context";
+import { MEDIA } from "../constants";
+
 export const Messages: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
@@ -354,9 +356,9 @@ export const Messages: FC = () => {
           </div>
           <div className="six">
             <img
-              src="/rpdp.png"
+              src={MEDIA.RP_SKETCH}
               alt=""
-              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125 blur-xl"
+              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
             />
             <img src="/hat.svg" alt="" className="hat" />
             <div className="wish">
