@@ -1,5 +1,5 @@
-import { Leaf } from "./components";
-import { Audio, Messages } from "./screens";
+import { Leaf } from "../components";
+import { Audio } from "../screens";
 
 export default function Home() {
   return (

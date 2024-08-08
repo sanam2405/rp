@@ -1,5 +1,5 @@
-import { Leaf } from "../components";
-import { Carousal } from "../screens";
+import { Leaf } from "../../components";
+import { Carousal } from "../../screens";
 
 export default function KigoTumi() {
   return (
