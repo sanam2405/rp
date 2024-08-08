@@ -1,5 +1,7 @@
+"use client";
 import { useRef, useEffect, FC, ReactNode } from "react";
 import styles from "../styles/Leaf.module.css";
+import Image from "next/image";
 
 interface FloatingImagesType {
   container: HTMLDivElement | null;
@@ -147,11 +149,13 @@ export const Leaf: FC<LeafProps> = ({ children, numberOfLeaves, leafPath }) => {
             ref={(el) => (containerRefs.current[i] = el)}
             className={styles.floatingImageContainer}
           >
-            <img
+            <Image
               src={leafPath}
               alt="thelastleaf"
               ref={(el) => (imageRefs.current[i] = el)}
               className={styles.floatingImage}
+              width={50}
+              height={50}
             />
           </div>
         </div>

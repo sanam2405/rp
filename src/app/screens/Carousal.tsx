@@ -1,5 +1,7 @@
+"use client";
+
 import { FC, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -24,7 +26,7 @@ const currentMedia = [MEDIA.SANAM_VIDEO, MEDIA.RP_VIDEO, MEDIA.SHEY_JE_VIDEO];
 
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { play, stopPlay, isPlaying } = useAudio();
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -52,7 +54,7 @@ export const Carousal: FC = () => {
   const handleClick = () => {
     setClick(!click);
     stopPlay();
-    navigate("/");
+    navigate.push("/");
   };
 
   const handleVideoPlay = (src: string) => {
@@ -206,7 +208,7 @@ export const Carousal: FC = () => {
             variant="body2"
             color="textSecondary"
             component="p"
-            className="tiro-bangla-regular"
+            // className='tiro-bangla-regular'
             dangerouslySetInnerHTML={{ __html: caption }}
           />
         </CardContent>
