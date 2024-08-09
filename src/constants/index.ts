@@ -1,13 +1,20 @@
-import polatoka from "/polatoka.mp3";
-import dhandharthekeo from "/dhandharthekeo.mp3";
-import sanamcomposition from "/sanamcomposition.mp3";
-import sanamImage from "/sanam.jpg";
-import sanamVideo from "/sanam.mp4";
-import rpImage from "/rp.jpg";
-import rpSketch from "/rpsketch.png";
-import rpVideo from "/rp.mp4";
-import ekaekaVideo from "/sheyje_arijit_square.mp4";
-import avatarImage from "/rimjhim.svg";
+const mediaFiles = {
+  polatoka: "/polatoka.mp3",
+  dhandharthekeo: "/dhandharthekeo.mp3",
+  sanamcomposition: "/sanamcomposition.mp3",
+  sanamVideo: "/sanam.mp4",
+  rpVideo: "/rp.mp4",
+  ekaekaVideo: "/sheyje_arijit_square.mp4",
+};
+
+const images = {
+  sanamImage: "/sanam.jpg",
+  rpImage: "/rp.jpg",
+  rpSketch: "/rpsketch.png",
+  avatarImage: "/rimjhim.svg",
+};
+
+export { mediaFiles, images };
 
 export const LYRICS = [
   "👀",
@@ -32,19 +39,19 @@ export const LYRICS = [
 ];
 
 export const MUSIC = {
-  POLATOKA: polatoka,
-  DHANDHAR_THEKEO: dhandharthekeo,
-  SANAM: sanamcomposition,
+  POLATOKA: mediaFiles.polatoka,
+  DHANDHAR_THEKEO: mediaFiles.dhandharthekeo,
+  SANAM: mediaFiles.sanamcomposition,
 };
 
 export const MEDIA = {
-  SANAM_IMG: sanamImage,
-  RP_IMG: rpImage,
-  RP_SKETCH: rpSketch,
-  SANAM_VIDEO: sanamVideo,
-  RP_VIDEO: rpVideo,
-  AVATAR_IMG: avatarImage,
-  SHEY_JE_VIDEO: ekaekaVideo,
+  SANAM_IMG: images.sanamImage,
+  RP_IMG: images.rpImage,
+  RP_SKETCH: images.rpSketch,
+  SANAM_VIDEO: mediaFiles.sanamVideo,
+  RP_VIDEO: mediaFiles.rpVideo,
+  AVATAR_IMG: images.avatarImage,
+  SHEY_JE_VIDEO: mediaFiles.ekaekaVideo,
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";

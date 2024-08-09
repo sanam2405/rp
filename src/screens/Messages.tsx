@@ -1,14 +1,17 @@
+"use client";
+
 import { FC, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Balloons, Spots } from "../components";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useAudio, useDarkMode } from "../context";
 import { MEDIA } from "../constants";
+import Image from "next/image";
 
 export const Messages: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
   const [bokaopacity, setBokaOpacity] = useState<number>(1);
@@ -27,7 +30,7 @@ export const Messages: FC = () => {
     const tl = gsap.timeline({
       onComplete: () => {
         setTimeout(() => {
-          navigate("/wish");
+          navigate.push("/bokaboka");
         }, 7000);
       },
     });
@@ -274,7 +277,7 @@ export const Messages: FC = () => {
               className={`text-red-500 hover:text-black font-rwd ${darkMode ? "gradient-text" : ""} `}
               style={{ fontSize: "5rem", fontWeight: "300" }}
             >
-              It's your Birthday ^.^
+              It&apos;s your Birthday ^.^
             </p>
           </div>
           <div className="four">
@@ -355,12 +358,20 @@ export const Messages: FC = () => {
             </p>
           </div>
           <div className="six">
-            <img
+            <Image
               src={MEDIA.RP_SKETCH}
               alt=""
               className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
+              height={500}
+              width={500}
             />
-            <img src="/hat.svg" alt="" className="hat" />
+            <Image
+              src="/hat.svg"
+              alt=""
+              className="hat"
+              width={94}
+              height={150}
+            />
             <div className="wish">
               <h3 className="wish-hbd">
                 <span className="text-red-600"> Happy 21st Birthday! </span>

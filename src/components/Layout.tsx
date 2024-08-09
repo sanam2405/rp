@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, ReactNode, useEffect, useState } from "react";
 import { Flashlight } from "./Flashlight";
 import { useDarkMode } from "../context";

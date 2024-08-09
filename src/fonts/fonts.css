@@ -1,15 +1,23 @@
 @font-face {
-  font-family: "lovelyvalentine";
+  font-family: "LVS";
   src: url("/lvs.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-size: 100px;
 }
 
+.font-lvs {
+  font-family: "LVS", sans-serif;
+}
+
 @font-face {
-  font-family: "royalwedding";
+  font-family: "RWD";
   src: url("/rwd.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-size: 100px;
+}
+
+.font-rwd {
+  font-family: "RWD", sans-serif;
 }

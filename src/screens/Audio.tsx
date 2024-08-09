@@ -1,5 +1,7 @@
+"use client";
+
 import { FC, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import Button from "@mui/material/Button";
@@ -18,7 +20,7 @@ export const Audio: FC = () => {
   const [sanamAnimation, setSanamAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Sanam button
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
   const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
 
@@ -49,7 +51,7 @@ export const Audio: FC = () => {
         setCurrentLineIndex((prevIndex) => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
-            navigate("/birthday");
+            navigate.push("/kigotumi");
           }
           return (prevIndex + 1) % LYRICS.length;
         });
