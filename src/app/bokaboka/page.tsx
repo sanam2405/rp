@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     siteName: "Rimjhim",
     images: [
       {
-        url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/rp.jpg",
+        url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/opengraph-image.jpg",
         width: 800,
         height: 600,
       },
       {
-        url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/rpsketch.png",
+        url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/opengraph-image.jpg",
         width: 1800,
         height: 1600,
         alt: "Rimjhim",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: "with ❤️ for love by sanam",
     creator: "@sanam2405",
     images: {
-      url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/rp.jpg",
+      url: "https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/rimjhim/opengraph-image.jpg",
       alt: "Rimjhim",
     },
   },

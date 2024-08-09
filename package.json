@@ -1,5 +1,6 @@
 {
-  "name": "rpnext",
+  "name": "rp",
+  "author": "Manas Pratim Biswas",
   "version": "0.1.0",
   "private": true,
   "scripts": {
