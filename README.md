@@ -2,6 +2,10 @@
 
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
+## Slime Mold Evolution Simulation
+
+The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](/public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
+
 ## Music Credits
 
 <details>
