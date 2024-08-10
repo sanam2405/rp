@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Leaf } from "@/components";
-import { Audio } from "../../screens";
+import dynamic from "next/dynamic";
+
+const Leaf = dynamic(() => import("@/components").then((mod) => mod.Leaf), {
+  ssr: false,
+});
+
+const Audio = dynamic(() => import("../../screens").then((mod) => mod.Audio), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Messages } from "../../screens";
+import dynamic from "next/dynamic";
+
+const Messages = dynamic(
+  () => import("../../screens").then((mod) => mod.Messages),
+  {
+    ssr: false,
+  },
+);
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",

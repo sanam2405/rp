@@ -1,6 +1,11 @@
-"use client";
+import dynamic from "next/dynamic";
 
-import { Myxomycete } from "@/components";
+const Myxomycete = dynamic(
+  () => import("@/components").then((mod) => mod.Myxomycete),
+  {
+    ssr: false,
+  },
+);
 
 export default function NotFound() {
   return (
