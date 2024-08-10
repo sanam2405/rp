@@ -5,4 +5,6 @@ import { Flashlight } from "./Flashlight";
 import { Loader } from "./Loader";
 import { Leaf } from "./Leaf";
 import { Aura } from "./Aura";
-export { Balloons, Spots, Layout, Flashlight, Loader, Leaf, Aura };
+import { Myxomycete } from "./Myxomycete";
+
+export { Balloons, Spots, Layout, Flashlight, Loader, Leaf, Aura, Myxomycete };

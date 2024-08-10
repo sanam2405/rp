@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { AudioProvider, DarkModeProvider } from "../context";
-import { Layout, Loader } from "../components";
+import { Layout } from "../components";
 import { CSSProperties } from "react";
 import { Aura } from "../components";
 
@@ -112,11 +112,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-wallpaper" style={backgroundStyle}>
+        <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
           <div style={backgroundOverlay}></div>
           <DarkModeProvider>
             <AudioProvider>
-              <Loader />
+              {/* <Loader /> */}
               <Layout>
                 <div className="w-full absolute inset-0 h-screen">
                   <Aura
