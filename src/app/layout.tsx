@@ -6,6 +6,7 @@ import "./globals.css";
 import { AudioProvider, DarkModeProvider } from "../context";
 import { Layout, Loader } from "../components";
 import { CSSProperties } from "react";
+import { Aura } from "../components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -113,11 +114,23 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bg-wallpaper" style={backgroundStyle}>
           <div style={backgroundOverlay}></div>
-
           <DarkModeProvider>
             <AudioProvider>
               <Loader />
-              <Layout>{children}</Layout>
+              <Layout>
+                <div className="w-full absolute inset-0 h-screen">
+                  <Aura
+                    id="tsparticlesfullpage"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                  />
+                </div>
+                {children}
+              </Layout>
             </AudioProvider>
           </DarkModeProvider>
         </div>
