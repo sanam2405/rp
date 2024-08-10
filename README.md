@@ -257,16 +257,22 @@ The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of m
     npm install
 ```
 
-- Run the frontend
-
-```bash
-    npm run dev
-```
-
-For a clean build
+- Build the project
 
 ```bash
    npm run build
+```
+
+- Run the project
+
+```bash
+    npm start
+```
+
+For starting a developmental server
+
+```bash
+   npm run dev
 ```
 
 ## _with_ ♥️ _for love by sanam_

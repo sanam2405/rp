@@ -14,7 +14,8 @@ export const Myxomycete = () => {
       const p5 = require("p5");
 
       let molds: Eukaryote[] = [];
-      const numberOfMolds = 1729; // The Hardy–Ramanujan Number, used as the total count of "molds"
+      // const numberOfMolds = 1729; // The Hardy–Ramanujan Number, used as the total count of "molds"
+      const numberOfMolds = 5441; // WBXXXX5441, my RE Hunter, used as the total count of "molds"
 
       // The Eukaryote class, representing a single mold
       class Eukaryote {
