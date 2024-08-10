@@ -9,8 +9,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-import { LYRICS } from "../constants";
-import { useAudio, useDarkMode } from "../context";
+import { LYRICS } from "@/constants";
+import { useAudio, useDarkMode } from "@/context";
 
 export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);

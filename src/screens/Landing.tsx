@@ -1,6 +1,7 @@
 "use client";
 
-import { Myxomycete } from "@/components";
+import { Leaf, Myxomycete } from "@/components";
+import { Audio } from "@/screens";
 import { useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 
@@ -12,7 +13,7 @@ export const Landing: FC = () => {
     const timer = setTimeout(() => {
       setIsTransitioning(true); // Start the transition
       const transitionTimer = setTimeout(() => {
-        router.push("/ilu"); // Navigate after the animation
+        setIsTransitioning(false); // Transition has been completed
       }, 7000); // Wait for the transition to finish
 
       return () => clearTimeout(transitionTimer);
@@ -22,8 +23,18 @@ export const Landing: FC = () => {
   }, [router]);
 
   return (
-    <div className={isTransitioning ? "animate-fade-out" : ""}>
-      <Myxomycete />
-    </div>
+    <>
+      <div className={isTransitioning ? "animate-fade-out" : ""}>
+        {isTransitioning && <Myxomycete />}
+      </div>
+
+      <div className={!isTransitioning ? "animate-fade-in" : ""}>
+        {!isTransitioning && (
+          <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
+            <Audio />
+          </Leaf>
+        )}
+      </div>
+    </>
   );
 };

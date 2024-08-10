@@ -19,8 +19,8 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import { useAudio } from "../context";
-import { GITHUB_URI, MEDIA } from "../constants";
+import { useAudio } from "@/context";
+import { GITHUB_URI, MEDIA } from "@/constants";
 
 const currentMedia = [MEDIA.SANAM_VIDEO, MEDIA.RP_VIDEO, MEDIA.SHEY_JE_VIDEO];
 
@@ -54,7 +54,7 @@ export const Carousal: FC = () => {
   const handleClick = () => {
     setClick(!click);
     stopPlay();
-    navigate.push("/");
+    navigate.push("/ilu");
   };
 
   const handleVideoPlay = (src: string) => {

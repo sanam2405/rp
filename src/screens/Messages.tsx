@@ -2,10 +2,10 @@
 
 import { FC, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { Balloons, Spots } from "../components";
+import { Balloons, Spots } from "@/components";
 import { useRouter } from "next/navigation";
-import { useAudio, useDarkMode } from "../context";
-import { MEDIA } from "../constants";
+import { useAudio, useDarkMode } from "@/context";
+import { MEDIA } from "@/constants";
 import Image from "next/image";
 
 export const Messages: FC = () => {

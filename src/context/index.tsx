@@ -9,7 +9,7 @@ import {
   SetStateAction,
 } from "react";
 import useSound from "use-sound";
-import { DARK_SCREEN, MUSIC } from "../constants";
+import { DARK_SCREEN, MUSIC } from "@/constants";
 
 interface AudioContextType {
   play: () => void;

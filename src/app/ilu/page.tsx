@@ -1,13 +1,5 @@
+import { Myxomycete } from "@/components";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const Leaf = dynamic(() => import("@/components").then((mod) => mod.Leaf), {
-  ssr: false,
-});
-
-const Audio = dynamic(() => import("../../screens").then((mod) => mod.Audio), {
-  ssr: false,
-});
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",
@@ -83,11 +75,5 @@ export const metadata: Metadata = {
 };
 
 export default function Ilu() {
-  return (
-    <div className="animate-fade-in">
-      <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
-        <Audio />
-      </Leaf>
-    </div>
-  );
+  return <Myxomycete />;
 }

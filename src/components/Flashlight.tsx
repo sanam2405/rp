@@ -12,8 +12,8 @@ import React, {
   RefObject,
 } from "react";
 import ResizeObserver from "resize-observer-polyfill";
-import { useDarkMode } from "../context";
-import { DARK_SCREEN, LIGHT_SCREEN } from "../constants";
+import { useDarkMode } from "@/context";
+import { DARK_SCREEN, LIGHT_SCREEN } from "@/constants";
 
 interface Position {
   x: number;
