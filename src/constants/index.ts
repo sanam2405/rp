@@ -12,6 +12,8 @@ const images = {
   rpImage: "/rp.jpg",
   rpSketch: "/rpsketch.png",
   avatarImage: "/rimjhim.svg",
+  pySanam: "/pysanam.png",
+  pyRP: "/pyrp.png",
 };
 
 export { mediaFiles, images };
