@@ -266,6 +266,40 @@ The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of m
 - Composition & Vocals: _Lucky Ali_ (Sunoh)
 - Writing & Recitation : _Manas_
 
+<details>
+  <summary>8. <i> যারা কাফেতে মোড়েতে বসে আছো </i> </summary>
+  <br/>
+
+    যারা কাফেতে মোড়েতে বসে আছো
+    আমি তোমাদের ছেড়ে চললাম
+    তোমরা হতাশ-পেয়ালা ভরে নিলে
+    আমি রক্ত ঝরিয়ে কাঁদলাম ।
+    চারমিনারের ধোঁয়াতে
+    জীবন-পেয়ালা জমাট কুয়াশা
+    ফ্লুরেসেন্ট আলোর মোড়ে মোড়ে ঘোরে
+    তৃষিত মুক্তিপিপাসা ।
+    আজ ভেঙ্গে যাব, কাল জুড়ে যাব
+    তবু ভাঙ্গতে জুড়তে চলেছি
+    কালবোশেখিটা তোমাদের দেব
+    খুঁজে আনতেই চলেছি।
+    ওগো হতাশ তোমরা কেঁদো না
+    কোনো সান্ত্বনা আমি দেব না
+    সূর্য ডোবার সংকেতে দেখ
+    মুক্তিরঙ্গের নিশানা ।
+    সাহারা হৃদয় দাঁড়িয়ে যারা
+    মোড়ে মোড়ে আজও হতাশায়
+    আমার রক্ত ঝরে ঝরে যাক
+    তাদের শূন্য পেয়ালায় ।
+    আজ ভেঙ্গে যাব, কাল জুড়ে যাব
+    তবু ভাঙ্গতে জুড়তে চলেছি
+    বিদ্রোহী আমি বিপ্লবে ডাক
+    তোমাদের দিতে এসেছি ।
+
+</details>
+
+- Lyrics & Composition: _Samaresh Bandyopadhyay & Snigdha Bandyopadhyay_ (Calcutta People's Choir & Ganabishan)
+- Vocals: _Shuvro Deb_
+
 ## Setting up locally
 
 - Clone the rp repository
