@@ -5,7 +5,7 @@ const mediaFiles = {
   sanamVideo: "/sanam.mp4",
   rpVideo: "/rp.mp4",
   ekaekaVideo: "/sheyje_arijit_square.mp4",
-  spotifyAndMural: "/spotifyandmuralvideo.mp4",
+  spotifyAndMural: "/spotifyandmural.mp4",
 };
 
 const images = {

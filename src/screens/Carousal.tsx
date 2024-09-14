@@ -22,7 +22,12 @@ import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "@/context";
 import { GITHUB_URI, MEDIA } from "@/constants";
 
-const currentMedia = [MEDIA.SANAM_VIDEO, MEDIA.RP_VIDEO, MEDIA.SHEY_JE_VIDEO];
+const currentMedia = [
+  MEDIA.SANAM_VIDEO,
+  MEDIA.RP_VIDEO,
+  MEDIA.SHEY_JE_VIDEO,
+  MEDIA.MURAL_VIDEO,
+];
 
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
@@ -72,6 +77,10 @@ export const Carousal: FC = () => {
       case MEDIA.SHEY_JE_VIDEO:
         newCaption =
           "ভালোবাসার মানুষের ঘেন্নাটাও এক প্রকার প্রেমের জন্ম দেয় <br/> ঘেন্না হোক বা ভালোবাসা, <br/> যাক অবশেষে কিছু তো একটা করলো সে :) <br/> অগত্যা তার প্রিয় গায়ক অরিজিৎ সিং এর কণ্ঠে <br/> আমার অন্যতম প্রিয় সঙ্গীতশিল্পী ও সুরকার <br/> শায়ান চৌধুরী অর্ণবের গান রাখা থাকলো তার জন্য";
+        break;
+      case MEDIA.MURAL_VIDEO:
+        newCaption =
+          "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।";
         break;
       default:
         newCaption =
