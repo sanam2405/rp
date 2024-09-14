@@ -242,6 +242,30 @@ The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of m
 - Composition: _Shayan Chowdhury Arnob_ (Chaina Bhabish)
 - Rendition: _Arijit Singh_
 
+<details>
+  <summary>7. <i> ओ सनम </i> </summary>
+  <br/>
+
+    शाम-सवेरे तेरी यादें आती हैं
+    आ के दिल को मेरे यूँ तड़पाती हैं
+    ओ सनम, मोहब्बत की क़सम
+    मिल के बिछड़ना तो दस्तूर हो गया
+    यादों में तेरी मजबूर हो गया
+    ओ सनम, इन यादों की कसम
+    समझे ज़माना के दिल है खिलौना
+    जाना है अब "क्या है दिल का लगाना"
+    नज़रों से अब ना हम को गिराना
+    मर भी गए तो भूल ना जाना
+    आँखों में बसी हो पर दूर हो कहीं
+    दिल के करीब हो, ये मुझ को है यकीं
+    ओ सनम, तेरे प्यार की कसम
+
+</details>
+
+- Lyrics: _Syed Aslam Noor_
+- Composition & Vocals: _Lucky Ali_ (Sunoh)
+- Writing & Recitation : _Manas_
+
 ## Setting up locally
 
 - Clone the rp repository
