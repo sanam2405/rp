@@ -6,6 +6,8 @@ const mediaFiles = {
   rpVideo: "/rp.mp4",
   ekaekaVideo: "/sheyje_arijit_square.mp4",
   spotifyAndMural: "/spotifyandmural.mp4",
+  cafe: "/cafe.mp4",
+  swanSong: "/swanSong.mp4",
 };
 
 const images = {
@@ -58,6 +60,8 @@ export const MEDIA = {
   RP_VIDEO: mediaFiles.rpVideo,
   SHEY_JE_VIDEO: mediaFiles.ekaekaVideo,
   MURAL_VIDEO: mediaFiles.spotifyAndMural,
+  CAFE_VIDEO: mediaFiles.cafe,
+  SWANSONG_VIDEO: mediaFiles.swanSong,
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";

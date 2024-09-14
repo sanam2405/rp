@@ -27,6 +27,7 @@ const currentMedia = [
   MEDIA.RP_VIDEO,
   MEDIA.SHEY_JE_VIDEO,
   MEDIA.MURAL_VIDEO,
+  MEDIA.CAFE_VIDEO,
 ];
 
 export const Carousal: FC = () => {
@@ -81,6 +82,10 @@ export const Carousal: FC = () => {
       case MEDIA.MURAL_VIDEO:
         newCaption =
           "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।";
+        break;
+      case MEDIA.CAFE_VIDEO:
+        newCaption =
+          "আজ ভেঙ্গে যাব, কাল জুড়ে যাব <br /> তবু ভাঙ্গতে জুড়তে চলেছি <br /> কালবোশেখিটা তোমাদের দেব <br /> খুঁজে আনতেই চলেছি।";
         break;
       default:
         newCaption =
