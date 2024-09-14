@@ -1,5 +1,5 @@
 import { Sorry } from "@/components";
-import { images } from "@/constants";
+import { MEDIA } from "@/constants";
 import dynamic from "next/dynamic";
 
 const Myxomycete = dynamic(
@@ -21,8 +21,8 @@ export default function NotFound() {
           className="p-1 md:p-4 border rounded-3xl dark:bg-neutral-900 bg-neutral-100  border-neutral-200 dark:border-neutral-800 mx-auto w-3/4 h-1/2 md:h-3/4"
         >
           <Sorry
-            firstImage={images.pySanam}
-            secondImage={images.pyRP}
+            firstImage={MEDIA.PY_SANAM}
+            secondImage={MEDIA.PY_RP}
             firstImageClassName="object-cover object-left-top w-full"
             secondImageClassname="object-cover object-left-top w-full"
             className="w-full h-full rounded-[22px] md:rounded-lg"

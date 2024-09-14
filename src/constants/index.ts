@@ -5,6 +5,7 @@ const mediaFiles = {
   sanamVideo: "/sanam.mp4",
   rpVideo: "/rp.mp4",
   ekaekaVideo: "/sheyje_arijit_square.mp4",
+  spotifyAndMural: "/spotifyandmuralvideo.mp4",
 };
 
 const images = {
@@ -50,10 +51,13 @@ export const MEDIA = {
   SANAM_IMG: images.sanamImage,
   RP_IMG: images.rpImage,
   RP_SKETCH: images.rpSketch,
+  PY_SANAM: images.pySanam,
+  PY_RP: images.pyRP,
+  AVATAR_IMG: images.avatarImage,
   SANAM_VIDEO: mediaFiles.sanamVideo,
   RP_VIDEO: mediaFiles.rpVideo,
-  AVATAR_IMG: images.avatarImage,
   SHEY_JE_VIDEO: mediaFiles.ekaekaVideo,
+  MURAL_VIDEO: mediaFiles.spotifyAndMural,
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";
