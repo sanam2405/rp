@@ -14,7 +14,7 @@ export const Landing: FC = () => {
       setIsTransitioning(true); // Start the transition
       const transitionTimer = setTimeout(() => {
         setIsTransitioning(false); // Transition has been completed
-      }, 7000); // Wait for the transition to finish
+      }, 5000); // Wait for the transition to finish
 
       return () => clearTimeout(transitionTimer);
     }, 0); // Optional delay before the animation starts

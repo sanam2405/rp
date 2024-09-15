@@ -9,14 +9,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-import { LYRICS } from "@/constants";
+import { INTRO, LYRICS } from "@/constants";
 import { useAudio, useDarkMode } from "@/context";
 
 export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isIntroCompleted, setIsIntroCompleted] = useState(false);
   const [firstLoopCompleted, setFirstLoopCompleted] = useState(false);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
-  const [showSanamButton, setShowSanamButton] = useState(true); // Tracks if "Built by Sanam" button should be shown
+  const [currentIntroLineIndex, setCurrentIntroLineIndex] = useState(0);
+  const [showSanamButton, setShowSanamButton] = useState(false); // Tracks if "Built by Sanam" button should be shown
   const [sanamAnimation, setSanamAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Sanam button
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
   const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
@@ -44,6 +46,27 @@ export const Audio: FC = () => {
       }
     };
 
+    if (!isIntroCompleted) {
+      requestWakeLock();
+      const intervals = [5441, 1729, 1729, 1729, 1729];
+      const currentInterval =
+        intervals[currentIntroLineIndex % intervals.length];
+      const interval = setInterval(() => {
+        setCurrentIntroLineIndex((prevIndex) => {
+          if ((prevIndex + 1) % INTRO.length === 0) {
+            setIsIntroCompleted(true);
+            setShowSanamButton(true);
+          }
+          return (prevIndex + 1) % INTRO.length;
+        });
+      }, currentInterval); // intro beat duration
+
+      return () => {
+        clearInterval(interval);
+        releaseWakeLock();
+      };
+    }
+
     if (isVisible && !firstLoopCompleted) {
       requestWakeLock();
 
@@ -66,7 +89,7 @@ export const Audio: FC = () => {
     return () => {
       releaseWakeLock();
     };
-  }, [isVisible, firstLoopCompleted, navigate]);
+  }, [isVisible, isIntroCompleted, firstLoopCompleted, navigate]);
 
   const handleSanamClick = () => {
     setShowSanamButton(false); // Hide Sanam button
@@ -103,7 +126,15 @@ export const Audio: FC = () => {
             alignItems: "center",
           }}
         >
-          {showSanamButton && (
+          {!isIntroCompleted && (
+            <p
+              key={currentIntroLineIndex}
+              className={`tiro-bangla-regular text-red-500 hover:text-black transition-all duration-1500 ease-in-out opacity-100 ${currentIntroLineIndex !== 0 && darkMode ? "gradient-lyrics opacity-0" : "opacity-100"}`}
+            >
+              {INTRO[currentIntroLineIndex]}
+            </p>
+          )}
+          {isIntroCompleted && showSanamButton && (
             <Button
               id="sanamButton"
               variant="outlined"
