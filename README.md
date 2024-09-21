@@ -1,5 +1,6 @@
 # _জানি বেঁকে গেছে নদী, তবুও তো নিরবধি, <br> মিছিলে-মিছিলে আমি খুঁজেছি তোমায়।_
 
+![Rimjhim](public/rimjhim.jpeg)
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
 ## Slime Mold Evolution Simulation
