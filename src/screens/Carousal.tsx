@@ -26,6 +26,7 @@ const currentMedia = [
   MEDIA.SANAM_VIDEO,
   MEDIA.RP_VIDEO,
   MEDIA.SHEY_JE_VIDEO,
+  MEDIA.NODE_VIDEO,
   MEDIA.MURAL_VIDEO,
   MEDIA.CAFE_VIDEO,
 ];
@@ -78,6 +79,10 @@ export const Carousal: FC = () => {
       case MEDIA.SHEY_JE_VIDEO:
         newCaption =
           "ভালোবাসার মানুষের ঘেন্নাটাও এক প্রকার প্রেমের জন্ম দেয় <br/> ঘেন্না হোক বা ভালোবাসা, <br/> যাক অবশেষে কিছু তো একটা করলো সে :) <br/> অগত্যা তার প্রিয় গায়ক অরিজিৎ সিং এর কণ্ঠে <br/> আমার অন্যতম প্রিয় সঙ্গীতশিল্পী ও সুরকার <br/> শায়ান চৌধুরী অর্ণবের গান রাখা থাকলো তার জন্য";
+        break;
+      case MEDIA.NODE_VIDEO:
+        newCaption =
+          "তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা :) <br/> <i> about trees and graphs </i> <br/> <i> and nodes and habits </i>";
         break;
       case MEDIA.MURAL_VIDEO:
         newCaption =

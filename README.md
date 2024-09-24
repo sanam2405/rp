@@ -1,4 +1,4 @@
-# _জানি বেঁকে গেছে নদী, তবুও তো নিরবধি, <br> মিছিলে-মিছিলে আমি খুঁজেছি তোমায়।_
+> _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
 ![Rimjhim](public/rimjhim.jpeg)
 _[Take Me Home](https://rimjhim.sanam.live/)_
@@ -438,6 +438,6 @@ For starting a developmental server
 
 ## _with_ ♥️ _for love by sanam_
 
-> _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
+> _জানি বেঁকে গেছে নদী, তবুও তো নিরবধি, <br> মিছিলে-মিছিলে আমি খুঁজেছি তোমায়।_
 
 - [Manas Pratim Biswas](https://www.linkedin.com/in/manas-pratim-biswas)
