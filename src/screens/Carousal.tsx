@@ -2,6 +2,7 @@
 
 import { FC, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import DOMPurify from "isomorphic-dompurify";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -228,7 +229,7 @@ export const Carousal: FC = () => {
             color="textSecondary"
             component="p"
             // className='tiro-bangla-regular'
-            dangerouslySetInnerHTML={{ __html: caption }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caption) }}
           />
         </CardContent>
       </Card>
