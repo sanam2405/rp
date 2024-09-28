@@ -8,6 +8,7 @@ import { Aura } from "./Aura";
 import { Myxomycete } from "./Myxomycete";
 import { Roman, RomanTitle, RomanDescription } from "./Roman";
 import { Sorry } from "./Sorry";
+import { Scribble } from "./Scribble";
 
 export {
   Balloons,
@@ -22,4 +23,5 @@ export {
   RomanTitle,
   RomanDescription,
   Sorry,
+  Scribble,
 };
