@@ -38,7 +38,7 @@ export const initializeDoubleTapListener = (doubleTapMs: number) => {
     console.log("window is not defined.");
   } finally {
     console.log(
-      "doubletap eventListner could not be dispatched across window.",
+      "doubletap eventListener could not be dispatched across window.",
     );
   }
 };
