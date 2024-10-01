@@ -5,7 +5,7 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
 
 ## Slime Mold Evolution Simulation
 
-The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](/apps/web/public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
+The [_algorithm_](/apps/web/src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](/apps/web/public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
 
 ## Music Credits
 
@@ -415,25 +415,19 @@ The [_algorithm_](/src/components/Myxomycete.tsx) used for the [_simulation of m
 - Install the dependencies
 
 ```bash
-    npm install
+    pnpm install
 ```
 
 - Build the project
 
 ```bash
-   npm run build
+   pnpm build
 ```
 
-- Run the project
+- Start a _[turbopack development server](https://turbo.build/pack/docs/features/dev-server)_
 
 ```bash
-    npm start
-```
-
-For starting a developmental server
-
-```bash
-   npm run dev
+   pnpm dev
 ```
 
 ## _with_ ♥️ _for love by sanam_
