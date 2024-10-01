@@ -1,12 +1,7 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/screens/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+// We want each package to be responsible for its own content.
+const config: Omit<Config, "content"> = {
   theme: {
     extend: {
       backgroundImage: {
@@ -14,10 +9,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-       keyframes: {
+      keyframes: {
         fadeIn: {
-          '0%': { opacity: "0" },
-          '100%': { opacity: "1" },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         fadeOut: {
           from: { opacity: "1" },
@@ -25,8 +20,8 @@ const config: Config = {
         },
       },
       animation: {
-        'fade-in': 'fadeIn 7s forwards',
-        'fade-out': 'fadeOut 7s forwards',
+        "fade-in": "fadeIn 7s forwards",
+        "fade-out": "fadeOut 7s forwards",
       },
     },
   },
