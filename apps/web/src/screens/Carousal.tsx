@@ -21,7 +21,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "@/context";
-import { GITHUB_URI, MEDIA } from "@/constants";
+import { GITHUB_URI, MEDIA } from "@rp/constants";
 
 const currentMedia = [
   MEDIA.SANAM_VIDEO,

@@ -1,0 +1,19 @@
+{
+    "name": "@rp/constants",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist/**"
+    ],
+    "devDependencies": {
+        "@rp/typescript-config": "workspace:^",
+        "tsup": "^8.3.0",
+        "typescript": "^5.6.2"
+    }
+}

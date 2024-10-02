@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { Balloons, Spots } from "@/components";
 import { useRouter } from "next/navigation";
 import { useAudio, useDarkMode } from "@/context";
-import { MEDIA } from "@/constants";
+import { MEDIA } from "@rp/constants";
 import Image from "next/image";
 
 export const Messages: FC = () => {

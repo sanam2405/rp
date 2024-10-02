@@ -13,7 +13,7 @@ import React, {
 } from "react";
 import ResizeObserver from "resize-observer-polyfill";
 import { useDarkMode } from "@/context";
-import { DARK_SCREEN, LIGHT_SCREEN } from "@/constants";
+import { DARK_SCREEN, LIGHT_SCREEN } from "@rp/constants";
 
 interface Position {
   x: number;

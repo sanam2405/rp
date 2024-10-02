@@ -3,7 +3,7 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { Flashlight } from "./Flashlight";
 import { useDarkMode } from "@/context";
-import { DARK_SCREEN } from "@/constants";
+import { DARK_SCREEN } from "@rp/constants";
 
 export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const [position, setPosition] = useState<{ x: number; y: number }>({

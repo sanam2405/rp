@@ -1,5 +1,5 @@
 import { Sorry } from "@/components";
-import { MEDIA } from "@/constants";
+import { MEDIA } from "@rp/constants";
 import dynamic from "next/dynamic";
 
 const Myxomycete = dynamic(
