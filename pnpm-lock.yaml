@@ -102,13 +102,13 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.2.14
         version: 14.2.14
-      '@repo/eslint-config':
+      '@rp/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
-      '@repo/tailwind-config':
+      '@rp/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/config-tailwind
-      '@repo/typescript-config':
+      '@rp/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
       '@types/node':
@@ -168,7 +168,7 @@ importers:
 
   packages/config-tailwind:
     devDependencies:
-      '@repo/typescript-config':
+      '@rp/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
       tailwindcss:

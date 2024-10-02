@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@repo/eslint-config/next.js"],
+  extends: ["@rp/eslint-config/next.js"],
   rules: {
     "no-unused-vars": ["off"],
     "@typescript-eslint/no-unused-vars": ["off"],
