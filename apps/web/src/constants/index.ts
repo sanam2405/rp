@@ -9,6 +9,7 @@ const mediaFiles = {
   cafe: "/cafe.mp4",
   swanSong: "/swanSong.mp4",
   nodeVideo: "/node.mp4",
+  juttiVideo: "/jutti.mp4",
 };
 
 const images = {
@@ -82,6 +83,7 @@ export const MEDIA = {
   CAFE_VIDEO: mediaFiles.cafe,
   SWANSONG_VIDEO: mediaFiles.swanSong,
   NODE_VIDEO: mediaFiles.nodeVideo,
+  JUTTI_VIDEO: mediaFiles.juttiVideo,
 };
 
 export const GITHUB_URI = "https://github.com/sanam2405/rp";

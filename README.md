@@ -407,6 +407,69 @@ The [_Word Cloud_](/apps/web/public/wordcloud.png) used as a backdrop is born ou
 - Composition: _Aftermath_
 - Band: _Aftermath_
 
+<details>
+  <summary>11. <i> Jutti Meri </i> </summary>
+  <br/>
+
+    Jutti meri jaandi hai pahadiye de naal
+    (Neither my shoe will go with the mountain boy)
+    Te paula mere jaanda e uss dogre de naal
+    (Nor my sandal will go with the dogra)
+
+    Pehli pehli vaar mennu saura lene aa gaya
+    (First came my father-in-law to take me home)
+    Saura lein aagaya te vanga pawa gaya
+    (My father-in-law came with bangles to woo me)
+
+    Wanga te paanian hatthe de naal
+    Te paula mara jaanda uss dogre de naal
+    (I will wear the bangles in my hand
+    but my sandle is not going anywhere with the dogra)
+
+    Dooji dooji var menu 'Der' lene aagya
+    (The second time around, my brother-in-law came to take me home)
+    'Der' lene aagya teh legenga pawa gaya
+    (My brother-in-law came to take me home, and to woo me he got a beautiful lehenga)
+
+    Lehenga te paanian lakke de naal
+    Te paula mere jaanda uss dogre de naal
+    (I will wear the lehenga on my waist
+    but my sandle is not going anywhere with the dogra)
+
+    Teeji teeji vaar menu aap lene aa gaya,
+    (The third time, my husband came to take me home)
+    Aap lene aagaya do galla sunagaya
+    (Finally, he came and scolded me for being too stubborn)
+    Thumak thumak jaandi ae a maiye de naal
+    (Dancing and swaying I go along with my husband)
+    Thumak thumak jaandi ae a maiye de naal
+    (Dancing and swaying I go along with my husband)
+
+    Sona mera maahi tur jaana ode naal
+    (I happily go with my handsome husband)
+    Sona mera maahi tur jaana ode naal
+    (I happily go with my handsome husband)
+
+    Thumak thumak jaandi ae a maiye de naal
+    (Dancing and swaying I go along with my husband)
+    Thumak thumak jaandi ae a maiye de naal
+    (Dancing and swaying I go along with my husband)
+
+</details>
+
+<br/>
+
+Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new bride who is being playful about not going back to her husband's house.
+
+- Lyrics: _Panjabi/Dogra Folklore_
+- Composition: _Sameer Uddin_ (Folk Tales)
+- Lead Vocalist: _Neha Bhasin_
+- Backing Vocals: _Ananya Purkayastha & Rashi Bagai_
+- Guitar: Sanjoy Das / Sameer Uddin
+- Bouzouki: Prasant Singh
+- Percussion: Abhishek Arora
+- Piano: Natasha Pinto
+
 ## Setting up locally
 
 - Clone the rp repository
