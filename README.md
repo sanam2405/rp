@@ -7,6 +7,10 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
 
 The [_algorithm_](/apps/web/src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](/apps/web/public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
 
+## Word Cloud and Scripting
+
+The [_Word Cloud_](/apps/web/public/wordcloud.png) used as a backdrop is born out of the chat between me and my beloved from a smaller prototype project called [_chatinfo_](https://github.com/sanam2405/chatinfo), where I scripted a [WhatsApp](https://www.whatsapp.com/) static textual analyzer in _Python_.
+
 ## Music Credits
 
 <details>
