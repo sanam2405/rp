@@ -497,6 +497,12 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
    pnpm dev
 ```
 
+- Running with Docker
+
+```bash
+   docker compose up
+```
+
 ## _with_ ♥️ _for love by sanam_
 
 > _জানি বেঁকে গেছে নদী, তবুও তো নিরবধি, <br> মিছিলে-মিছিলে আমি খুঁজেছি তোমায়।_
