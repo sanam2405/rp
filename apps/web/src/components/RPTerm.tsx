@@ -1,19 +1,29 @@
+/* eslint-disable */
 "use client";
 
-import { Terminal } from "@xterm/xterm";
 import { useEffect, useRef } from "react";
 import "@xterm/xterm/css/xterm.css";
-const term = new Terminal();
 
 export const RPTerminal = () => {
   const terminalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!terminalRef.current) return;
+    const initTerminal = async () => {
+      const { Terminal } = await import("@xterm/xterm");
+      const { FitAddon } = await import("@xterm/addon-fit");
 
-    term.open(terminalRef.current);
-    term.write("\x1B[1;3;31mrimjhim@sanam\x1B[0m $ 1 4 3 ");
-  }, [terminalRef]);
+      const term = new Terminal();
+      const fitAddon = new FitAddon();
+
+      if (!terminalRef.current) return;
+      term.loadAddon(fitAddon);
+      term.open(terminalRef.current);
+      fitAddon.fit();
+      term.write("\x1B[1;3;31mrimjhim@sanam\x1B[0m $ 1 4 3 ");
+    };
+
+    initTerminal();
+  }, []);
 
   return <div ref={terminalRef} className="w-full h-full p-0 m-0"></div>;
 };
