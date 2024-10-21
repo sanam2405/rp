@@ -9,6 +9,7 @@ import { Myxomycete } from "./Myxomycete";
 import { Roman, RomanTitle, RomanDescription } from "./Roman";
 import { Sorry } from "./Sorry";
 import { Scribble } from "./Scribble";
+import { RPTerminal } from "./RPTerm";
 
 export {
   Balloons,
@@ -24,4 +25,5 @@ export {
   RomanDescription,
   Sorry,
   Scribble,
+  RPTerminal,
 };
