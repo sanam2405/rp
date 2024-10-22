@@ -90,7 +90,6 @@ const rpTheme: ITheme = {
 export const RPTerminal = () => {
   const terminalRef = useRef<HTMLDivElement | null>(null);
   let ws: WebSocket | null = null;
-
   useEffect(() => {
     const initTerminal = async () => {
       const { Terminal } = await import("@xterm/xterm");
