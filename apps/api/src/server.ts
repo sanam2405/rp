@@ -19,7 +19,7 @@ export const createServer = (): Express => {
       return res.json({ message: `hello ${req.params.name}` });
     })
     .get("/status", (_, res) => {
-      return res.json({ heath: true });
+      return res.json({ health: true });
     });
 
   return app;

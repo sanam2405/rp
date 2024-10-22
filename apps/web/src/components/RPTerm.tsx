@@ -115,7 +115,8 @@ export const RPTerminal = () => {
       term.write(CUSTOM_PROMPT);
 
       try {
-        ws = new WebSocket("ws://localhost:5005");
+        if (!process.env.NEXT_PUBLIC_WS_BACKEND_URI) return;
+        ws = new WebSocket(process.env.NEXT_PUBLIC_WS_BACKEND_URI);
 
         // handles WebSocket messages
         ws.onmessage = (event) => {
