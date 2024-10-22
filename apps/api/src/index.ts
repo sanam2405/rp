@@ -2,6 +2,7 @@ import http from "node:http";
 import { WebSocketServer } from "ws";
 import { spawn } from "node-pty";
 import { createServer } from "./server";
+import { CUSTOM_PROMPT } from "@rp/constants";
 
 const port = process.env.PORT || 5005;
 const app = createServer();
@@ -11,7 +12,10 @@ const wss = new WebSocketServer({ server });
 wss.on("connection", (ws) => {
   const ptyProcess = spawn("bash", [], {
     name: "xterm-color",
-    env: process.env,
+    env: {
+      ...process.env,
+      PS1: CUSTOM_PROMPT,
+    },
   });
 
   ws.on("message", (message) => {
