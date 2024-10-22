@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./globals.css";
+import "../globals.css";
 import { AudioProvider, DarkModeProvider } from "@/context";
 import { Layout } from "@/components";
 import { CSSProperties } from "react";
@@ -105,7 +105,7 @@ const backgroundOverlay: CSSProperties = {
   filter: "grayscale(100%) contrast(150%)",
 };
 
-export default function RootLayout({
+export default function NeelLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
