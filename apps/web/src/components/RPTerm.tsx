@@ -89,7 +89,7 @@ const rpTheme: ITheme = {
 
 export const RPTerminal = () => {
   const terminalRef = useRef<HTMLDivElement | null>(null);
-  const ws = new WebSocket("ws://localhost:5005");
+  let ws: WebSocket | null = null;
 
   useEffect(() => {
     const initTerminal = async () => {
@@ -115,29 +115,38 @@ export const RPTerminal = () => {
 
       term.write(CUSTOM_PROMPT);
 
-      // handles WebSocket messages
-      ws.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        if (data.type === "data") {
-          term.write(data.data);
-        }
-      };
+      try {
+        ws = new WebSocket("ws://localhost:5005");
 
-      // handles terminal key events
-      term.onKey((e) => {
-        ws.send(
-          JSON.stringify({
-            type: "command",
-            data: e.key,
-          }),
+        // handles WebSocket messages
+        ws.onmessage = (event) => {
+          const data = JSON.parse(event.data);
+          if (data.type === "data") {
+            term.write(data.data);
+          }
+        };
+
+        // handles terminal key events
+        term.onKey((e) => {
+          ws?.send(
+            JSON.stringify({
+              type: "command",
+              data: e.key,
+            }),
+          );
+        });
+      } catch (error) {
+        console.error("WebSocket connection failed:", error);
+        term.write(
+          `\r\n ${CUSTOM_PROMPT} WebSocket connection failed. You can still explore the RPTerminal.`,
         );
-      });
+      }
     };
 
     initTerminal();
 
     return () => {
-      ws.close();
+      ws?.close();
     };
   }, []);
 
