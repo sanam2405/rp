@@ -1,7 +1,26 @@
 > _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
-![Rimjhim](/apps/web/public/rimjhim.jpeg)
+_[Preface](https://rimjhim.sanam.live/preface)_
+<br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
+
+# Inspiration
+
+I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
+
+![](apps/web/public/gitanjali.png)
+
+> _I have carried the manuscript of these translations about with me for days, reading it in railway trains, or on the tops of omnibuses and in restaurants, and I have often had to close it lest some stranger would see how much it moved me. These [lyrics](https://poets.org/glossary/lyric-poetry)—which are in the original, my Indians tell me, full of subtlety of rhythm, of untranslatable delicacies of colour, of [metrical](https://poets.org/glossary/meter) invention—display in their thought a world I have dreamed of all my life long. ~ William Butler Yeats, [Introduction to Gitanjali](https://poets.org/text/william-butler-yeatss-introduction-gitanjali)_
+
+His reflection on the untranslatable emotions in the poems mirrored my own feelings, a world I had dreamed of for years.
+
+# Background
+
+_*RP*_ was born out of a moment of personal reflection to wish a birthday to someone very close to my heart, sparked on April Fool’s Day of 2024, when I was bedridden with fever. That same day, an unexpected on-campus offer arrived, marking a pivotal moment in my life. What started in that fevered haze has since developed across various places—the local trains of _Eastern Railways_, the quiet expanses of _Jadavpur University_ and the _Open Air Theatre_, the river banks of _Ganga_ and _Padma_, and the trials of the old silk route. Each location has left its mark as I developed newer ideas and added more features to this project, much like my own journey through love, wait, hope, despair, anger, and apathy.
+
+This repository is more than just code; it is a memoir of emotions and experiences, etched in the places I have been and the ones I hope to visit. With ❤️ for love, I [document this journey](https://rimjhim.sanam.live/preface).
+
+![Rimjhim](/apps/web/public/rimjhim.jpeg)
 
 ## Slime Mold Evolution Simulation
 
