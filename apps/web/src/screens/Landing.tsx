@@ -5,7 +5,7 @@ import { Audio } from "@/screens";
 import { useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 
-export const Landing: FC = () => {
+export default function Landing() {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -37,4 +37,4 @@ export const Landing: FC = () => {
       </div>
     </>
   );
-};
+}

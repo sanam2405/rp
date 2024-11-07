@@ -1,13 +1,16 @@
 import dynamic from "next/dynamic";
 
-const Landing = dynamic(() => import("@/screens").then((mod) => mod.Landing), {
-  ssr: false,
-});
+const LandingPage = dynamic(
+  () => {
+    return import("../../screens/Landing");
+  },
+  { ssr: false },
+);
 
 export default function Home() {
   return (
     <>
-      <Landing />
+      <LandingPage />
     </>
   );
 }

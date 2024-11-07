@@ -8,7 +8,7 @@ import { useAudio, useDarkMode } from "@/context";
 import { MEDIA } from "@rp/constants";
 import Image from "next/image";
 
-export const Messages: FC = () => {
+export default function Messages() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useRouter();
@@ -437,4 +437,4 @@ export const Messages: FC = () => {
       </div>
     </>
   );
-};
+}
