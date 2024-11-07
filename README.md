@@ -1,4 +1,4 @@
-![Preface](/apps/web/public/preface.gif)
+[![Preface](/apps/web/public/preface.png)](https://rimjhim.manaspratimbiswas.com/preface)
 
 > _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
@@ -30,7 +30,7 @@ The [_algorithm_](/apps/web/src/components/Myxomycete.tsx) used for the [_simula
 
 The [_Word Cloud_](/apps/web/public/wordcloud.png) used as a backdrop is born out of the chat between me and my beloved from a smaller prototype project called [_chatinfo_](https://github.com/sanam2405/chatinfo), where I scripted a [WhatsApp](https://www.whatsapp.com/) static textual analyzer in _Python_.
 
-![Rimjhim](/apps/web/public/rimjhim.jpeg)
+[![Rimjhim](/apps/web/public/rimjhim.jpeg)](https://rimjhim.sanam.live/)
 
 ## Music Credits
 
