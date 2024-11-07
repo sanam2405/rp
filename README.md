@@ -1,3 +1,5 @@
+![Preface](/apps/web/public/preface.gif)
+
 > _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
 _[Preface](https://rimjhim.sanam.live/preface)_
@@ -8,7 +10,7 @@ _[Take Me Home](https://rimjhim.sanam.live/)_
 
 I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
 
-![](apps/web/public/gitanjali.png)
+![Gitanjali](apps/web/public/gitanjali.png)
 
 > _I have carried the manuscript of these translations about with me for days, reading it in railway trains, or on the tops of omnibuses and in restaurants, and I have often had to close it lest some stranger would see how much it moved me. These [lyrics](https://poets.org/glossary/lyric-poetry)—which are in the original, my Indians tell me, full of subtlety of rhythm, of untranslatable delicacies of colour, of [metrical](https://poets.org/glossary/meter) invention—display in their thought a world I have dreamed of all my life long. ~ William Butler Yeats, [Introduction to Gitanjali](https://poets.org/text/william-butler-yeatss-introduction-gitanjali)_
 
@@ -20,8 +22,6 @@ _*RP*_ was born out of a moment of personal reflection to wish a birthday to som
 
 This repository is more than just code; it is a memoir of emotions and experiences, etched in the places I have been and the ones I hope to visit. With ❤️ for love, I [document this journey](https://rimjhim.sanam.live/preface).
 
-![Rimjhim](/apps/web/public/rimjhim.jpeg)
-
 ## Slime Mold Evolution Simulation
 
 The [_algorithm_](/apps/web/src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](/apps/web/public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
@@ -29,6 +29,8 @@ The [_algorithm_](/apps/web/src/components/Myxomycete.tsx) used for the [_simula
 ## Word Cloud and Scripting
 
 The [_Word Cloud_](/apps/web/public/wordcloud.png) used as a backdrop is born out of the chat between me and my beloved from a smaller prototype project called [_chatinfo_](https://github.com/sanam2405/chatinfo), where I scripted a [WhatsApp](https://www.whatsapp.com/) static textual analyzer in _Python_.
+
+![Rimjhim](/apps/web/public/rimjhim.jpeg)
 
 ## Music Credits
 
