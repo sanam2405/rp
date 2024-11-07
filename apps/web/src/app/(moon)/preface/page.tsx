@@ -395,7 +395,7 @@ export default function RPWorld() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
+    <div className="flex flex-col items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-8">
         <motion.div
           initial={{
@@ -409,7 +409,7 @@ export default function RPWorld() {
           transition={{
             duration: 1,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-4xl mx-auto text-center mb-10" // Added mb-10 for spacing
         >
           <h2 className="text-center text-2xl md:text-4xl font-bold text-black dark:text-white">
             From 104°F till knee bruise
@@ -426,8 +426,10 @@ export default function RPWorld() {
             traveled and hope to hop by in the future :)
           </p>
         </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
+
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white dark:to-black pointer-events-none select-none z-40" />
+
+        <div className="absolute inset-x-0 flex justify-center bottom-10 md:-bottom-32 md:transform md:translate-y-10 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
