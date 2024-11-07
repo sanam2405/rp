@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "../globals.css";
+import { Aura } from "@/components";
 
-const Messages = dynamic(
-  () => {
-    return import("../../../screens/Messages");
-  },
-  { ssr: false },
-);
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",
@@ -82,10 +81,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KigoTumi() {
+export default function RPWorldLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <>
-      <Messages />
-    </>
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="w-full absolute inset-0 h-screen z-40 pointer-events-none">
+          <Aura
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full pointer-events-none"
+            particleColor="#FFFFFF"
+          />
+        </div>
+        {children}
+        <Analytics mode={"production"} />
+        <SpeedInsights />
+      </body>
+    </html>
   );
 }

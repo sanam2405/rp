@@ -27,21 +27,25 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   };
 
   useEffect(() => {
-    updateDarkness();
-    window.addEventListener("resize", updateDarkness);
-    return () => window.removeEventListener("resize", updateDarkness);
+    if (typeof window !== "undefined") {
+      updateDarkness();
+      window.addEventListener("resize", updateDarkness);
+      return () => window.removeEventListener("resize", updateDarkness);
+    }
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setPosition({ x: event.clientX, y: event.clientY });
-    };
+    if (typeof window !== "undefined") {
+      const handleMouseMove = (event: MouseEvent) => {
+        setPosition({ x: event.clientX, y: event.clientY });
+      };
 
-    window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
   }, []);
 
   return (

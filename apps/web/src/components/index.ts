@@ -10,6 +10,8 @@ import { Roman, RomanTitle, RomanDescription } from "./Roman";
 import { Sorry } from "./Sorry";
 import { Scribble } from "./Scribble";
 import { RPTerminal } from "./RPTerm";
+import { Globe } from "./Globe";
+import { World } from "./Globe";
 
 export {
   Balloons,
@@ -26,4 +28,6 @@ export {
   Sorry,
   Scribble,
   RPTerminal,
+  Globe,
+  World,
 };

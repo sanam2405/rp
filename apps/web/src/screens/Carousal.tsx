@@ -47,17 +47,19 @@ export const Carousal: FC = () => {
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 786px)");
-    setIsLargeScreen(mediaQuery.matches);
-
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(min-width: 786px)");
       setIsLargeScreen(mediaQuery.matches);
-    };
 
-    mediaQuery.addEventListener("change", handleResize);
-    return () => {
-      mediaQuery.removeEventListener("change", handleResize);
-    };
+      const handleResize = () => {
+        setIsLargeScreen(mediaQuery.matches);
+      };
+
+      mediaQuery.addEventListener("change", handleResize);
+      return () => {
+        mediaQuery.removeEventListener("change", handleResize);
+      };
+    }
   }, []);
 
   const handleClick = () => {
