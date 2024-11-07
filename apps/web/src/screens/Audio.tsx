@@ -118,6 +118,7 @@ export const Audio: FC = () => {
         }}
       >
         <Box
+          component="div"
           sx={{
             textAlign: "center",
             position: "relative",
@@ -170,6 +171,7 @@ export const Audio: FC = () => {
           )}
         </Box>
         <Box
+          component="div"
           sx={{
             position: "fixed",
             bottom: "0px",

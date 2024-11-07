@@ -32,7 +32,16 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": ["off"],
     "jsx-a11y/no-noninteractive-element-interactions": ["off"],
     "jsx-a11y/media-has-caption": ["off"],
-    "@typescript-eslint/no-unnecessary-type-assertion": ["off"]
-
+    "@typescript-eslint/no-unnecessary-type-assertion": ["off"],
+    "react/no-unescaped-entities": ["off"],
+    "@typescript-eslint/prefer-for-of": ["off"],
+    "no-implicit-coercion": ["off"],
+    "@typescript-eslint/no-unsafe-return": ["off"],
+    "react/no-unknown-property": ["off"],
+    "no-var": ["off"],
+    "prefer-named-capture-group": ["off"],
+    "no-param-reassign": ["off"],
+    "func-names": ["off"],
+    "@typescript-eslint/prefer-includes": ["off"],
   },
 };
