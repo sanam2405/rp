@@ -11,7 +11,8 @@ export default function PHProvider({
 }) {
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "", {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "",
+      api_host: "https://rimjhim.manaspratimbiswas.com/ingest",
+      ui_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "",
       person_profiles: "identified_only",
       capture_pageview: false, // false disables automatic page view capture
       capture_pageleave: true, // true enables page leave capture
