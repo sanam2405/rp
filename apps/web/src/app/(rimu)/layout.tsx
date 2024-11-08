@@ -7,6 +7,7 @@ import { AudioProvider, DarkModeProvider } from "@/context";
 import { Layout } from "@/components";
 import { CSSProperties } from "react";
 import { Aura } from "@/components";
+import { PHProvider, PostHogPageView } from "@/posthog";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -112,32 +113,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
-          <div style={backgroundOverlay}></div>
-          <DarkModeProvider>
-            <AudioProvider>
-              {/* <Loader /> */}
-              <Layout>
-                <div className="w-full absolute inset-0 h-screen">
-                  <Aura
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={100}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                  />
-                </div>
-                {children}
-              </Layout>
-            </AudioProvider>
-          </DarkModeProvider>
-        </div>
-        <Analytics mode={"production"} />
-        <SpeedInsights />
-      </body>
+      <PHProvider>
+        <body className={inter.className}>
+          <PostHogPageView />
+          <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
+            <div style={backgroundOverlay}></div>
+            <DarkModeProvider>
+              <AudioProvider>
+                {/* <Loader /> */}
+                <Layout>
+                  <div className="w-full absolute inset-0 h-screen">
+                    <Aura
+                      id="tsparticlesfullpage"
+                      background="transparent"
+                      minSize={0.6}
+                      maxSize={1.4}
+                      particleDensity={100}
+                      className="w-full h-full"
+                      particleColor="#FFFFFF"
+                    />
+                  </div>
+                  {children}
+                </Layout>
+              </AudioProvider>
+            </DarkModeProvider>
+          </div>
+          <Analytics mode={"production"} />
+          <SpeedInsights />
+        </body>
+      </PHProvider>
     </html>
   );
 }
