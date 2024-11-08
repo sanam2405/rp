@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -115,7 +116,9 @@ export default function RootLayout({
     <html lang="en">
       <PHProvider>
         <body className={inter.className}>
-          <PostHogPageView />
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
           <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
             <div style={backgroundOverlay}></div>
             <DarkModeProvider>

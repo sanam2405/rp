@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -91,7 +92,9 @@ export default function RTermLayout({
     <html lang="en">
       <PHProvider>
         <body className={inter.className}>
-          <PostHogPageView />
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
           <div className="w-full absolute inset-0 h-screen z-50 pointer-events-none">
             <Aura
               id="tsparticlesfullpage"
