@@ -76,7 +76,7 @@ export const Carousal: FC = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
   const [caption, setCaption] = useState(
-    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
+    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :)",
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
@@ -131,7 +131,7 @@ export const Carousal: FC = () => {
         break;
       default:
         newCaption =
-          "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ";
+          "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :)";
     }
     setCaption(newCaption);
     setIsVideoPlaying(true);
@@ -306,7 +306,6 @@ export const Carousal: FC = () => {
             variant="body2"
             color="textSecondary"
             component="p"
-            // className='tiro-bangla-regular'
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caption) }}
           />
         </CardContent>
