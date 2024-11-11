@@ -14,10 +14,18 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
+    "@phosphor-icons/react": "^2.1.7",
     "@react-three/drei": "^9.115.0",
     "@react-three/fiber": "^8.17.10",
     "@rp/constants": "workspace:*",
     "@tabler/icons-react": "^3.19.0",
+    "@tiptap/extension-character-count": "^2.9.1",
+    "@tiptap/extension-highlight": "^2.9.1",
+    "@tiptap/extension-task-item": "^2.9.1",
+    "@tiptap/extension-task-list": "^2.9.1",
+    "@tiptap/pm": "^2.9.1",
+    "@tiptap/react": "^2.9.1",
+    "@tiptap/starter-kit": "^2.9.1",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
@@ -46,7 +54,8 @@
     "tailwind-merge": "^2.5.2",
     "three": "^0.170.0",
     "three-globe": "^2.34.4",
-    "use-sound": "^4.0.3"
+    "use-sound": "^4.0.3",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.14",

@@ -11,6 +11,9 @@ import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
+import { RPMenuBar } from "./RPMenuBar";
+import { RPMenuItems } from "./RPMenuItems";
+import RPEditor  from "./RPEditor";
 
 export {
   Aura,
@@ -29,4 +32,7 @@ export {
   Sorry,
   Spots,
   World,
+  RPMenuBar,
+  RPMenuItems,
+  RPEditor
 };
