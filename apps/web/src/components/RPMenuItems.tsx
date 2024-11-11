@@ -1,25 +1,32 @@
 "use client";
-
-import { cn } from "@/lib/utils";
-import { IconButton, Tooltip } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
+import { Editor } from "@tiptap/react";
+import React, { useMemo } from "react";
 
 export const RPMenuItems = ({
   Icon,
   title,
   action,
   isActive = null,
+  editor,
 }: {
   Icon: React.FC<any>;
   title?: string;
   action?: () => void;
   isActive?: (() => boolean) | null;
+  editor: Editor;
 }) => {
+  const isButtonActive = useMemo(() => isActive?.() || false, [isActive]);
+
   return (
     <Tooltip title={title}>
-      <IconButton
-        onClick={action}
+      <Button
+        onClick={() => {
+          editor.chain().focus().run();
+          action?.();
+        }}
         sx={{
-          backgroundColor: "transparent",
+          backgroundColor: isButtonActive ? "#ef4444" : "transparent",
           border: "none",
           borderRadius: "0.375rem",
           cursor: "pointer",
@@ -33,14 +40,11 @@ export const RPMenuItems = ({
           "&:hover": {
             backgroundColor: "#fecaca",
           },
-          ...(isActive?.() && {
-            backgroundColor: "#ef4444",
-          }),
         }}
         size="small"
       >
         <Icon size={20} />
-      </IconButton>
+      </Button>
     </Tooltip>
   );
 };

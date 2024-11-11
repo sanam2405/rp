@@ -26,7 +26,6 @@ export default function RPEditor() {
           "prose prose-sm dark:prose-invert max-w-none flex flex-col max-h-full mx-2 focus:outline-none",
       },
     },
-    immediatelyRender: false,
   });
 
   useEffect(() => {

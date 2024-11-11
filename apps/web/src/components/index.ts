@@ -13,7 +13,7 @@ import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
 import { RPMenuBar } from "./RPMenuBar";
 import { RPMenuItems } from "./RPMenuItems";
-import RPEditor  from "./RPEditor";
+import RPEditor from "./RPEditor";
 
 export {
   Aura,
@@ -34,5 +34,5 @@ export {
   World,
   RPMenuBar,
   RPMenuItems,
-  RPEditor
+  RPEditor,
 };

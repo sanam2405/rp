@@ -132,13 +132,13 @@ export const RPTerminal = () => {
             JSON.stringify({
               type: "command",
               data: e.key,
-            })
+            }),
           );
         });
       } catch (error) {
         console.error("WebSocket connection failed:", error);
         term.write(
-          `\r\n ${CUSTOM_PROMPT} WebSocket connection failed. You can still explore the RPTerminal.`
+          `\r\n ${CUSTOM_PROMPT} WebSocket connection failed. You can still explore the RPTerminal.`,
         );
       }
     };
@@ -150,10 +150,5 @@ export const RPTerminal = () => {
     };
   }, []);
 
-  return (
-    <div
-      ref={terminalRef}
-      className="w-full h-full p-0 m-0"
-    ></div>
-  );
+  return <div ref={terminalRef} className="w-full h-full p-0 m-0"></div>;
 };
