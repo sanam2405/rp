@@ -22,15 +22,48 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import { useAudio } from "@/context";
 import { GITHUB_URI, MEDIA } from "@rp/constants";
+import { usePostHog } from "posthog-js/react";
 
-const currentMedia = [
-  MEDIA.SANAM_VIDEO,
-  MEDIA.RP_VIDEO,
-  MEDIA.SHEY_JE_VIDEO,
-  MEDIA.JUTTI_VIDEO,
-  MEDIA.NODE_VIDEO,
-  MEDIA.MURAL_VIDEO,
-  MEDIA.CAFE_VIDEO,
+interface ICurrentMedia {
+  src: string;
+  caption: string;
+}
+const currentMedia: ICurrentMedia[] = [
+  {
+    src: MEDIA.SANAM_VIDEO,
+    caption:
+      "গুনগানের হাজার বুলি, শুধুই সময় নষ্ট <br/> আঁকছো ছবি সমস্ত দিন, রঙ সবই অস্পষ্ট <br/> সুখের থেকেও হাজার গুনে দুঃখ অনেক ভালো <br/> তাইতো বলি আমায় বরং <br/> ঘেন্না কর, ঘেন্না কর",
+  },
+  {
+    src: MEDIA.RP_VIDEO,
+    caption:
+      "গুনে গুনে দেখি অবেলার স্বপ্নটায়, আঁকা ছিলো কত শত কবিতায় <br/> স্বপ্নের সেই কবিতার ছন্দতে, মিশে ছিলো তার হাসিমাখা ছবিটা <br/> যা আঁকা ছিলো অদ্ভুত রঙ তুলি, যা জমা থাকে আমার মনে মাঝে <br/> বর হয়ে আমি চড়ছি ঘোড়ায়, আড়ালে তুমি লুকিয়ে আছো বৌ সাজে :) <br/> আমার এই স্বপ্ন কি শুধু, স্বপ্ন হয়ে হাসাবে আমায় ? <br/> তেমন সাহস নেই আমার, তোমাকে কিভাবে প্রস্তাব জানাই ?",
+  },
+  {
+    src: MEDIA.SHEY_JE_VIDEO,
+    caption:
+      "ভালোবাসার মানুষের ঘেন্নাটাও এক প্রকার প্রেমের জন্ম দেয় <br/> ঘেন্না হোক বা ভালোবাসা, <br/> যাক অবশেষে কিছু তো একটা করলো সে :) <br/> অগত্যা তার প্রিয় গায়ক অরিজিৎ সিং এর কণ্ঠে <br/> আমার অন্যতম প্রিয় সঙ্গীতশিল্পী ও সুরকার <br/> শায়ান চৌধুরী অর্ণবের গান রাখা থাকলো তার জন্য",
+  },
+  {
+    src: MEDIA.JUTTI_VIDEO,
+    caption:
+      "<q><i>If you save every photo, then your phone will surely burst one day :) </i></q> <br/> ~ <i>Rimjhim</i>, circa 2022",
+  },
+  {
+    src: MEDIA.NODE_VIDEO,
+    caption:
+      "তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা :) <br/> <i> about trees and graphs </i> <br/> <i> and nodes and habits </i>",
+  },
+  {
+    src: MEDIA.MURAL_VIDEO,
+    caption:
+      "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।",
+  },
+  {
+    src: MEDIA.CAFE_VIDEO,
+    caption:
+      "আজ ভেঙ্গে যাব, কাল জুড়ে যাব <br /> তবু ভাঙ্গতে জুড়তে চলেছি <br /> কালবোশেখিটা তোমাদের দেব <br /> খুঁজে আনতেই চলেছি।",
+  },
 ];
 
 export const Carousal: FC = () => {
@@ -41,10 +74,11 @@ export const Carousal: FC = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
   const [caption, setCaption] = useState(
-    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
+    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) "
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+  const posthog = usePostHog();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -68,37 +102,30 @@ export const Carousal: FC = () => {
     navigate.push("/ilu");
   };
 
-  const handleVideoPlay = (src: string) => {
+  const handleVideoPlay = (currentMedia: ICurrentMedia) => {
     stopPlay();
     let newCaption = "";
-    switch (src) {
+    switch (currentMedia.src) {
       case MEDIA.RP_VIDEO:
-        newCaption =
-          "গুনে গুনে দেখি অবেলার স্বপ্নটায়, আঁকা ছিলো কত শত কবিতায় <br/> স্বপ্নের সেই কবিতার ছন্দতে, মিশে ছিলো তার হাসিমাখা ছবিটা <br/> যা আঁকা ছিলো অদ্ভুত রঙ তুলি, যা জমা থাকে আমার মনে মাঝে <br/> বর হয়ে আমি চড়ছি ঘোড়ায়, আড়ালে তুমি লুকিয়ে আছো বৌ সাজে :) <br/> আমার এই স্বপ্ন কি শুধু, স্বপ্ন হয়ে হাসাবে আমায় ? <br/> তেমন সাহস নেই আমার, তোমাকে কিভাবে প্রস্তাব জানাই ?";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.SANAM_VIDEO:
-        newCaption =
-          "গুনগানের হাজার বুলি, শুধুই সময় নষ্ট<br/> আঁকছো ছবি সমস্ত দিন, রঙ সবই অস্পষ্ট <br/> সুখের থেকেও হাজার গুনে দুঃখ অনেক ভালো<br/> তাইতো বলি আমায় বরং<br/> ঘেন্না কর, ঘেন্না কর";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.SHEY_JE_VIDEO:
-        newCaption =
-          "ভালোবাসার মানুষের ঘেন্নাটাও এক প্রকার প্রেমের জন্ম দেয় <br/> ঘেন্না হোক বা ভালোবাসা, <br/> যাক অবশেষে কিছু তো একটা করলো সে :) <br/> অগত্যা তার প্রিয় গায়ক অরিজিৎ সিং এর কণ্ঠে <br/> আমার অন্যতম প্রিয় সঙ্গীতশিল্পী ও সুরকার <br/> শায়ান চৌধুরী অর্ণবের গান রাখা থাকলো তার জন্য";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.JUTTI_VIDEO:
-        newCaption =
-          "<q><i>If you save every photo, then your phone will surely burst one day :) </i></q> <br/> ~ <i>Rimjhim</i>, circa 2022";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.NODE_VIDEO:
-        newCaption =
-          "তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা :) <br/> <i> about trees and graphs </i> <br/> <i> and nodes and habits </i>";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.MURAL_VIDEO:
-        newCaption =
-          "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।";
+        newCaption = currentMedia.caption;
         break;
       case MEDIA.CAFE_VIDEO:
-        newCaption =
-          "আজ ভেঙ্গে যাব, কাল জুড়ে যাব <br /> তবু ভাঙ্গতে জুড়তে চলেছি <br /> কালবোশেখিটা তোমাদের দেব <br /> খুঁজে আনতেই চলেছি।";
+        newCaption = currentMedia.caption;
         break;
       default:
         newCaption =
@@ -115,6 +142,7 @@ export const Carousal: FC = () => {
   useEffect(() => {
     if (!isPlaying && !isVideoPlaying) {
       play();
+      posthog.capture("bokaboka.music_loop_started");
     }
   }, [play, isPlaying, isVideoPlaying]);
 
@@ -138,6 +166,9 @@ export const Carousal: FC = () => {
               <IconButton>
                 <GitHubIcon
                   onClick={() => {
+                    posthog.capture("bokaboka.button_clicked", {
+                      buttonName: "githubButton",
+                    });
                     window.location.href = `${GITHUB_URI}#readme`;
                   }}
                   className="text-gray-500 hover:text-gray-950"
@@ -156,17 +187,36 @@ export const Carousal: FC = () => {
             className="aspect-w-1 aspect-h-1 h-96 relative"
           >
             {currentMedia.map((item, index) => (
-              <SwiperSlide key={index} className="relative h-full">
+              <SwiperSlide
+                key={index}
+                className="relative h-full"
+              >
                 <div className="relative group h-full">
-                  {item.endsWith(".mp4") ? (
+                  {item.src.endsWith(".mp4") ? (
                     <div className="absolute inset-0">
                       <video
                         className="w-full h-full object-cover"
                         loop
-                        onPlay={() => handleVideoPlay(item)}
-                        onPause={handleVideoPause}
+                        onPlay={() => {
+                          console.log("played");
+                          posthog.capture("bokaboka.media_play_started", {
+                            mediaName: item.src,
+                            caption: item.caption,
+                          });
+                          handleVideoPlay(item);
+                        }}
+                        onPause={() => {
+                          posthog.capture("bokaboka.media_play_paused", {
+                            mediaName: item.src,
+                            caption: item.caption,
+                          });
+                          handleVideoPause;
+                        }}
                       >
-                        <source src={item} type="video/mp4" />
+                        <source
+                          src={item.src}
+                          type="video/mp4"
+                        />
                         Shey Je Boshe Ache Eka Eka
                       </video>
                       <div
@@ -182,8 +232,19 @@ export const Carousal: FC = () => {
                             if (video) {
                               if (isVideoPlaying) {
                                 video.pause();
+                                posthog.capture("bokaboka.media_play_paused", {
+                                  mediaName: item.src,
+                                  caption: item.caption,
+                                });
                               } else {
                                 video.play();
+                                posthog.capture(
+                                  "bokaboka.media_play_paused_resumed",
+                                  {
+                                    mediaName: item.src,
+                                    caption: item.caption,
+                                  }
+                                );
                               }
                             }
                           }}
@@ -200,7 +261,7 @@ export const Carousal: FC = () => {
                     <CardMedia
                       component="img"
                       className="w-full h-full object-cover object-top"
-                      image={item}
+                      image={item.src}
                       alt={`media-${index}`}
                       style={{ aspectRatio: "1/1" }}
                     />
@@ -213,19 +274,34 @@ export const Carousal: FC = () => {
         <CardActions disableSpacing>
           <IconButton>
             <Favorite
-              onClick={handleClick}
+              onClick={() => {
+                posthog.capture("bokaboka.button_clicked", {
+                  buttonName: "likeButton",
+                });
+                handleClick();
+              }}
               className="text-gray-500 hover:text-red-500"
             />
           </IconButton>
           <IconButton>
             <CommentIcon
-              onClick={handleClick}
+              onClick={() => {
+                posthog.capture("bokaboka.button_clicked", {
+                  buttonName: "commentButton",
+                });
+                handleClick();
+              }}
               className="text-gray-500 hover:text-blue-500"
             />
           </IconButton>
           <IconButton>
             <ShareIcon
-              onClick={handleClick}
+              onClick={() => {
+                posthog.capture("bokaboka.button_clicked", {
+                  buttonName: "shareButton",
+                });
+                handleClick();
+              }}
               className="text-gray-500 hover:text-green-700"
             />
           </IconButton>

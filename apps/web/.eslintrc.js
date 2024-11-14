@@ -43,5 +43,6 @@ module.exports = {
     "no-param-reassign": ["off"],
     "func-names": ["off"],
     "@typescript-eslint/prefer-includes": ["off"],
+    "@typescript-eslint/naming-convention": ["off"],
   },
 };
