@@ -1,16 +1,16 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
+import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import { useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
 
-import { INTRO, LYRICS } from "@rp/constants";
 import { useAudio, useDarkMode } from "@/context";
+import { INTRO, LYRICS } from "@rp/constants";
 import { usePostHog } from "posthog-js/react";
 
 export const Audio: FC = () => {

@@ -1,15 +1,15 @@
 "use client";
 
+import { DARK_SCREEN, MUSIC } from "@rp/constants";
 import {
-  ReactNode,
   createContext,
   FC,
+  ReactNode,
+  SetStateAction,
   useContext,
   useState,
-  SetStateAction,
 } from "react";
 import useSound from "use-sound";
-import { DARK_SCREEN, MUSIC } from "@rp/constants";
 
 interface AudioContextType {
   play: () => void;

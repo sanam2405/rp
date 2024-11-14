@@ -3,7 +3,7 @@
 import { Leaf, Myxomycete } from "@/components";
 import { Audio } from "@/screens";
 import { useRouter } from "next/navigation";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Landing() {
   const router = useRouter();

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import p5 from "p5";
+import { useEffect, useRef } from "react";
 
 export const Myxomycete = () => {
   // Reference to the HTML div element to render the p5 sketch

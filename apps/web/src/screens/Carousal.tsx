@@ -1,28 +1,30 @@
 "use client";
 
-import { FC, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import DOMPurify from "isomorphic-dompurify";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
-import "swiper/swiper-bundle.css";
+import { useAudio } from "@/context";
+import { Favorite } from "@mui/icons-material";
+import CommentIcon from "@mui/icons-material/Comment";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import ShareIcon from "@mui/icons-material/Share";
 import {
+  Avatar,
   Card,
+  CardActions,
+  CardContent,
   CardHeader,
   CardMedia,
-  CardContent,
-  CardActions,
+  IconButton,
+  Typography,
 } from "@mui/material";
-import { Avatar, IconButton, Typography } from "@mui/material";
-import { Favorite } from "@mui/icons-material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import CommentIcon from "@mui/icons-material/Comment";
-import ShareIcon from "@mui/icons-material/Share";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import PauseIcon from "@mui/icons-material/Pause";
-import { useAudio } from "@/context";
 import { GITHUB_URI, MEDIA } from "@rp/constants";
+import DOMPurify from "isomorphic-dompurify";
+import { useRouter } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
+import { FC, useEffect, useState } from "react";
+import { Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 
 interface ICurrentMedia {
   src: string;
@@ -74,7 +76,7 @@ export const Carousal: FC = () => {
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
   const [caption, setCaption] = useState(
-    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) "
+    "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :) ",
   );
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
@@ -187,10 +189,7 @@ export const Carousal: FC = () => {
             className="aspect-w-1 aspect-h-1 h-96 relative"
           >
             {currentMedia.map((item, index) => (
-              <SwiperSlide
-                key={index}
-                className="relative h-full"
-              >
+              <SwiperSlide key={index} className="relative h-full">
                 <div className="relative group h-full">
                   {item.src.endsWith(".mp4") ? (
                     <div className="absolute inset-0">
@@ -212,10 +211,7 @@ export const Carousal: FC = () => {
                           handleVideoPause();
                         }}
                       >
-                        <source
-                          src={item.src}
-                          type="video/mp4"
-                        />
+                        <source src={item.src} type="video/mp4" />
                         Shey Je Boshe Ache Eka Eka
                       </video>
                       <div
@@ -242,7 +238,7 @@ export const Carousal: FC = () => {
                                   {
                                     mediaName: item.src,
                                     caption: item.caption,
-                                  }
+                                  },
                                 );
                               }
                             }

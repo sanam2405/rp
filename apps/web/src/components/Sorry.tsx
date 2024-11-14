@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Aura } from "@/components";
-import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { IconDotsVertical } from "@tabler/icons-react";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 interface SorryProps {
   firstImage?: string;

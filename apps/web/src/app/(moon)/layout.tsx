@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import "../globals.css";
 import { Aura } from "@/components";
 import { PHProvider, PostHogPageView } from "@/posthog";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

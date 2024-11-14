@@ -1,11 +1,10 @@
-import { Aura } from "@/components";
 import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import "../globals.css";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -83,7 +82,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RTermLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -95,17 +94,6 @@ export default function RTermLayout({
           <Suspense>
             <PostHogPageView />
           </Suspense>
-          <div className="w-full absolute inset-0 h-screen z-50 pointer-events-none">
-            <Aura
-              id="tsparticlesfullpage"
-              background="transparent"
-              minSize={0.6}
-              maxSize={1.4}
-              particleDensity={100}
-              className="w-full h-full pointer-events-none"
-              particleColor="#FFFFFF"
-            />
-          </div>
           {children}
           <Analytics mode={"production"} />
           <SpeedInsights />

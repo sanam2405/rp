@@ -21,7 +21,7 @@ const images = {
   pyRP: "/pyrp.png",
 };
 
-export { mediaFiles, images };
+export { images, mediaFiles };
 
 export const LYRICS = [
   "👀",

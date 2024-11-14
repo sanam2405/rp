@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import { Leaf } from "@/components";
 import { Carousal } from "@/screens";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",
