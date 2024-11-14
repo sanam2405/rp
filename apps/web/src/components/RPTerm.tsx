@@ -1,9 +1,9 @@
 /* eslint-disable */
 "use client";
 
-import { useEffect, useRef } from "react";
-import "@xterm/xterm/css/xterm.css";
 import { CUSTOM_PROMPT } from "@rp/constants";
+import "@xterm/xterm/css/xterm.css";
+import { useEffect, useRef } from "react";
 
 interface ITheme {
   /** The default foreground color */

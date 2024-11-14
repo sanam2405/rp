@@ -1,11 +1,12 @@
-import { Aura } from "@/components";
+import { Aura, Layout } from "@/components";
+import { AudioProvider, DarkModeProvider } from "@/context";
 import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
-import "../globals.css";
+import { CSSProperties, Suspense } from "react";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -83,7 +84,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RTermLayout({
+const backgroundStyle: CSSProperties = {
+  position: "relative",
+  overflow: "hidden",
+};
+
+const backgroundOverlay: CSSProperties = {
+  content: "",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  backgroundImage: "url('/wordcloud.png')",
+  backgroundSize: "cover",
+  backgroundRepeat: "repeat-x repeat-y",
+  backgroundPosition: "center top",
+  zIndex: -1,
+  opacity: 0.15,
+  filter: "grayscale(100%) contrast(150%)",
+};
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -95,18 +117,28 @@ export default function RTermLayout({
           <Suspense>
             <PostHogPageView />
           </Suspense>
-          <div className="w-full absolute inset-0 h-screen z-50 pointer-events-none">
-            <Aura
-              id="tsparticlesfullpage"
-              background="transparent"
-              minSize={0.6}
-              maxSize={1.4}
-              particleDensity={100}
-              className="w-full h-full pointer-events-none"
-              particleColor="#FFFFFF"
-            />
+          <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
+            <div style={backgroundOverlay}></div>
+            <DarkModeProvider>
+              <AudioProvider>
+                {/* <Loader /> */}
+                <Layout>
+                  <div className="w-full absolute inset-0 h-screen">
+                    <Aura
+                      id="tsparticlesfullpage"
+                      background="transparent"
+                      minSize={0.6}
+                      maxSize={1.4}
+                      particleDensity={100}
+                      className="w-full h-full"
+                      particleColor="#FFFFFF"
+                    />
+                  </div>
+                  {children}
+                </Layout>
+              </AudioProvider>
+            </DarkModeProvider>
           </div>
-          {children}
           <Analytics mode={"production"} />
           <SpeedInsights />
         </body>

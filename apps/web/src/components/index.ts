@@ -1,33 +1,32 @@
-import { Balloons } from "./Balloons";
-import { Spots } from "./Spots";
-import { Layout } from "./Layout";
-import { Flashlight } from "./Flashlight";
-import { Loader } from "./Loader";
-import { Leaf } from "./Leaf";
 import { Aura } from "./Aura";
+import { Balloons } from "./Balloons";
+import { Flashlight } from "./Flashlight";
+import { Globe, World } from "./Globe";
+import { Layout } from "./Layout";
+import { Leaf } from "./Leaf";
+import { Loader } from "./Loader";
 import { Myxomycete } from "./Myxomycete";
-import { Roman, RomanTitle, RomanDescription } from "./Roman";
-import { Sorry } from "./Sorry";
-import { Scribble } from "./Scribble";
+import { Roman, RomanDescription, RomanTitle } from "./Roman";
 import { RPTerminal } from "./RPTerm";
-import { Globe } from "./Globe";
-import { World } from "./Globe";
+import { Scribble } from "./Scribble";
+import { Sorry } from "./Sorry";
+import { Spots } from "./Spots";
 
 export {
-  Balloons,
-  Spots,
-  Layout,
-  Flashlight,
-  Loader,
-  Leaf,
   Aura,
+  Balloons,
+  Flashlight,
+  Globe,
+  Layout,
+  Leaf,
+  Loader,
   Myxomycete,
   Roman,
-  RomanTitle,
   RomanDescription,
-  Sorry,
-  Scribble,
+  RomanTitle,
   RPTerminal,
-  Globe,
+  Scribble,
+  Sorry,
+  Spots,
   World,
 };

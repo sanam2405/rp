@@ -16,7 +16,7 @@ importers:
         version: 3.3.3
       prettier-plugin-tailwindcss:
         specifier: ^0.5.14
-        version: 0.5.14(prettier@3.3.3)
+        version: 0.5.14(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.6.2))(prettier@3.3.3)
       turbo:
         specifier: ^2.1.3
         version: 2.1.3
@@ -153,9 +153,15 @@ importers:
       p5:
         specifier: ^1.11.0
         version: 1.11.0
+      posthog-js:
+        specifier: ^1.181.0
+        version: 1.181.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      prettier-plugin-organize-imports:
+        specifier: ^4.1.0
+        version: 4.1.0(prettier@3.3.3)(typescript@5.6.2)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1807,6 +1813,9 @@ packages:
     resolution: {integrity: sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==}
     engines: {node: '>= 0.6'}
 
+  core-js@3.39.0:
+    resolution: {integrity: sha512-raM0ew0/jJUqkJ0E6e8UDtl+y/7ktFivgWvqw8dNSQeNWoSDLvQ1H/RN3aPXB9tBd4/FhyR4RDPGhsNIMsAn7g==}
+
   cors@2.8.5:
     resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
     engines: {node: '>= 0.10'}
@@ -2344,6 +2353,9 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
+
+  fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
 
   fflate@0.6.10:
     resolution: {integrity: sha512-IQrh3lEPM93wVCEczc9SaAOvkmcoQn/G8Bo1e8ZPlY3X3bnAxWaBdvTdvM1hP62iZp0BXWDy4vTAy4fF0+Dlpg==}
@@ -3333,12 +3345,28 @@ packages:
     resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
+  posthog-js@1.181.0:
+    resolution: {integrity: sha512-bI+J+f4E8x4JwbGtG6LReQv1Xvss01F6cs7UDlvffHySpVhNq4ptkNjV88B92IVEsrCtNYhy/TjFnGxk6RN0Qw==}
+
   potpack@1.0.2:
     resolution: {integrity: sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==}
+
+  preact@10.24.3:
+    resolution: {integrity: sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prettier-plugin-organize-imports@4.1.0:
+    resolution: {integrity: sha512-5aWRdCgv645xaa58X8lOxzZoiHAldAPChljr/MT0crXVOWTZ+Svl4hIWlz+niYSlO6ikE5UXkN1JrRvIP2ut0A==}
+    peerDependencies:
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+      vue-tsc: ^2.1.0
+    peerDependenciesMeta:
+      vue-tsc:
+        optional: true
 
   prettier-plugin-packagejson@2.5.2:
     resolution: {integrity: sha512-w+TmoLv2pIa+siplW1cCj2ujEXQQS6z7wmWLOiLQK/2QVl7Wy6xh/ZUpqQw8tbKMXDodmSW4GONxlA33xpdNOg==}
@@ -4115,6 +4143,9 @@ packages:
   w3c-xmlserializer@5.0.0:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
+
+  web-vitals@4.2.4:
+    resolution: {integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==}
 
   webgl-constants@1.1.1:
     resolution: {integrity: sha512-LkBXKjU5r9vAW7Gcu3T5u+5cvSvh5WwINdr0C+9jpzVB41cjQAP5ePArDtk/WHYdVj0GefCgM73BA7FlIiNtdg==}
@@ -5908,6 +5939,8 @@ snapshots:
 
   cookie@0.7.1: {}
 
+  core-js@3.39.0: {}
+
   cors@2.8.5:
     dependencies:
       object-assign: 4.1.1
@@ -6736,6 +6769,8 @@ snapshots:
   fdir@6.4.0(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
+
+  fflate@0.4.8: {}
 
   fflate@0.6.10: {}
 
@@ -7691,9 +7726,23 @@ snapshots:
       picocolors: 1.1.0
       source-map-js: 1.2.1
 
+  posthog-js@1.181.0:
+    dependencies:
+      core-js: 3.39.0
+      fflate: 0.4.8
+      preact: 10.24.3
+      web-vitals: 4.2.4
+
   potpack@1.0.2: {}
 
+  preact@10.24.3: {}
+
   prelude-ls@1.2.1: {}
+
+  prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.6.2):
+    dependencies:
+      prettier: 3.3.3
+      typescript: 5.6.2
 
   prettier-plugin-packagejson@2.5.2(prettier@3.3.3):
     dependencies:
@@ -7702,9 +7751,11 @@ snapshots:
     optionalDependencies:
       prettier: 3.3.3
 
-  prettier-plugin-tailwindcss@0.5.14(prettier@3.3.3):
+  prettier-plugin-tailwindcss@0.5.14(prettier-plugin-organize-imports@4.1.0(prettier@3.3.3)(typescript@5.6.2))(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
+    optionalDependencies:
+      prettier-plugin-organize-imports: 4.1.0(prettier@3.3.3)(typescript@5.6.2)
 
   prettier@3.3.3: {}
 
@@ -8519,6 +8570,8 @@ snapshots:
   w3c-xmlserializer@5.0.0:
     dependencies:
       xml-name-validator: 5.0.0
+
+  web-vitals@4.2.4: {}
 
   webgl-constants@1.1.1: {}
 

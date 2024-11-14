@@ -1,12 +1,12 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import { Balloons, Spots } from "@/components";
-import { useRouter } from "next/navigation";
 import { useAudio, useDarkMode } from "@/context";
 import { MEDIA } from "@rp/constants";
+import gsap from "gsap";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function Messages() {
   const containerRef = useRef<HTMLDivElement>(null);

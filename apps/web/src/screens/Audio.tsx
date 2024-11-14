@@ -1,16 +1,17 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
+import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import { useRouter } from "next/navigation";
+import { FC, useEffect, useState } from "react";
 
-import { INTRO, LYRICS } from "@rp/constants";
 import { useAudio, useDarkMode } from "@/context";
+import { INTRO, LYRICS } from "@rp/constants";
+import { usePostHog } from "posthog-js/react";
 
 export const Audio: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +26,7 @@ export const Audio: FC = () => {
   const navigate = useRouter();
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
+  const posthog = usePostHog();
 
   useEffect(() => {
     let wakeLock: WakeLockSentinel | null;
@@ -74,6 +76,7 @@ export const Audio: FC = () => {
         setCurrentLineIndex((prevIndex) => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
+            posthog.capture("landing.music_loop_completed");
             navigate.push("/kigotumi");
           }
           return (prevIndex + 1) % LYRICS.length;
@@ -94,6 +97,9 @@ export const Audio: FC = () => {
   const handleSanamClick = () => {
     setShowSanamButton(false); // Hide Sanam button
     setShowMusicButton(true); // Show music button
+    posthog.capture("landing.button_clicked", {
+      buttonName: "sanamButtom",
+    });
   };
 
   const handleMusicClick = () => {
@@ -102,6 +108,9 @@ export const Audio: FC = () => {
     }
     setIsVisible(true); // Show the lyrics
     setShowMusicButton(false); // Hide the music button
+    posthog.capture("landing.button_clicked", {
+      buttonName: "musicButton",
+    });
   };
 
   return (

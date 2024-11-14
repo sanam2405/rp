@@ -1,7 +1,7 @@
 "use client";
-import { useRef, useEffect, FC, ReactNode } from "react";
-import styles from "../styles/Leaf.module.css";
 import Image from "next/image";
+import { FC, ReactNode, useEffect, useRef } from "react";
+import styles from "../styles/Leaf.module.css";
 
 interface FloatingImagesType {
   container: HTMLDivElement | null;

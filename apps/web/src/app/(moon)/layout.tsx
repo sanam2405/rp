@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Aura } from "@/components";
+import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "../globals.css";
-import { Aura } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -88,22 +90,28 @@ export default function RPWorldLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-full absolute inset-0 h-screen z-40 pointer-events-none">
-          <Aura
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full pointer-events-none"
-            particleColor="#FFFFFF"
-          />
-        </div>
-        {children}
-        <Analytics mode={"production"} />
-        <SpeedInsights />
-      </body>
+      <PHProvider>
+        <body className={inter.className}>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
+
+          <div className="w-full absolute inset-0 h-screen z-40 pointer-events-none">
+            <Aura
+              id="tsparticlesfullpage"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={100}
+              className="w-full h-full pointer-events-none"
+              particleColor="#FFFFFF"
+            />
+          </div>
+          {children}
+          <Analytics mode={"production"} />
+          <SpeedInsights />
+        </body>
+      </PHProvider>
     </html>
   );
 }

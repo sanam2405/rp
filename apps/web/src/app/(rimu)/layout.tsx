@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Aura, Layout } from "@/components";
+import { AudioProvider, DarkModeProvider } from "@/context";
+import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { CSSProperties, Suspense } from "react";
 import "../globals.css";
-import { AudioProvider, DarkModeProvider } from "@/context";
-import { Layout } from "@/components";
-import { CSSProperties } from "react";
-import { Aura } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -112,32 +112,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
-          <div style={backgroundOverlay}></div>
-          <DarkModeProvider>
-            <AudioProvider>
-              {/* <Loader /> */}
-              <Layout>
-                <div className="w-full absolute inset-0 h-screen">
-                  <Aura
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    minSize={0.6}
-                    maxSize={1.4}
-                    particleDensity={100}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                  />
-                </div>
-                {children}
-              </Layout>
-            </AudioProvider>
-          </DarkModeProvider>
-        </div>
-        <Analytics mode={"production"} />
-        <SpeedInsights />
-      </body>
+      <PHProvider>
+        <body className={inter.className}>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
+          <div className="bg-wallpaper animate-fade-in" style={backgroundStyle}>
+            <div style={backgroundOverlay}></div>
+            <DarkModeProvider>
+              <AudioProvider>
+                {/* <Loader /> */}
+                <Layout>
+                  <div className="w-full absolute inset-0 h-screen">
+                    <Aura
+                      id="tsparticlesfullpage"
+                      background="transparent"
+                      minSize={0.6}
+                      maxSize={1.4}
+                      particleDensity={100}
+                      className="w-full h-full"
+                      particleColor="#FFFFFF"
+                    />
+                  </div>
+                  {children}
+                </Layout>
+              </AudioProvider>
+            </DarkModeProvider>
+          </div>
+          <Analytics mode={"production"} />
+          <SpeedInsights />
+        </body>
+      </PHProvider>
     </html>
   );
 }
