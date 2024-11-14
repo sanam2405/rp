@@ -198,7 +198,6 @@ export const Carousal: FC = () => {
                         className="w-full h-full object-cover"
                         loop
                         onPlay={() => {
-                          console.log("played");
                           posthog.capture("bokaboka.media_play_started", {
                             mediaName: item.src,
                             caption: item.caption,
@@ -210,7 +209,7 @@ export const Carousal: FC = () => {
                             mediaName: item.src,
                             caption: item.caption,
                           });
-                          handleVideoPause;
+                          handleVideoPause();
                         }}
                       >
                         <source
