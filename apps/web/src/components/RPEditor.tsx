@@ -1,19 +1,23 @@
 "use client";
 
+import { RPMenuBar } from "@/components";
 import CharacterCount from "@tiptap/extension-character-count";
 import Highlight from "@tiptap/extension-highlight";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { RPMenuBar } from "@/components";
 import { useEffect } from "react";
 
 export default function RPEditor() {
   const rpEditor = useEditor({
     extensions: [
       StarterKit.configure(),
-      Highlight,
+      Highlight.configure({
+        HTMLAttributes: {
+          class: "bg-yellow-200",
+        },
+      }),
       TaskList,
       TaskItem,
       CharacterCount.configure({
@@ -33,11 +37,13 @@ export default function RPEditor() {
   }, []);
 
   return (
-    <>
-      <div>
+    <div className="w-full">
+      <div className="max-w-full py-2">
         {rpEditor && <RPMenuBar editor={rpEditor} />}
-        <EditorContent editor={rpEditor} />
+        <div className="mt-4">
+          <EditorContent editor={rpEditor} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }

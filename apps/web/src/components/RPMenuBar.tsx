@@ -1,5 +1,4 @@
-import type { Editor } from "@tiptap/react";
-import { v4 as uuidv4 } from "uuid";
+import { RPMenuItems } from "@/components";
 import {
   ArrowUUpLeft,
   ArrowUUpRight,
@@ -17,7 +16,8 @@ import {
   TextStrikethrough,
   TextTSlash,
 } from "@phosphor-icons/react/dist/ssr";
-import { RPMenuItems } from "@/components";
+import type { Editor } from "@tiptap/react";
+import { v4 as uuidv4 } from "uuid";
 
 export const RPMenuBar = ({ editor }: { editor: Editor }) => {
   const listOfIcons = [
@@ -43,8 +43,7 @@ export const RPMenuBar = ({ editor }: { editor: Editor }) => {
       {
         Icon: Highlighter,
         title: "Highlight",
-        action: () =>
-          editor.chain().focus().toggleMark("bold", { color: "#fcd34d" }),
+        action: () => editor.chain().focus().toggleHighlight().run(),
         isActive: () => editor.isActive("highlight"),
       },
     ],
@@ -117,18 +116,11 @@ export const RPMenuBar = ({ editor }: { editor: Editor }) => {
   ];
 
   return (
-    <div className="flex items-center bg-gray-200 border-b-4 border-gray-900 rounded-lg mx-1 my-2 flex-wrap p-1 gap-1 w-screen">
+    <div className="flex items-center bg-gray-200 border-b-4 border-gray-900 rounded-lg mx-2 flex-wrap py-2 gap-1 w-screen">
       {listOfIcons.map((iconGroups, index) => (
-        <div
-          className="flex items-center"
-          key={uuidv4()}
-        >
+        <div className="flex items-center" key={uuidv4()}>
           {iconGroups.map((singleIcon) => (
-            <RPMenuItems
-              {...singleIcon}
-              editor={editor}
-              key={uuidv4()}
-            />
+            <RPMenuItems {...singleIcon} editor={editor} key={uuidv4()} />
           ))}
           {index !== listOfIcons.length - 1 && (
             <div className="bg-gray-900 h-5 w-px mx-2" />

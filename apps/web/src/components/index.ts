@@ -7,13 +7,13 @@ import { Leaf } from "./Leaf";
 import { Loader } from "./Loader";
 import { Myxomycete } from "./Myxomycete";
 import { Roman, RomanDescription, RomanTitle } from "./Roman";
+import RPEditor from "./RPEditor";
+import { RPMenuBar } from "./RPMenuBar";
+import { RPMenuItems } from "./RPMenuItems";
 import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-import { RPMenuBar } from "./RPMenuBar";
-import { RPMenuItems } from "./RPMenuItems";
-import RPEditor from "./RPEditor";
 
 export {
   Aura,
@@ -27,12 +27,12 @@ export {
   Roman,
   RomanDescription,
   RomanTitle,
+  RPEditor,
+  RPMenuBar,
+  RPMenuItems,
   RPTerminal,
   Scribble,
   Sorry,
   Spots,
   World,
-  RPMenuBar,
-  RPMenuItems,
-  RPEditor,
 };

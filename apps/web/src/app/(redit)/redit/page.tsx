@@ -4,15 +4,13 @@ const RPEditor = dynamic(
   () => {
     return import("../../../components/RPEditor");
   },
-  { ssr: false }
+  { ssr: false },
 );
 
 export default function RPEdit() {
   return (
-    <>
-      <div className="flex w-screen h-screen p-0 m-0">
-        <RPEditor />
-      </div>
-    </>
+    <div className="flex w-full h-screen overflow-hidden">
+      <RPEditor />
+    </div>
   );
 }
