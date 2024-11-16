@@ -9,7 +9,7 @@ const RPEditor = dynamic(
 
 export default function RPEdit() {
   return (
-    <div className="flex w-full h-screen overflow-hidden">
+    <div className="w-full h-screen">
       <RPEditor />
     </div>
   );

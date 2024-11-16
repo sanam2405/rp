@@ -28,7 +28,7 @@ export default function RPEditor() {
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm dark:prose-invert max-w-none flex flex-col max-h-full mx-2 focus:outline-none",
+          "prose prose-sm dark:prose-invert max-w-none flex flex-col mx-2 focus:outline-none break-words",
       },
     },
   });
@@ -38,10 +38,12 @@ export default function RPEditor() {
   }, [rpEditor]);
 
   return (
-    <div className="w-full">
-      <div className="max-w-full py-2">
+    <div className="w-full h-screen flex flex-col overflow-hidden">
+      <div className="sticky top-0 z-10">
         {rpEditor && <RPMenuBar editor={rpEditor} />}
-        <div className="mt-4">
+      </div>
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
+        <div className="max-w-full py-2">
           <EditorContent editor={rpEditor} />
         </div>
       </div>
