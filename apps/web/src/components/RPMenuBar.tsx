@@ -1,7 +1,11 @@
+"use client";
+
 import { RPMenuItems } from "@/components";
 import {
+  ArrowsClockwise,
   ArrowUUpLeft,
   ArrowUUpRight,
+  ClipboardText,
   Highlighter,
   ListBullets,
   ListChecks,
@@ -17,9 +21,12 @@ import {
   TextTSlash,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Editor } from "@tiptap/react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export const RPMenuBar = ({ editor }: { editor: Editor }) => {
+  const [showCopiedTooltip, setShowCopiedTooltip] = useState<boolean>(false);
+
   const listOfIcons = [
     [
       {
@@ -111,6 +118,22 @@ export const RPMenuBar = ({ editor }: { editor: Editor }) => {
         Icon: ArrowUUpRight,
         title: "Redo",
         action: () => editor.chain().focus().redo().run(),
+      },
+    ],
+    [
+      {
+        Icon: ClipboardText,
+        title: showCopiedTooltip ? "Copied!" : "Copy Text",
+        action: async () => {
+          await navigator.clipboard.writeText(editor.getText());
+          setShowCopiedTooltip(true);
+          setTimeout(() => setShowCopiedTooltip(false), 2000);
+        },
+      },
+      {
+        Icon: ArrowsClockwise,
+        title: "Reset",
+        action: () => editor.commands.setContent(""),
       },
     ],
   ];

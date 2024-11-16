@@ -1,6 +1,7 @@
 "use client";
 
 import { RPMenuBar } from "@/components";
+import reditJSON from "@/constants/redit.json";
 import CharacterCount from "@tiptap/extension-character-count";
 import Highlight from "@tiptap/extension-highlight";
 import TaskItem from "@tiptap/extension-task-item";
@@ -33,8 +34,8 @@ export default function RPEditor() {
   });
 
   useEffect(() => {
-    rpEditor?.commands.setContent("<h1>Welcome to RPEditor</h1>");
-  }, []);
+    rpEditor?.commands.setContent(reditJSON);
+  }, [rpEditor]);
 
   return (
     <div className="w-full">
