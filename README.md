@@ -6,7 +6,7 @@
 
 _[Preface](https://rimjhim.sanam.live/preface)_
 <br/>
-_[In-houseRedit](https://rimjhim.manaspratimbiswas.com/redit)_
+_[In-house Redit](https://rimjhim.manaspratimbiswas.com/redit)_
 <br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
