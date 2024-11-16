@@ -1,7 +1,9 @@
+import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -87,11 +89,16 @@ export default function RPEditLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <Analytics mode={"production"} />
-        <SpeedInsights />
-      </body>
+      <PHProvider>
+        <body className={inter.className}>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
+          {children}
+          <Analytics mode={"production"} />
+          <SpeedInsights />
+        </body>
+      </PHProvider>
     </html>
   );
 }
