@@ -2,7 +2,11 @@
 
 > _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
+[![Redit](/apps/web/public/redit.png)](https://rimjhim.manaspratimbiswas.com/redit)
+
 _[Preface](https://rimjhim.sanam.live/preface)_
+<br/>
+_[In-houseRedit](https://rimjhim.manaspratimbiswas.com/redit)_
 <br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
