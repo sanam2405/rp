@@ -146,7 +146,7 @@ export const RPMenuBar = ({ editor }: { editor: Editor }) => {
             <RPMenuItems {...singleIcon} editor={editor} key={uuidv4()} />
           ))}
           {index !== listOfIcons.length - 1 && (
-            <div className="bg-gray-900 h-5 w-px mx-2" />
+            <div className="hidden md:block bg-gray-900 h-5 w-px mx-2 shrink-0" />
           )}
         </div>
       ))}
