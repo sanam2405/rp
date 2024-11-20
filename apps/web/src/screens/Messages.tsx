@@ -12,14 +12,9 @@ export default function Messages() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useRouter();
-  const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
   const [bokaopacity, setBokaOpacity] = useState<number>(1);
-  useEffect(() => {
-    if (!isPlaying) {
-      play();
-    }
-  }, []);
+  const { isPlaying, pause } = useAudio();
 
   useEffect(() => {
     if (textBoxCharsRef.current) {
@@ -234,7 +229,7 @@ export default function Messages() {
       );
 
     return () => {};
-  }, []);
+  }, [navigate, isPlaying, pause]);
 
   return (
     <>
