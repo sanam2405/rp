@@ -24,6 +24,8 @@ export const Audio: FC = () => {
   const [sanamAnimation, setSanamAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Sanam button
   const [showMusicButton, setShowMusicButton] = useState(false); // Tracks if music button should be shown
   const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
+  const [monologueOne, setMonologueOne] = useState(false);
+  const [monologueTwo, setMonologueTwo] = useState(false);
   const navigate = useRouter();
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
@@ -98,19 +100,30 @@ export const Audio: FC = () => {
   }, [isVisible, isIntroCompleted, firstLoopCompleted, navigate]);
 
   const handleSanamClick = () => {
-    setShowSanamButton(false); // Hide Sanam button
-    setShowMusicButton(true); // Show music button
+    setShowSanamButton(false);
+    setMonologueOne(true);
     posthog.capture("landing.button_clicked", {
       buttonName: "sanamButtom",
     });
+
+    setTimeout(() => {
+      setMonologueOne(false);
+      setShowMusicButton(true);
+    }, 3000);
   };
 
   const handleMusicClick = () => {
-    if (!isPlaying) {
-      play(); // Start playing the audio
-    }
-    setIsVisible(true); // Show the lyrics
-    setShowMusicButton(false); // Hide the music button
+    setShowMusicButton(false);
+    setMonologueTwo(true);
+
+    setTimeout(() => {
+      setMonologueTwo(false);
+      setIsVisible(true);
+      if (!isPlaying) {
+        play();
+      }
+    }, 3000);
+
     posthog.capture("landing.button_clicked", {
       buttonName: "musicButton",
     });
@@ -156,16 +169,11 @@ export const Audio: FC = () => {
               onClick={handleSanamClick}
               className={`${sanamAnimation} hover:scale-110 transition-transform duration-200`}
             >
-              {/* Built by Sanam */}
-              {/* <i> তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে </i> */}
               {sanamText.map((el, i) => (
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.25,
-                    delay: i / 5,
-                  }}
+                  transition={{ duration: 0.25, delay: i / 5 }}
                   key={i}
                   className="mr-1"
                 >
@@ -174,17 +182,26 @@ export const Audio: FC = () => {
               ))}
             </Button>
           )}
+          {monologueOne && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className=" tiro-bangla-regular text-red-500 text-2xl"
+            >
+              <i>তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে</i>
+            </motion.div>
+          )}
           {showMusicButton && (
             <Button
               id="musicButton"
               variant="contained"
               endIcon={<PlayCircleOutlineOutlinedIcon />}
               onClick={handleMusicClick}
-              sx={{ marginBottom: "1rem" }}
               className={`${musicAnimation} hover:scale-110 transition-transform duration-200 text-white`}
+              sx={{ marginBottom: "1rem" }}
             >
-              {/* Music */}
-              {/* <i> পলাতকা প্লাবনের পরী প্রণয়নী </i> */}
               {musicText.map((el, i) => (
                 <motion.button
                   initial={{ opacity: 0 }}
@@ -197,6 +214,17 @@ export const Audio: FC = () => {
                 </motion.button>
               ))}
             </Button>
+          )}
+          {monologueTwo && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="tiro-bangla-regular text-blue-500 text-2xl"
+            >
+              <i>পলাতকা প্লাবনের পরী প্রণয়নী</i>
+            </motion.div>
           )}
           {isVisible && !firstLoopCompleted && (
             <p
