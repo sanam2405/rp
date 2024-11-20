@@ -122,7 +122,7 @@ export const Audio: FC = () => {
       if (!isPlaying) {
         play();
       }
-    }, 3000);
+    }, 5000);
 
     posthog.capture("landing.button_clicked", {
       buttonName: "musicButton",
@@ -188,9 +188,10 @@ export const Audio: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className=" tiro-bangla-regular text-red-500 text-2xl"
+              className=" tiro-bangla-regular text-red-500 text-xl"
             >
-              <i>তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে</i>
+              <i className="block mb-3">তোমাকেই ভালবাসবো ভেবেছি </i>
+              <i className="block">শত যুদ্ধের শেষে</i>
             </motion.div>
           )}
           {showMusicButton && (
@@ -221,9 +222,10 @@ export const Audio: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="tiro-bangla-regular text-blue-500 text-2xl"
+              className="tiro-bangla-regular text-blue-500 text-xl"
             >
-              <i>পলাতকা প্লাবনের পরী প্রণয়নী</i>
+              <i className="block mb-3">তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা,</i>
+              <i className="block">আমার শেষ বিকেলের ধোঁকা</i>
             </motion.div>
           )}
           {isVisible && !firstLoopCompleted && (
