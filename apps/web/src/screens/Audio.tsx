@@ -11,6 +11,7 @@ import { FC, useEffect, useState } from "react";
 
 import { useAudio, useDarkMode } from "@/context";
 import { INTRO, LYRICS } from "@rp/constants";
+import { motion } from "framer-motion";
 import { usePostHog } from "posthog-js/react";
 
 export const Audio: FC = () => {
@@ -27,6 +28,8 @@ export const Audio: FC = () => {
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
   const posthog = usePostHog();
+  const sanamText = "End of Beginning. Let's Restart ?".split(" ");
+  const musicText = "Some Music ?".split(" ");
 
   useEffect(() => {
     let wakeLock: WakeLockSentinel | null;
@@ -147,27 +150,52 @@ export const Audio: FC = () => {
           {isIntroCompleted && showSanamButton && (
             <Button
               id="sanamButton"
-              variant="outlined"
+              variant="contained"
               color="error"
               endIcon={<FavoriteTwoToneIcon />}
               onClick={handleSanamClick}
-              className={sanamAnimation}
+              className={`${sanamAnimation} hover:scale-110 transition-transform duration-200`}
             >
               {/* Built by Sanam */}
-              <i> তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে </i>
+              {/* <i> তোমাকেই ভালবাসবো ভেবেছি শত যুদ্ধের শেষে </i> */}
+              {sanamText.map((el, i) => (
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.25,
+                    delay: i / 5,
+                  }}
+                  key={i}
+                  className="mr-1"
+                >
+                  <i>{el}</i>
+                </motion.button>
+              ))}
             </Button>
           )}
           {showMusicButton && (
             <Button
               id="musicButton"
-              variant="outlined"
+              variant="contained"
               endIcon={<PlayCircleOutlineOutlinedIcon />}
               onClick={handleMusicClick}
               sx={{ marginBottom: "1rem" }}
-              className={musicAnimation}
+              className={`${musicAnimation} hover:scale-110 transition-transform duration-200 text-white`}
             >
               {/* Music */}
-              <i> পলাতকা প্লাবনের পরী প্রণয়নী </i>
+              {/* <i> পলাতকা প্লাবনের পরী প্রণয়নী </i> */}
+              {musicText.map((el, i) => (
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.25, delay: i / 5 }}
+                  key={i}
+                  className="mr-1"
+                >
+                  <i>{el}</i>
+                </motion.button>
+              ))}
             </Button>
           )}
           {isVisible && !firstLoopCompleted && (
