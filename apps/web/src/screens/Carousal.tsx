@@ -71,7 +71,7 @@ const currentMedia: ICurrentMedia[] = [
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
   const navigate = useRouter();
-  const { play, stopPlay, isPlaying } = useAudio();
+  const { pause, resume, isPlaying } = useAudio();
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const formattedDate = `April 3, ${year}`;
@@ -100,12 +100,16 @@ export const Carousal: FC = () => {
 
   const handleClick = () => {
     setClick(!click);
-    stopPlay();
+    if (isPlaying) {
+      pause();
+    }
     navigate.push("/ilu");
   };
 
   const handleVideoPlay = (currentMedia: ICurrentMedia) => {
-    stopPlay();
+    if (isPlaying) {
+      pause();
+    }
     let newCaption = "";
     switch (currentMedia.src) {
       case MEDIA.RP_VIDEO:
@@ -139,14 +143,9 @@ export const Carousal: FC = () => {
 
   const handleVideoPause = () => {
     setIsVideoPlaying(false);
+    resume();
+    posthog.capture("bokaboka.music_loop_started");
   };
-
-  useEffect(() => {
-    if (!isPlaying && !isVideoPlaying) {
-      play();
-      posthog.capture("bokaboka.music_loop_started");
-    }
-  }, [play, isPlaying, isVideoPlaying]);
 
   return (
     <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">

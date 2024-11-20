@@ -7,44 +7,76 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from "react";
-import useSound from "use-sound";
+
+// global audio state
+const globalAudioState = {
+  isPlaying: false,
+};
 
 interface AudioContextType {
   play: () => void;
-  stopPlay: () => void;
+  pause: () => void;
+  resume: () => void;
   isPlaying: boolean;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
-export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { stop }] = useSound(MUSIC.SANAM, {
-    loop: true,
-    preload: true,
-    html5: true,
-  });
+// singleton audio instance
+const audioElement =
+  typeof window !== "undefined" ? new Audio(MUSIC.SANAM) : null;
+if (audioElement) {
+  audioElement.loop = true;
+}
 
-  const togglePlay = () => {
-    if (isPlaying) {
-      stop();
-    } else {
-      play();
+export const AudioProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  // global state to sync with local state
+  const [isPlaying, setIsPlaying] = useState(globalAudioState.isPlaying);
+
+  // sync local state with global state
+  useEffect(() => {
+    globalAudioState.isPlaying = isPlaying;
+  }, [isPlaying]);
+
+  // sync with global state on mount
+  useEffect(() => {
+    setIsPlaying(globalAudioState.isPlaying);
+
+    // if it was playing before, resume it
+    if (globalAudioState.isPlaying && audioElement) {
+      audioElement.play();
     }
-    setIsPlaying(!isPlaying);
+  }, []);
+
+  const play = () => {
+    if (audioElement && !globalAudioState.isPlaying) {
+      audioElement.play();
+      setIsPlaying(true);
+    }
   };
 
-  const stopPlaying = () => {
-    stop();
-    setIsPlaying(false);
+  const pause = () => {
+    if (audioElement && globalAudioState.isPlaying) {
+      audioElement.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const resume = () => {
+    if (audioElement && !globalAudioState.isPlaying) {
+      audioElement.play();
+      setIsPlaying(true);
+    }
   };
 
   const audioContextValue: AudioContextType = {
-    play: togglePlay,
-    stopPlay: stopPlaying,
-    isPlaying: isPlaying,
+    play,
+    pause,
+    resume,
+    isPlaying,
   };
 
   return (

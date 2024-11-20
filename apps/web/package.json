@@ -54,7 +54,6 @@
     "tailwind-merge": "^2.5.2",
     "three": "^0.170.0",
     "three-globe": "^2.34.4",
-    "use-sound": "^4.0.3",
     "uuid": "^11.0.3"
   },
   "devDependencies": {
