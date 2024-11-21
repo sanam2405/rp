@@ -109,7 +109,7 @@ export const Audio: FC = () => {
     setTimeout(() => {
       setMonologueOne(false);
       setShowMusicButton(true);
-    }, 3000);
+    }, 5000);
   };
 
   const handleMusicClick = () => {
@@ -122,7 +122,7 @@ export const Audio: FC = () => {
       if (!isPlaying) {
         play();
       }
-    }, 5000);
+    }, 3000);
 
     posthog.capture("landing.button_clicked", {
       buttonName: "musicButton",
@@ -190,8 +190,8 @@ export const Audio: FC = () => {
               transition={{ duration: 0.5 }}
               className=" tiro-bangla-regular text-red-500 text-xl"
             >
-              <i className="block mb-3">তোমাকেই ভালবাসবো ভেবেছি </i>
-              <i className="block">শত যুদ্ধের শেষে</i>
+              <i className="block mb-3">তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা,</i>
+              <i className="block">আমার শেষ বিকেলের ধোঁকা</i>
             </motion.div>
           )}
           {showMusicButton && (
@@ -224,8 +224,8 @@ export const Audio: FC = () => {
               transition={{ duration: 0.5 }}
               className="tiro-bangla-regular text-blue-500 text-xl"
             >
-              <i className="block mb-3">তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা,</i>
-              <i className="block">আমার শেষ বিকেলের ধোঁকা</i>
+              <i className="block mb-3">তোমাকেই ভালবাসবো ভেবেছি </i>
+              <i className="block">শত যুদ্ধের শেষে</i>
             </motion.div>
           )}
           {isVisible && !firstLoopCompleted && (
