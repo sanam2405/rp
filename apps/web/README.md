@@ -516,7 +516,13 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
    pnpm build
 ```
 
-- Start a _[turbopack development server](https://turbo.build/pack/docs/features/dev-server)_
+- Start the project
+
+```bash
+   pnpm start
+```
+
+- For local development, start a _[turbopack development server](https://turbo.build/pack/docs/features/dev-server)_
 
 ```bash
    pnpm dev
