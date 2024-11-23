@@ -26,6 +26,8 @@ _*RP*_ was born out of a moment of personal reflection to wish a birthday to som
 
 This repository is more than just code; it is a memoir of emotions and experiences, etched in the places I have been and the ones I hope to visit. With ❤️ for love, I [document this journey](https://rimjhim.sanam.live/preface).
 
+> तू बात करे या ना मुझसे <br> चाहे आँखों का पैग़ाम ना ले <br> पर ये मत कहना, अरे ओ पगले <br> मुझे देख ना तू, मेरा नाम ना ले
+
 ## Slime Mold Evolution Simulation
 
 The [_algorithm_](src/components/Myxomycete.tsx) used for the [_simulation of mold behavior_](https://rimjhim.sanam.live/ilu) is inspired by the research paper titled "[_Characteristics of Pattern Formation and Evolution in Approximations of Physarum Transport Networks_](public/artl.2010.16.2.pdf)", which explores the pattern formation and evolution in Physarum transport networks.
