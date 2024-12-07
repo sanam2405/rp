@@ -1,12 +1,7 @@
 import "./App.css";
-
+import "./backdrop.css";
 function App() {
-  return (
-    <>
-      <h1>Hello World</h1>
-      <p>Okay</p>
-    </>
-  );
+  return <h1>Hey RP!</h1>;
 }
 
 export default App;
