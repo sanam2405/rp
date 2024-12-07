@@ -75,31 +75,199 @@ importers:
 
   apps/desktop:
     dependencies:
+      '@emotion/react':
+        specifier: ^11.13.3
+        version: 11.13.3(@types/react@18.3.12)(react@18.3.1)
+      '@emotion/styled':
+        specifier: ^11.13.0
+        version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1)
+      '@mui/icons-material':
+        specifier: ^5.16.7
+        version: 5.16.7(@mui/material@5.16.7(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react@18.3.1)
+      '@mui/material':
+        specifier: ^5.16.7
+        version: 5.16.7(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@phosphor-icons/react':
+        specifier: ^2.1.7
+        version: 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-three/drei':
+        specifier: ^9.115.0
+        version: 9.116.3(@react-three/fiber@8.17.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.170.0))(@types/react@18.3.12)(@types/three@0.169.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.170.0)
+      '@react-three/fiber':
+        specifier: ^8.17.10
+        version: 8.17.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.170.0)
+      '@rp/constants':
+        specifier: workspace:*
+        version: link:../../packages/constants
+      '@tabler/icons-react':
+        specifier: ^3.19.0
+        version: 3.22.0(react@18.3.1)
       '@tauri-apps/api':
         specifier: ^2
         version: 2.1.1
       '@tauri-apps/plugin-shell':
         specifier: ^2
         version: 2.0.1
+      '@tiptap/extension-character-count':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/extension-highlight':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-task-item':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/extension-task-list':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/pm':
+        specifier: ^2.9.1
+        version: 2.9.1
+      '@tiptap/react':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tiptap/starter-kit':
+        specifier: ^2.9.1
+        version: 2.9.1
+      '@tsparticles/engine':
+        specifier: ^3.5.0
+        version: 3.5.0
+      '@tsparticles/react':
+        specifier: ^3.0.0
+        version: 3.0.0(@tsparticles/engine@3.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tsparticles/slim':
+        specifier: ^3.5.0
+        version: 3.5.0
+      '@types/gsap':
+        specifier: ^3.0.0
+        version: 3.0.0
+      '@types/howler':
+        specifier: ^2.2.12
+        version: 2.2.12
+      '@types/swiper':
+        specifier: ^6.0.0
+        version: 6.0.0
+      '@types/three':
+        specifier: ^0.169.0
+        version: 0.169.0
+      '@vercel/analytics':
+        specifier: ^1.3.1
+        version: 1.4.0(next@14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@vercel/speed-insights':
+        specifier: ^1.0.12
+        version: 1.1.0(next@14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@xterm/addon-clipboard':
+        specifier: ^0.1.0
+        version: 0.1.0(@xterm/xterm@5.5.0)
+      '@xterm/addon-fit':
+        specifier: ^0.10.0
+        version: 0.10.0(@xterm/xterm@5.5.0)
+      '@xterm/xterm':
+        specifier: ^5.5.0
+        version: 5.5.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      framer-motion:
+        specifier: ^11.9.0
+        version: 11.11.17(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
+      isomorphic-dompurify:
+        specifier: ^2.16.0
+        version: 2.16.0
+      next:
+        specifier: 14.2.12
+        version: 14.2.12(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      p5:
+        specifier: ^1.11.0
+        version: 1.11.1
+      posthog-js:
+        specifier: ^1.181.0
+        version: 1.186.1
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+      prettier-plugin-organize-imports:
+        specifier: ^4.1.0
+        version: 4.1.0(prettier@3.3.3)(typescript@5.6.3)
       react:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-loader-spinner:
+        specifier: ^6.1.6
+        version: 6.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      swiper:
+        specifier: ^11.1.14
+        version: 11.1.14
+      tailwind-merge:
+        specifier: ^2.5.2
+        version: 2.5.4
+      three:
+        specifier: ^0.170.0
+        version: 0.170.0
+      three-globe:
+        specifier: ^2.34.4
+        version: 2.34.4(three@0.170.0)
+      uuid:
+        specifier: ^11.0.3
+        version: 11.0.3
     devDependencies:
+      '@rp/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/config-tailwind
+      '@rp/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/config-typescript
       '@tauri-apps/cli':
         specifier: ^2
         version: 2.1.0
+      '@types/node':
+        specifier: ^20.16.10
+        version: 20.17.6
+      '@types/p5':
+        specifier: ^1.7.6
+        version: 1.7.6
       '@types/react':
         specifier: ^18.2.15
         version: 18.3.12
       '@types/react-dom':
         specifier: ^18.2.7
         version: 18.3.1
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.18.0
+        version: 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/parser':
+        specifier: ^7.18.0
+        version: 7.18.0(eslint@8.57.1)(typescript@5.6.3)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
         version: 4.3.4(vite@5.4.11(@types/node@20.17.6))
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.49)
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      eslint-plugin-react-hooks:
+        specifier: ^4.6.2
+        version: 4.6.2(eslint@8.57.1)
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.12
+        version: 0.4.14(eslint@8.57.1)
+      postcss:
+        specifier: ^8.4.47
+        version: 8.4.49
+      resize-observer-polyfill:
+        specifier: ^1.5.1
+        version: 1.5.1
+      tailwindcss:
+        specifier: ^3.4.13
+        version: 3.4.15
       typescript:
         specifier: ^5.2.2
         version: 5.6.3
@@ -207,7 +375,7 @@ importers:
         version: 2.16.0
       next:
         specifier: 14.2.12
-        version: 14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 14.2.12(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       p5:
         specifier: ^1.11.0
         version: 1.11.1
@@ -6470,12 +6638,12 @@ snapshots:
 
   '@vercel/analytics@1.4.0(next@14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     optionalDependencies:
-      next: 14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.12(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
 
   '@vercel/speed-insights@1.1.0(next@14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     optionalDependencies:
-      next: 14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.12(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
 
   '@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.18)(eslint@8.57.1)(prettier@3.3.3)(typescript@5.6.3)':
@@ -6489,7 +6657,7 @@ snapshots:
       eslint-import-resolver-alias: 1.1.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1))
       eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@8.57.1)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
       eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-playwright: 0.16.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
@@ -7250,7 +7418,7 @@ snapshots:
 
   eslint-import-resolver-alias@1.1.2(eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)):
     dependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
 
   eslint-import-resolver-node@0.3.9:
     dependencies:
@@ -7266,13 +7434,13 @@ snapshots:
       debug: 4.3.7
       enhanced-resolve: 5.17.1
       eslint: 8.57.1
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
       fast-glob: 3.3.2
       get-tsconfig: 4.8.1
       is-bun-module: 1.2.1
       is-glob: 4.0.3
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-node
@@ -7309,16 +7477,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
-      '@typescript-eslint/parser': 6.21.0(eslint@8.57.1)(typescript@5.6.3)
-      eslint: 8.57.1
-      eslint-import-resolver-typescript: 3.6.3(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-plugin-import@2.31.0)(eslint@8.57.1)
-    transitivePeerDependencies:
-      - supports-color
-
   eslint-module-utils@2.12.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
@@ -7346,7 +7504,7 @@ snapshots:
       eslint: 8.57.1
       ignore: 5.3.2
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -8356,7 +8514,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  next@14.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@14.2.12(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@next/env': 14.2.12
       '@swc/helpers': 0.5.5
@@ -8366,7 +8524,7 @@ snapshots:
       postcss: 8.4.31
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      styled-jsx: 5.1.1(react@18.3.1)
+      styled-jsx: 5.1.1(@babel/core@7.26.0)(react@18.3.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.2.12
       '@next/swc-darwin-x64': 14.2.12
@@ -9178,10 +9336,12 @@ snapshots:
       stylis: 4.3.2
       tslib: 2.6.2
 
-  styled-jsx@5.1.1(react@18.3.1):
+  styled-jsx@5.1.1(@babel/core@7.26.0)(react@18.3.1):
     dependencies:
       client-only: 0.0.1
       react: 18.3.1
+    optionalDependencies:
+      '@babel/core': 7.26.0
 
   stylis@4.2.0: {}
 

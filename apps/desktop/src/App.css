@@ -1,116 +1,343 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+@import "./fonts/fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Tiro+Bangla:ital@0;1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tiro-bangla-regular {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: x-large;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
+.tiro-bangla-regular-italic {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 600;
+  font-style: italic;
 }
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+.gradient-text-long {
+  background: linear-gradient(43deg, #ff0000 0%, #ef4444 70%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.gradient-text {
+  background: linear-gradient(43deg, #ff0000 0%, #ef4444 45%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-lyrics {
+  background: linear-gradient(to bottom, #ff0000 0%, #ef4444 45%, #000000 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+#rimjhim {
+  color: #ef4444;
+}
+
+#heyRP {
+  color: #ef4444;
+}
+
+@media screen and (min-width: 786px) {
+  .tiro-bangla-regular {
+    font-size: xx-large;
+  }
+
+  .tiro-bangla-regular-italic {
+    font-size: xx-large;
+  }
 }
 
 .container {
+  height: 100vh;
+  width: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+.container div.six {
+  top: 10vh;
+  z-index: 1;
+}
+
+.container div.seven,
+.container div.eight {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.container > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20vh;
+}
+
+.one h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.two p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+}
+
+.three p {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.four .text-box {
+  width: 600px;
+  margin: 0 auto;
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.text-box p {
   margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
+.text-box span {
+  visibility: hidden;
 }
 
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
+.text-box .fake-btn {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #fff;
+  background-color: #ef4444;
+  padding: 5px 8px;
+  border-radius: 3px;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
+.five p {
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.idea-3 strong {
+  padding: 3px 5px;
+  border-radius: 3px;
+  display: inline-block;
 }
 
-a:hover {
-  color: #535bf2;
+.five .idea-5 {
+  font-size: 4rem;
 }
 
-h1 {
-  text-align: center;
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
 }
 
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+.idea-6 span {
+  font-size: 15rem;
 }
 
-button {
+.six {
+  position: relative;
+}
+
+.six img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.six .hat {
+  position: absolute;
+  width: 80px;
+  top: -35px;
+  left: 41.5%;
+  /* transform: scale(0.1); */
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.eight svg {
+  width: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1) {
+  top: 7vh;
+  left: 5vw;
+  fill: #bd6ecf;
+}
+
+.eight svg:nth-child(2) {
+  top: 23vh;
+  left: 35vw;
+  fill: #7dd175;
+}
+
+.eight svg:nth-child(3) {
+  top: 33vh;
+  left: 23vw;
+  fill: #349d8b;
+}
+
+.eight svg:nth-child(4) {
+  top: 43vh;
+  left: 57vw;
+  fill: #347a9d;
+}
+
+.eight svg:nth-child(5) {
+  top: 68vh;
+  left: 7vw;
+  fill: #c66053;
+}
+
+.eight svg:nth-child(6) {
+  top: 42vh;
+  left: 77vw;
+  fill: #bfaa40;
+}
+
+.eight svg:nth-child(7) {
+  top: 68vh;
+  left: 83vw;
+  fill: #e3bae8;
+}
+
+.eight svg:nth-child(8) {
+  top: 86vh;
+  left: 37vw;
+  fill: #8762cb;
+}
+
+.eight svg:nth-child(9) {
+  top: 94vh;
+  left: 87vw;
+  fill: #9a90da;
+}
+
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wish h5 {
+  font-weight: lighter;
+  font-size: 2rem;
+  margin: 10px 0 0;
+}
+
+.nine p {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+#replay {
+  z-index: 3;
   cursor: pointer;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
+/* Media Queries */
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    left: 40%;
+  }
 }
 
-#greet-input {
-  margin-right: 5px;
+@media screen and (max-height: 800px) {
+  .six .hat {
+    left: 37%;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
+@media screen and (max-height: 700px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
   }
 
-  a:hover {
-    color: #24c8db;
+  .four .text-box {
+    width: 90%;
   }
 
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
+  .text-box .fake-btn {
+    right: 5px;
+    bottom: -38px;
   }
-  button:active {
-    background-color: #0f0f0f69;
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .six .hat {
+    width: 50px;
+    top: -20px;
+  }
+
+  .wish-hbd {
+    font-size: 2.2em;
+  }
+
+  .wish h5 {
+    font-size: 1.4rem;
+  }
+
+  .nine p {
+    font-size: 1.5rem;
+    font-weight: lighter;
   }
 }
