@@ -1,6 +1,6 @@
 import { Aura, backgroundOverlay, backgroundStyle, Layout } from "@/components";
 import { AudioProvider, DarkModeProvider } from "@/context";
-// import { Landing } from "@/screens";
+import { Landing } from "@/screens";
 import { FC } from "react";
 import "../backdrop.css";
 import "../globals.css";
@@ -23,7 +23,7 @@ export const LandingPage: FC = () => {
                 particleColor="#FFFFFF"
               />
             </div>
-            {/* <Landing /> */}
+            <Landing />
           </Layout>
         </AudioProvider>
       </DarkModeProvider>

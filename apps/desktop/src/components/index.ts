@@ -1,4 +1,5 @@
 import { Aura } from "./Aura";
+import { backgroundOverlay, backgroundStyle } from "./Background";
 import { Balloons } from "./Balloons";
 import { Flashlight } from "./Flashlight";
 import { Globe, World } from "./Globe";
@@ -14,10 +15,11 @@ import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-import { backgroundOverlay, backgroundStyle } from "./Background";
 
 export {
   Aura,
+  backgroundOverlay,
+  backgroundStyle,
   Balloons,
   Flashlight,
   Globe,
@@ -36,6 +38,4 @@ export {
   Sorry,
   Spots,
   World,
-  backgroundOverlay,
-  backgroundStyle,
 };
