@@ -11,7 +11,7 @@ export const Myxomycete = () => {
       // Dynamically import the p5 library since it only works in the browser
       const p5 = require("p5");
 
-      let molds: Eukaryote[] = [];
+      const molds: Eukaryote[] = [];
       // const numberOfMolds = 1729; // The Hardy–Ramanujan Number, used as the total count of "molds"
       const numberOfMolds = 5441; // WBXXXX5441, my RE Hunter, used as the total count of "molds"
 
@@ -80,17 +80,17 @@ export const Myxomycete = () => {
           let index =
             4 * (d * p.floor(this.rSensorPos.y)) * (d * p.width) +
             4 * (d * p.floor(this.rSensorPos.x));
-          let r = p.pixels[index];
+          const r = p.pixels[index];
 
           index =
             4 * (d * p.floor(this.lSensorPos.y)) * (d * p.width) +
             4 * (d * p.floor(this.lSensorPos.x));
-          let l = p.pixels[index];
+          const l = p.pixels[index];
 
           index =
             4 * (d * p.floor(this.fSensorPos.y)) * (d * p.width) +
             4 * (d * p.floor(this.fSensorPos.x));
-          let f = p.pixels[index];
+          const f = p.pixels[index];
 
           // Logic to adjust the heading based on sensor readings
           if (f > l && f > r) {
