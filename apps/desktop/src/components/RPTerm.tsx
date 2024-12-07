@@ -110,10 +110,9 @@ export const RPTerminal = () => {
       fitAddon.fit();
 
       term.write(CUSTOM_PROMPT);
-
       try {
-        if (!process.env.VITE_PUBLIC_WS_BACKEND_URI) return;
-        ws = new WebSocket(process.env.VITE_PUBLIC_WS_BACKEND_URI);
+        if (!import.meta.env.VITE_PUBLIC_WS_BACKEND_URI) return;
+        ws = new WebSocket(import.meta.env.VITE_PUBLIC_WS_BACKEND_URI);
 
         // handles WebSocket messages
         ws.onmessage = (event) => {

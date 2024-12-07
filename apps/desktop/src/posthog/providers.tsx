@@ -8,9 +8,9 @@ export default function PHProvider({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    posthog.init(process.env.VITE_PUBLIC_POSTHOG_KEY || "", {
+    posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY || "", {
       api_host: "/ingest",
-      ui_host: process.env.VITE_PUBLIC_POSTHOG_HOST || "",
+      ui_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || "",
       person_profiles: "identified_only",
       capture_pageview: false, // false disables automatic page view capture
       capture_pageleave: true, // true enables page leave capture

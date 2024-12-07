@@ -96,12 +96,28 @@ export const Carousal: FC = () => {
     }
   }, []);
 
-  const handleClick = () => {
+  const handleLikeClick = () => {
     setClick(!click);
     if (isPlaying) {
       pause();
     }
-    navigate("/ilu");
+    navigate("/preface");
+  };
+
+  const handleCommentClick = () => {
+    setClick(!click);
+    if (isPlaying) {
+      pause();
+    }
+    navigate("/redit");
+  };
+
+  const handleShareClick = () => {
+    setClick(!click);
+    if (isPlaying) {
+      pause();
+    }
+    navigate("/rterm");
   };
 
   const handleVideoPlay = (currentMedia: ICurrentMedia) => {
@@ -270,7 +286,7 @@ export const Carousal: FC = () => {
                 posthog.capture("bokaboka.button_clicked", {
                   buttonName: "likeButton",
                 });
-                handleClick();
+                handleLikeClick();
               }}
               className="text-gray-500 hover:text-red-500"
             />
@@ -281,7 +297,7 @@ export const Carousal: FC = () => {
                 posthog.capture("bokaboka.button_clicked", {
                   buttonName: "commentButton",
                 });
-                handleClick();
+                handleCommentClick();
               }}
               className="text-gray-500 hover:text-blue-500"
             />
@@ -292,7 +308,7 @@ export const Carousal: FC = () => {
                 posthog.capture("bokaboka.button_clicked", {
                   buttonName: "shareButton",
                 });
-                handleClick();
+                handleShareClick();
               }}
               className="text-gray-500 hover:text-green-700"
             />

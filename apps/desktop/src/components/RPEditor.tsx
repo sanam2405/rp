@@ -6,9 +6,9 @@ import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 
-export default function RPEditor() {
+export const RPEditor: FC = () => {
   const rpEditor = useEditor({
     extensions: [
       StarterKit.configure(),
@@ -47,4 +47,4 @@ export default function RPEditor() {
       </div>
     </div>
   );
-}
+};

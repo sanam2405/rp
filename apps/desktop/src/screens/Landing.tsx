@@ -1,9 +1,9 @@
 import { Leaf, Myxomycete } from "@/components";
 import { Audio } from "@/screens";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Landing() {
+export const Landing: FC = () => {
   const navigate = useNavigate();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -35,4 +35,4 @@ export default function Landing() {
       </div>
     </>
   );
-}
+};

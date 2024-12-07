@@ -2,10 +2,10 @@ import { Balloons, Spots } from "@/components";
 import { MEDIA } from "@/constants";
 import { useAudio, useDarkMode } from "@/context";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Messages() {
+export const Messages: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
   const navigate = useNavigate();
@@ -429,4 +429,4 @@ export default function Messages() {
       </div>
     </>
   );
-}
+};
