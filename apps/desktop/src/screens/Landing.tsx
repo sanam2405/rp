@@ -1,12 +1,10 @@
-"use client";
-
 import { Leaf, Myxomycete } from "@/components";
 import { Audio } from "@/screens";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
@@ -20,7 +18,7 @@ export default function Landing() {
     }, 0); // Optional delay before the animation starts
 
     return () => clearTimeout(timer);
-  }, [router]);
+  }, [navigate]);
 
   return (
     <>

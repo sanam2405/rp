@@ -1,5 +1,3 @@
-"use client";
-
 import { RPMenuBar } from "@/components";
 import reditJSON from "@/constants/redit.json";
 import CharacterCount from "@tiptap/extension-character-count";

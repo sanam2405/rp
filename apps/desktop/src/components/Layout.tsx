@@ -1,7 +1,5 @@
-"use client";
-
+import { DARK_SCREEN } from "@/constants";
 import { useDarkMode } from "@/context";
-import { DARK_SCREEN } from "@rp/constants";
 import { FC, ReactNode, useEffect, useState } from "react";
 import { Flashlight } from "./Flashlight";
 

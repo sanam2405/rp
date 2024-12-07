@@ -1,5 +1,3 @@
-"use client";
-
 import { initializeDoubleTapListener } from "@/lib";
 import { FC, useEffect } from "react";
 

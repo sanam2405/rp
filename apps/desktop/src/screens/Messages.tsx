@@ -1,17 +1,14 @@
-"use client";
-
 import { Balloons, Spots } from "@/components";
+import { MEDIA } from "@/constants";
 import { useAudio, useDarkMode } from "@/context";
-import { MEDIA } from "@rp/constants";
 import gsap from "gsap";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Messages() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textBoxCharsRef = useRef<HTMLParagraphElement>(null);
-  const navigate = useRouter();
+  const navigate = useNavigate();
   const { darkMode } = useDarkMode();
   const [bokaopacity, setBokaOpacity] = useState<number>(1);
   const { isPlaying, pause } = useAudio();
@@ -25,7 +22,7 @@ export default function Messages() {
     const tl = gsap.timeline({
       onComplete: () => {
         setTimeout(() => {
-          navigate.push("/bokaboka");
+          navigate("/bokaboka");
         }, 7000);
       },
     });
@@ -353,14 +350,14 @@ export default function Messages() {
             </p>
           </div>
           <div className="six">
-            <Image
+            <img
               src={MEDIA.RP_SKETCH}
               alt=""
               className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
               height={500}
               width={500}
             />
-            <Image
+            <img
               src="/hat.svg"
               alt=""
               className="hat"

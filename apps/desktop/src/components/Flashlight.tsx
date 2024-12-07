@@ -1,8 +1,6 @@
-"use client";
-
 /* eslint-disable react-hooks/rules-of-hooks */
+import { DARK_SCREEN, LIGHT_SCREEN } from "@/constants";
 import { useDarkMode } from "@/context";
-import { DARK_SCREEN, LIGHT_SCREEN } from "@rp/constants";
 import React, {
   Children,
   cloneElement,

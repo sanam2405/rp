@@ -1,4 +1,3 @@
-"use client";
 import { Aura } from "@/components";
 import { cn } from "@/lib/utils";
 import { IconDotsVertical } from "@tabler/icons-react";

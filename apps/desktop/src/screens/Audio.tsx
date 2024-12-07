@@ -1,16 +1,14 @@
-"use client";
-
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import PlayCircleOutlineOutlinedIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
-import { useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import { INTRO, LYRICS } from "@/constants";
 import { useAudio, useDarkMode } from "@/context";
-import { INTRO, LYRICS } from "@rp/constants";
 import { motion } from "framer-motion";
 import { usePostHog } from "posthog-js/react";
 
@@ -26,7 +24,7 @@ export const Audio: FC = () => {
   const [musicAnimation, setMusicAnimation] = useState("animate-pulse z-50"); // Tracks the animation of the Music button
   const [monologueOne, setMonologueOne] = useState(false);
   const [monologueTwo, setMonologueTwo] = useState(false);
-  const navigate = useRouter();
+  const navigate = useNavigate();
   const { play, isPlaying } = useAudio();
   const { darkMode } = useDarkMode();
   const posthog = usePostHog();
@@ -82,7 +80,7 @@ export const Audio: FC = () => {
           if ((prevIndex + 1) % LYRICS.length === 0) {
             setFirstLoopCompleted(true);
             posthog.capture("landing.music_loop_completed");
-            navigate.push("/kigotumi");
+            navigate("/kigotumi");
           }
           return (prevIndex + 1) % LYRICS.length;
         });

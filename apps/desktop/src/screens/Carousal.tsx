@@ -1,5 +1,4 @@
-"use client";
-
+import { GITHUB_URI, MEDIA } from "@/constants";
 import { useAudio } from "@/context";
 import { Favorite } from "@mui/icons-material";
 import CommentIcon from "@mui/icons-material/Comment";
@@ -17,11 +16,10 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import { GITHUB_URI, MEDIA } from "@rp/constants";
 import DOMPurify from "isomorphic-dompurify";
-import { useRouter } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
 import { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -39,7 +37,7 @@ const currentMedia: ICurrentMedia[] = [
   {
     src: MEDIA.RP_VIDEO,
     caption:
-      "গুনে গুনে দেখি অবেলার স্বপ্নটায়, আঁকা ছিলো কত শত কবিতায় <br/> স্বপ্নের সেই কবিতার ছন্দতে, মিশে ছিলো তার হাসিমাখা ছবিটা <br/> যা আঁকা ছিলো অদ্ভুত রঙ তুলি, যা জমা থাকে আমার মনে মাঝে <br/> বর হয়ে আমি চড়ছি ঘোড়ায়, আড়ালে তুমি লুকিয়ে আছো বৌ সাজে :) <br/> আমার এই স্বপ্ন কি শুধু, স্বপ্ন হয়ে হাসাবে আমায় ? <br/> তেমন সাহস নেই আমার, তোমাকে কিভাবে প্রস্তাব জানাই ?",
+      "গুনে গুনে দেখি অবেলার স্বপ্নটায়, আঁকা ছিলো কত শত কবিতায় <br/> স্বপ্নের সেই কবিতার ছন্দতে, মিশে ছিলো তার হাসিমা���া ছবিটা <br/> যা আঁকা ছিলো অদ্ভুত রঙ তুলি, যা জমা থাকে আমার মনে মাঝে <br/> বর হয়ে আমি চড়ছি ঘোড়ায়, আড়ালে তুমি লুকিয়ে আছো বৌ সাজে :) <br/> আমার এই স্বপ্ন কি শুধু, স্বপ্ন হয়ে হাসাবে আমায় ? <br/> তেমন সাহস নেই আমার, তোমাকে কিভাবে প্রস্তাব জানাই ?",
   },
   {
     src: MEDIA.SHEY_JE_VIDEO,
@@ -59,7 +57,7 @@ const currentMedia: ICurrentMedia[] = [
   {
     src: MEDIA.MURAL_VIDEO,
     caption:
-      "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।",
+      "আসলে বড় হওয়া ব্যাপারটাই খুব কঠিন। জীবনে যখন যেমনটি ভেবেছিলাম তা কিছুই হয়নি।। রবীন্দ্রনাথ নিজেই লিখেছিলেন - চাইলাম জামা, পাইলাম মোজা, মোজা দিয়েই জামার কাজ চালানোর চেষ্টা করছি। <br /> অগত্যা, হ্যাঁ আমি আজও কোটা ফ্যাক্টরি দেখিনি। ঠাকুমার ঘরের দেওয়ালে সেই দিদির আর আমার নাম লেখা, আমার নামের পাশে আজও ফাঁকা পরে রয়েছে। আর অচিরেই হারিয়ে গেছে স্পটিফাই এর সেই প্লেলিস্ট।",
   },
   {
     src: MEDIA.CAFE_VIDEO,
@@ -70,7 +68,7 @@ const currentMedia: ICurrentMedia[] = [
 
 export const Carousal: FC = () => {
   const [click, setClick] = useState(true);
-  const navigate = useRouter();
+  const navigate = useNavigate();
   const { pause, resume, isPlaying } = useAudio();
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -103,7 +101,7 @@ export const Carousal: FC = () => {
     if (isPlaying) {
       pause();
     }
-    navigate.push("/ilu");
+    navigate("/ilu");
   };
 
   const handleVideoPlay = (currentMedia: ICurrentMedia) => {

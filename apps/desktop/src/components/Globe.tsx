@@ -1,5 +1,3 @@
-"use client";
-
 import countries from "@/constants/globe.json";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, extend, Object3DNode, useThree } from "@react-three/fiber";

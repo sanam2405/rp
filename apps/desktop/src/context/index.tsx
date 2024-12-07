@@ -1,6 +1,4 @@
-"use client";
-
-import { DARK_SCREEN, MUSIC } from "@rp/constants";
+import { DARK_SCREEN, MUSIC } from "@/constants";
 import {
   createContext,
   FC,

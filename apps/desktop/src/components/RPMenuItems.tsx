@@ -1,4 +1,3 @@
-"use client";
 import { Button, Tooltip } from "@mui/material";
 import { Editor } from "@tiptap/react";
 import React, { useMemo } from "react";

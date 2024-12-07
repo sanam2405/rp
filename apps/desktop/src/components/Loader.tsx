@@ -1,5 +1,3 @@
-"use client";
-
 import { CSSProperties, useEffect, useState } from "react";
 import { Hearts } from "react-loader-spinner";
 

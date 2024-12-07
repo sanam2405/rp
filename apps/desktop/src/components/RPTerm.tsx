@@ -1,7 +1,4 @@
-/* eslint-disable */
-"use client";
-
-import { CUSTOM_PROMPT } from "@rp/constants";
+import { CUSTOM_PROMPT } from "@/constants";
 import "@xterm/xterm/css/xterm.css";
 import { useEffect, useRef } from "react";
 
@@ -115,8 +112,8 @@ export const RPTerminal = () => {
       term.write(CUSTOM_PROMPT);
 
       try {
-        if (!process.env.NEXT_PUBLIC_WS_BACKEND_URI) return;
-        ws = new WebSocket(process.env.NEXT_PUBLIC_WS_BACKEND_URI);
+        if (!process.env.VITE_PUBLIC_WS_BACKEND_URI) return;
+        ws = new WebSocket(process.env.VITE_PUBLIC_WS_BACKEND_URI);
 
         // handles WebSocket messages
         ws.onmessage = (event) => {
