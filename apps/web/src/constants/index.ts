@@ -90,3 +90,4 @@ export const GITHUB_URI = "https://github.com/sanam2405/rp";
 
 export const DARK_SCREEN = 0.95;
 export const LIGHT_SCREEN = 0.05;
+export const CUSTOM_PROMPT = "\x1B[1;31mrimjhim@sanam\x1B[0m $ ";

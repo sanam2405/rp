@@ -1,0 +1,27 @@
+/* disable scroll for mobile and smaller devices */
+@media (max-width: 785px) {
+  body {
+    overflow-y: hidden;
+  }
+}
+
+.bg-wallpaper {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-wallpaper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/wordcloud.png");
+  background-size: cover;
+  background-repeat: repeat-x repeat-y;
+  background-position: center top;
+  z-index: -1;
+  opacity: 0.15;
+  filter: grayscale(100%) contrast(150%);
+}
