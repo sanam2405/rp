@@ -1,3 +1,5 @@
+import { RPSidebar } from "@/components";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { PHProvider, PostHogPageView } from "@/posthog";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -91,12 +93,17 @@ export default function RootLayout({
     <html lang="en">
       <PHProvider>
         <body className={inter.className}>
-          <Suspense>
-            <PostHogPageView />
-          </Suspense>
-          {children}
-          <Analytics mode={"production"} />
-          <SpeedInsights />
+          <SidebarProvider defaultOpen={false}>
+            <Suspense>
+              <PostHogPageView />
+            </Suspense>
+            <RPSidebar />
+            <main>
+              {children}
+              <Analytics mode={"production"} />
+              <SpeedInsights />
+            </main>
+          </SidebarProvider>
         </body>
       </PHProvider>
     </html>

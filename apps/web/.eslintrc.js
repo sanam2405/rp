@@ -42,6 +42,8 @@ module.exports = {
     "prefer-named-capture-group": ["off"],
     "no-param-reassign": ["off"],
     "func-names": ["off"],
+    "no-redeclare": ["off"],
+    "import/named": ["off"],
     "@typescript-eslint/prefer-includes": ["off"],
     "@typescript-eslint/naming-convention": ["off"],
   },
