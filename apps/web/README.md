@@ -2,7 +2,7 @@
 
 > _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
 
-[![Redit](/apps/web/public/redit.png)](https://rimjhim.manaspratimbiswas.com/redit)
+[![Redit](public/redit.png)](https://rimjhim.manaspratimbiswas.com/redit)
 
 _[Preface](https://rimjhim.sanam.live/preface)_
 <br/>
@@ -10,11 +10,15 @@ _[In-house Redit](https://rimjhim.manaspratimbiswas.com/redit)_
 <br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
+RP can also be downloaded as a cross-platform desktop application at [**_GitHub Releases_**](https://github.com/sanam2405/rp/releases)
+
+![RP Desktop](public/rpdesktop.png)
+
 # Inspiration
 
 I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
 
-![Gitanjali](public/gitanjali.png)
+![Gitanjali](apps/web/public/gitanjali.png)
 
 > _I have carried the manuscript of these translations about with me for days, reading it in railway trains, or on the tops of omnibuses and in restaurants, and I have often had to close it lest some stranger would see how much it moved me. These [lyrics](https://poets.org/glossary/lyric-poetry)—which are in the original, my Indians tell me, full of subtlety of rhythm, of untranslatable delicacies of colour, of [metrical](https://poets.org/glossary/meter) invention—display in their thought a world I have dreamed of all my life long. ~ William Butler Yeats, [Introduction to Gitanjali](https://poets.org/text/william-butler-yeatss-introduction-gitanjali)_
 
@@ -26,7 +30,7 @@ _*RP*_ was born out of a moment of personal reflection to wish a birthday to som
 
 This repository is more than just code; it is a memoir of emotions and experiences, etched in the places I have been and the ones I hope to visit. With ❤️ for love, I [document this journey](https://rimjhim.sanam.live/preface).
 
-> तू बात करे या ना मुझसे <br> चाहे आँखों का पैग़ाम ना ले <br> पर ये मत कहना, अरे ओ पगले <br> मुझे देख ना तू, मेरा नाम ना ले
+> _तू बात करे या ना मुझसे <br> चाहे आँखों का पैग़ाम ना ले <br> पर ये मत कहना, अरे ओ पगले <br> मुझे देख ना तू, मेरा नाम ना ले_
 
 ## Slime Mold Evolution Simulation
 
@@ -497,6 +501,25 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
 - Percussion: Abhishek Arora
 - Piano: Natasha Pinto
 
+## Technologies used
+
+- [Turborepo](https://turbo.build/repo/docs) for building the monorepo
+- [Tauri](https://tauri.app/) for building the cross-platform desktop apps
+- [Next.js](https://nextjs.org/) for the web app
+- [pnpm](https://pnpm.io/) for managing dependencies
+- [TailwindCSS](https://tailwindcss.com/) for styling
+- [Three.js](https://threejs.org/) for the 3D model of the GitHub Globe
+- [GSAP](https://greensock.com/gsap/) for the animations
+- [Howler](https://howlerjs.com/) for the audios
+- [P5js](https://p5js.org/) for the canvas
+- [Swiper](https://swiperjs.com/) for the slider Instagram carousel
+- [MUI](https://mui.com/), [Shadcn](https://ui.shadcn.com/) for the UI components
+- [Phosphor Icons](https://phosphoricons.com/) and [MUI Icons](https://mui.com/material-ui/icons/) for the icons
+- [Tiptap](https://tiptap.dev/) for the customised text editor
+- [XTerm](https://xtermjs.org/) and [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) for the web terminal UI
+- [Express](https://expressjs.com/) and [Nodepty](https://github.com/microsoft/node-pty) for the terminal emulator
+- [GitHub Actions](https://github.com/features/actions) for CI/CD
+
 ## Setting up locally
 
 - Clone the rp repository
@@ -512,10 +535,17 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
     pnpm install
 ```
 
-- Build the project
+- Build the web project
 
 ```bash
    pnpm build
+```
+
+- Build the desktop app and create a release for macOS, Windows and Linux
+
+```bash
+   cd apps/desktop
+   pnpm tauri build
 ```
 
 - Start the project
@@ -524,10 +554,17 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
    pnpm start
 ```
 
-- For local development, start a _[turbopack development server](https://turbo.build/pack/docs/features/dev-server)_
+- For local development, start a _[turbopack webdevelopment server](https://turbo.build/pack/docs/features/dev-server)_
 
 ```bash
    pnpm dev
+```
+
+- For local desktop development, start a _[tauri development server](https://v1.tauri.app/v1/guides/development/development-cycle)_
+
+```bash
+   cd apps/desktop
+   pnpm tauri dev
 ```
 
 - Running with Docker

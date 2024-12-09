@@ -10,6 +10,10 @@ _[In-house Redit](https://rimjhim.manaspratimbiswas.com/redit)_
 <br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
 
+RP can also be downloaded as a cross-platform desktop application at [**_GitHub Releases_**](https://github.com/sanam2405/rp/releases)
+
+![RP Desktop](/apps/web/public/rpdesktop.png)
+
 # Inspiration
 
 I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
@@ -497,6 +501,25 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
 - Percussion: Abhishek Arora
 - Piano: Natasha Pinto
 
+## Technologies used
+
+- [Turborepo](https://turbo.build/repo/docs) for building the monorepo
+- [Tauri](https://tauri.app/) for building the cross-platform desktop apps
+- [Next.js](https://nextjs.org/) for the web app
+- [pnpm](https://pnpm.io/) for managing dependencies
+- [TailwindCSS](https://tailwindcss.com/) for styling
+- [Three.js](https://threejs.org/) for the 3D model of the GitHub Globe
+- [GSAP](https://greensock.com/gsap/) for the animations
+- [Howler](https://howlerjs.com/) for the audios
+- [P5js](https://p5js.org/) for the canvas
+- [Swiper](https://swiperjs.com/) for the slider Instagram carousel
+- [MUI](https://mui.com/), [Shadcn](https://ui.shadcn.com/) for the UI components
+- [Phosphor Icons](https://phosphoricons.com/) and [MUI Icons](https://mui.com/material-ui/icons/) for the icons
+- [Tiptap](https://tiptap.dev/) for the customised text editor
+- [XTerm](https://xtermjs.org/) and [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) for the web terminal UI
+- [Express](https://expressjs.com/) and [Nodepty](https://github.com/microsoft/node-pty) for the terminal emulator
+- [GitHub Actions](https://github.com/features/actions) for CI/CD
+
 ## Setting up locally
 
 - Clone the rp repository
@@ -512,10 +535,17 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
     pnpm install
 ```
 
-- Build the project
+- Build the web project
 
 ```bash
    pnpm build
+```
+
+- Build the desktop app and create a release for macOS, Windows and Linux
+
+```bash
+   cd apps/desktop
+   pnpm tauri build
 ```
 
 - Start the project
@@ -524,10 +554,17 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
    pnpm start
 ```
 
-- For local development, start a _[turbopack development server](https://turbo.build/pack/docs/features/dev-server)_
+- For local development, start a _[turbopack webdevelopment server](https://turbo.build/pack/docs/features/dev-server)_
 
 ```bash
    pnpm dev
+```
+
+- For local desktop development, start a _[tauri development server](https://v1.tauri.app/v1/guides/development/development-cycle)_
+
+```bash
+   cd apps/desktop
+   pnpm tauri dev
 ```
 
 - Running with Docker
