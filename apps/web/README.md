@@ -18,7 +18,7 @@ RP can also be downloaded as a cross-platform desktop application at [**_GitHub 
 
 I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
 
-![Gitanjali](apps/web/public/gitanjali.png)
+![Gitanjali](public/gitanjali.png)
 
 > _I have carried the manuscript of these translations about with me for days, reading it in railway trains, or on the tops of omnibuses and in restaurants, and I have often had to close it lest some stranger would see how much it moved me. These [lyrics](https://poets.org/glossary/lyric-poetry)—which are in the original, my Indians tell me, full of subtlety of rhythm, of untranslatable delicacies of colour, of [metrical](https://poets.org/glossary/meter) invention—display in their thought a world I have dreamed of all my life long. ~ William Butler Yeats, [Introduction to Gitanjali](https://poets.org/text/william-butler-yeatss-introduction-gitanjali)_
 
