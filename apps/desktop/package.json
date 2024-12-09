@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.2.1",
   "type": "module",
+  "author": "Manas Pratim Biswas",
+  "license": "AGPL-3.0-only",
+  "description": "A memoir to my love, wait, hope, despair, anger and apathy, with ❤️ for love",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

@@ -1,8 +1,10 @@
 [package]
 name = "rp"
 version = "0.2.1"
-description = "A Tauri App"
-authors = ["you"]
+description = "A memoir to my love, wait, hope, despair, anger and apathy, with ❤️ for love"
+author = "Manas Pratim Biswas"
+license = "AGPL-3.0-only"
+repository = "https://github.com/sanam2405/rp"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -30,6 +30,12 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "publisher": "Manas Pratim Biswas",
+    "copyright": "Copyright © 2024 Manas Pratim Biswas",
+    "category": "DeveloperTool",
+    "shortDescription": "A memoir to my love",
+    "longDescription": "A memoir to my love, wait, hope, despair, anger and apathy, with ❤️ for love",
+    "license": "AGPL-3.0-only"
   }
 }
