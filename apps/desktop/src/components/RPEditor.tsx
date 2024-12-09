@@ -41,7 +41,7 @@ export const RPEditor: FC = () => {
         {rpEditor && <RPMenuBar editor={rpEditor} />}
       </div>
       <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="max-w-full py-2">
+        <div className="max-w-full py-2 ml-14">
           <EditorContent editor={rpEditor} />
         </div>
       </div>

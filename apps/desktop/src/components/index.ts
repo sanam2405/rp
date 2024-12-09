@@ -15,7 +15,7 @@ import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-
+import { RPSidebar } from "./RPSidebar";
 export {
   Aura,
   backgroundOverlay,
@@ -38,4 +38,5 @@ export {
   Sorry,
   Spots,
   World,
+  RPSidebar,
 };

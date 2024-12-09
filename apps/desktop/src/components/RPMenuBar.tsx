@@ -248,7 +248,7 @@ export const RPMenuBar = ({ editor }: { editor: Editor }) => {
   ];
 
   return (
-    <div className="sticky top-0 z-50 bg-gray-200 shadow-[0_25px_10px_-20px_rgba(0,0,0,0.3)] rounded-lg">
+    <div className="sticky top-0 z-[95] bg-gray-200 shadow-[0_25px_10px_-20px_rgba(0,0,0,0.3)] rounded-lg pointer-events-auto">
       <div className="flex items-center bg-gray-200 border-b-4 border-gray-900 rounded-lg mx-2 flex-wrap py-2 gap-1 w-[calc(100%-1rem)]">
         {listOfIcons.map((iconGroups, index) => (
           <div className="flex items-center" key={uuidv4()}>
