@@ -11,11 +11,11 @@ import { Roman, RomanDescription, RomanTitle } from "./Roman";
 import { RPEditor } from "./RPEditor";
 import { RPMenuBar } from "./RPMenuBar";
 import { RPMenuItems } from "./RPMenuItems";
+import { RPSidebar } from "./RPSidebar";
 import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-import { RPSidebar } from "./RPSidebar";
 export {
   Aura,
   backgroundOverlay,
@@ -33,10 +33,10 @@ export {
   RPEditor,
   RPMenuBar,
   RPMenuItems,
+  RPSidebar,
   RPTerminal,
   Scribble,
   Sorry,
   Spots,
   World,
-  RPSidebar,
 };
