@@ -10,11 +10,11 @@ import { Roman, RomanDescription, RomanTitle } from "./Roman";
 import RPEditor from "./RPEditor";
 import { RPMenuBar } from "./RPMenuBar";
 import { RPMenuItems } from "./RPMenuItems";
+import { RPSidebar } from "./RPSidebar";
 import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-
 export {
   Aura,
   Balloons,
@@ -30,6 +30,7 @@ export {
   RPEditor,
   RPMenuBar,
   RPMenuItems,
+  RPSidebar,
   RPTerminal,
   Scribble,
   Sorry,
