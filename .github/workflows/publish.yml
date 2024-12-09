@@ -32,8 +32,8 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          # Use Node 20.9.0 for Windows, LTS for others
-          node-version: ${{ matrix.platform == 'windows-latest' && '20.9.0' || 'lts/*' }}
+          # Use Node 20.9.0 for Windows and Ubuntu 22.04, LTS for others
+          node-version: ${{ (matrix.platform == 'windows-latest' || matrix.platform == 'ubuntu-22.04') && '20.9.0' || 'lts/*' }}
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
