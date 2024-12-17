@@ -128,7 +128,10 @@ export const Carousal: FC = () => {
     if (isPlaying) {
       pause();
     }
-    navigate.push("/rterm");
+    window.open(
+      "https://open.spotify.com/playlist/5VOcst0tGcSUNi8QInDcPX",
+      "_blank",
+    );
   };
 
   const handleVideoPlay = (currentMedia: ICurrentMedia) => {

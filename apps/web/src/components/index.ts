@@ -1,5 +1,6 @@
 import { Aura } from "./Aura";
 import { Balloons } from "./Balloons";
+import { CarouselSkeleton } from "./CarouselSkeleton";
 import { Flashlight } from "./Flashlight";
 import { Globe, World } from "./Globe";
 import { Layout } from "./Layout";
@@ -15,10 +16,10 @@ import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
-import { CarouselSkeleton } from "./CarouselSkeleton";
 export {
   Aura,
   Balloons,
+  CarouselSkeleton,
   Flashlight,
   Globe,
   Layout,
@@ -37,5 +38,4 @@ export {
   Sorry,
   Spots,
   World,
-  CarouselSkeleton,
 };

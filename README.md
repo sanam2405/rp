@@ -6,6 +6,8 @@
 
 _[Preface](https://rimjhim.sanam.live/preface)_
 <br/>
+_[Playlist](https://open.spotify.com/playlist/5VOcst0tGcSUNi8QInDcPX)_
+<br/>
 _[In-house Redit](https://rimjhim.manaspratimbiswas.com/redit)_
 <br/>
 _[Take Me Home](https://rimjhim.sanam.live/)_
@@ -15,6 +17,8 @@ RP can also be downloaded as a cross-platform desktop application at [**_GitHub 
 ![RP Desktop](/apps/web/public/rpdesktop.png)
 
 # Inspiration
+
+[![Rimjhim Playlist](/apps/web/public/playlist.png)](https://open.spotify.com/playlist/5VOcst0tGcSUNi8QInDcPX)
 
 I first encountered William Butler Yeats’ introduction to _Gitanjali_ when I was in eighth grade. I clearly remember, it was a rainy day, and I waded through waterlogged streets of quintessential North Calcutta to borrow a copy of Tagore's _Gitanjali_ from my local library. In Yeats’ words:
 
