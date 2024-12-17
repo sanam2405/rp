@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import Teentaal from "./teentaal";
+import dynamic from "next/dynamic";
+
+const Teentaal = dynamic(() => import("./teentaal"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",
