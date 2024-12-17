@@ -90,15 +90,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <PHProvider>
-        <body className={inter.className}>
+        <body className={`${inter.className} h-full overflow-hidden`}>
           <SidebarProvider defaultOpen={false}>
             <Suspense>
               <PostHogPageView />
             </Suspense>
             <RPSidebar />
-            <main>
+            <main className="h-full">
               {children}
               <Analytics mode={"production"} />
               <SpeedInsights />

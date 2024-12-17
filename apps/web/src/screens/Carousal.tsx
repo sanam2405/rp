@@ -164,9 +164,9 @@ export const Carousal: FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
+    <div className="flex justify-center items-center h-screen p-4 drop-shadow-xl overflow-hidden">
       <Card
-        className="w-full max-w-lg h-auto flex flex-col shadow-2xl"
+        className="w-full max-w-lg flex flex-col shadow-2xl max-h-[90vh]"
         id="sanamCarousal"
       >
         <div className="flex-grow shadow-md">
