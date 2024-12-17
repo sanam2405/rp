@@ -10,7 +10,7 @@ export default function Teentaal() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // time for media assets to load
+    }, 1500); // time for media assets to load
 
     return () => clearTimeout(timer);
   }, []);

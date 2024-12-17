@@ -16,6 +16,7 @@ import { RPTerminal } from "./RPTerm";
 import { Scribble } from "./Scribble";
 import { Sorry } from "./Sorry";
 import { Spots } from "./Spots";
+import { CarouselSkeleton } from "./CarouselSkeleton";
 export {
   Aura,
   backgroundOverlay,
@@ -39,4 +40,5 @@ export {
   Sorry,
   Spots,
   World,
+  CarouselSkeleton,
 };

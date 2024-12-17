@@ -1,5 +1,6 @@
 "use client";
 
+import { CarouselSkeleton } from "@/components";
 import { useAudio } from "@/context";
 import { Favorite } from "@mui/icons-material";
 import CommentIcon from "@mui/icons-material/Comment";
@@ -81,6 +82,7 @@ export const Carousal: FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const posthog = usePostHog();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -96,6 +98,13 @@ export const Carousal: FC = () => {
         mediaQuery.removeEventListener("change", handleResize);
       };
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // time for media assets to load
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLikeClick = () => {
@@ -162,6 +171,10 @@ export const Carousal: FC = () => {
     resume();
     posthog.capture("bokaboka.music_loop_started");
   };
+
+  if (isLoading) {
+    return <CarouselSkeleton />;
+  }
 
   return (
     <div className="flex justify-center items-center h-screen p-4 drop-shadow-xl overflow-hidden">
