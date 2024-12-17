@@ -172,7 +172,13 @@ export const Flashlight: React.FC<FlashlightProps> = (props) => {
         const isNotSanamButton = !target.closest("#sanamButton");
         const isNotMusicButton = !target.closest("#musicButton");
         const isNotCarousal = !target.closest("#sanamCarousal");
-        if (isNotSanamButton && isNotMusicButton && isNotCarousal) {
+        const isNotSidebar = !target.closest("#rpSidebar");
+        if (
+          isNotSanamButton &&
+          isNotMusicButton &&
+          isNotCarousal &&
+          isNotSidebar
+        ) {
           setEnabled((prevEnabled) => !prevEnabled);
           setDarkMode((prevDarkMode) => {
             const newDarkMode = !prevDarkMode;
