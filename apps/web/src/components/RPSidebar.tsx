@@ -59,29 +59,31 @@ const items = [
 
 export function RPSidebar() {
   return (
-    <Sidebar variant="floating" collapsible="icon">
-      <SidebarContent className="bg-transparent h-full flex justify-center">
-        <SidebarGroup className="flex-1 flex flex-col justify-center">
-          <SidebarGroupLabel></SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
-                    <a
-                      href={item.url}
-                      className="text-red-500 hover:text-blue-500 transition-colors duration-200"
-                    >
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+    <div id="rpSidebar">
+      <Sidebar variant="floating" collapsible="icon">
+        <SidebarContent className="bg-transparent h-full flex justify-center">
+          <SidebarGroup className="flex-1 flex flex-col justify-center">
+            <SidebarGroupLabel></SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {items.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild tooltip={item.title}>
+                      <a
+                        href={item.url}
+                        className="text-red-500 hover:text-blue-500 transition-colors duration-200"
+                      >
+                        {item.icon}
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+    </div>
   );
 }

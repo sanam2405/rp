@@ -1,5 +1,6 @@
 "use client";
 
+import { CarouselSkeleton } from "@/components";
 import { useAudio } from "@/context";
 import { Favorite } from "@mui/icons-material";
 import CommentIcon from "@mui/icons-material/Comment";
@@ -81,6 +82,7 @@ export const Carousal: FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const posthog = usePostHog();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -96,6 +98,13 @@ export const Carousal: FC = () => {
         mediaQuery.removeEventListener("change", handleResize);
       };
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // time for media assets to load
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLikeClick = () => {
@@ -163,10 +172,14 @@ export const Carousal: FC = () => {
     posthog.capture("bokaboka.music_loop_started");
   };
 
+  if (isLoading) {
+    return <CarouselSkeleton />;
+  }
+
   return (
-    <div className="flex justify-center items-center min-h-screen p-4 drop-shadow-xl">
+    <div className="flex justify-center items-center h-screen p-4 drop-shadow-xl overflow-hidden">
       <Card
-        className="w-full max-w-lg h-auto flex flex-col shadow-2xl"
+        className="w-full max-w-lg flex flex-col shadow-2xl max-h-[90vh]"
         id="sanamCarousal"
       >
         <div className="flex-grow shadow-md">
@@ -211,6 +224,8 @@ export const Carousal: FC = () => {
                       <video
                         className="w-full h-full object-cover"
                         loop
+                        preload="auto"
+                        playsInline
                         onPlay={() => {
                           posthog.capture("bokaboka.media_play_started", {
                             mediaName: item.src,
