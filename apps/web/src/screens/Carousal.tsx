@@ -211,6 +211,8 @@ export const Carousal: FC = () => {
                       <video
                         className="w-full h-full object-cover"
                         loop
+                        preload="auto"
+                        playsInline
                         onPlay={() => {
                           posthog.capture("bokaboka.media_play_started", {
                             mediaName: item.src,

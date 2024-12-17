@@ -1,6 +1,5 @@
-import { Leaf } from "@/components";
-import { Carousal } from "@/screens";
 import type { Metadata } from "next";
+import Teentaal from "./teentaal";
 
 export const metadata: Metadata = {
   title: "HBD • Rimjhim",
@@ -76,12 +75,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KigoTumi() {
-  return (
-    <>
-      <Leaf numberOfLeaves={7} leafPath="/thelastleaf.png">
-        <Carousal />
-      </Leaf>
-    </>
-  );
+export default function Bokaboka() {
+  return <Teentaal />;
 }
