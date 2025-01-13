@@ -584,7 +584,7 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
 সব কিছুই শেষ হয় যেমন, এটাও শেষ হলো <br>
 অপমানের বোঝা নিয়ে, সম্মান বেছে নিতে হলো <br>
 
-Life kept on going and lulled me with this motions, I kept rocking back and forth, as it threw me left and threw me right, and before I knew it; nobody buys yesterday’s lottery ticket.
+Life kept on going and lulled me with its motions, I kept rocking back and forth, as it threw me left and threw me right, and before I knew it; nobody buys yesterday’s lottery ticket.
 I came to Tequip, the day you made the first big breakthrough of your career. There you were, anxiously waiting for the selection list and I maintained distance, lest I bring some bad luck to you. After a long wait, the list came. You were selected. You hugged all of your friends in room 208 of Tequip and eventually turned back and smiled at me. I wanted to come up to you and tell you all this in person, but I just watched you smile. You looked beautiful.
 You are young, you can dream, and for sometime you let me into your dreams. And I want to thank you for that.
 
