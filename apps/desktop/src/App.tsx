@@ -2,6 +2,7 @@ import { RPSidebar } from "@/components";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import {
   BokabokaPage,
+  EpiloguePage,
   ILUPage,
   KigotumiPage,
   LandingPage,
@@ -33,6 +34,7 @@ function App() {
                   <Route path="/ilu" element={<ILUPage />} />
                   <Route path="/rterm" element={<RTermPage />} />
                   <Route path="/redit" element={<ReditPage />} />
+                  <Route path="/epilogue" element={<EpiloguePage />} />
                 </Routes>
               </div>
             </main>
