@@ -43,7 +43,7 @@ export const EpiloguePage: FC = () => {
                 সব কিছুই শেষ হয় যেমন, এটাও শেষ হলো <br />
                 অপমানের বোঝা নিয়ে, সম্মান বেছে নিতে হলো <br />
                 <br />
-                Life kept on going and lulled me with this motions, I kept
+                Life kept on going and lulled me with its motions, I kept
                 rocking back and forth, as it threw me left and threw me right,
                 and before I knew it; nobody buys yesterday's lottery ticket. I
                 came to Tequip, the day you made the first big breakthrough of
