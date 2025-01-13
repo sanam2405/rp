@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import "../globals.css";
-
+import "../mobilescroll.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -91,7 +91,7 @@ export default function RPWorldLayout({
   return (
     <html lang="en">
       <PHProvider>
-        <body className={inter.className}>
+        <body className={`${inter.className} mobile-scroll`}>
           <Suspense>
             <PostHogPageView />
           </Suspense>
