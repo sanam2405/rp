@@ -1,0 +1,17 @@
+@media (max-width: 785px) {
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto !important;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Reset any inherited overflow hidden */
+  body,
+  html,
+  #root,
+  #__next {
+    overflow: hidden !important;
+    height: 100%;
+  }
+}

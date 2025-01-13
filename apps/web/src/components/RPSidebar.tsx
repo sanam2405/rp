@@ -11,6 +11,7 @@ import {
 import {
   Code,
   HouseLine,
+  Infinity,
   LightbulbFilament,
   PenNib,
   Question,
@@ -54,6 +55,11 @@ const items = [
     title: "GitHub",
     url: GITHUB_URI,
     icon: <Code size={32} />,
+  },
+  {
+    title: "Epilogue",
+    url: "/epilogue",
+    icon: <Infinity size={32} />,
   },
 ];
 
