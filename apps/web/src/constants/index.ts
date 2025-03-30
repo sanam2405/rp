@@ -15,6 +15,8 @@ const mediaFiles = {
 const images = {
   sanamImage: "/sanam.jpg",
   rpImage: "/rp.jpg",
+  rpDP: "/rpdp.png",
+  rpDPGhibli: "/rpdpghibli.png",
   rpSketch: "/rpsketch.png",
   avatarImage: "/rimjhim.svg",
   pySanam: "/pysanam.png",
@@ -72,6 +74,8 @@ export const MUSIC = {
 export const MEDIA = {
   SANAM_IMG: images.sanamImage,
   RP_IMG: images.rpImage,
+  RP_DP: images.rpDP,
+  RP_DP_GHIBLI: images.rpDPGhibli,
   RP_SKETCH: images.rpSketch,
   PY_SANAM: images.pySanam,
   PY_RP: images.pyRP,

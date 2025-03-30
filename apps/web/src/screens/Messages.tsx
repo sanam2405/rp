@@ -6,6 +6,7 @@ import { MEDIA } from "@rp/constants";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { PowerGlitch } from "powerglitch";
 import { useEffect, useRef, useState } from "react";
 
 export default function Messages() {
@@ -15,6 +16,12 @@ export default function Messages() {
   const { darkMode } = useDarkMode();
   const [bokaopacity, setBokaOpacity] = useState<number>(1);
   const { isPlaying, pause } = useAudio();
+  const [currentImage, setCurrentImage] = useState(MEDIA.RP_SKETCH);
+  const imageSequence = [
+    { src: MEDIA.RP_SKETCH, duration: 1000 },
+    { src: MEDIA.RP_DP, duration: 500 }, // peekaboo
+    { src: MEDIA.RP_DP_GHIBLI, duration: 3000 },
+  ];
 
   useEffect(() => {
     if (textBoxCharsRef.current) {
@@ -164,7 +171,17 @@ export default function Messages() {
       )
       .from(
         ".rp-dp",
-        { scale: 3.5, opacity: 0, x: 25, y: -25, rotationZ: -45 },
+        {
+          scale: 3.5,
+          opacity: 0,
+          x: 25,
+          y: -25,
+          rotationZ: -45,
+          onComplete: () => {
+            cycleStarted = true;
+            cycleImage(0);
+          },
+        },
         "-=2",
       )
       .from(".hat", { x: -100, y: 350, rotation: -180, opacity: 0 })
@@ -228,7 +245,58 @@ export default function Messages() {
         "+=2",
       );
 
-    return () => {};
+    /*
+      She turns 22 this year, while I code this out 
+      From my recently rented studio apartment. 
+      HSR - BLR, March 31st, 2025
+    */
+
+    let cycleTimeout: NodeJS.Timeout;
+    let glitchTimeout: NodeJS.Timeout;
+    let cycleStarted = false;
+
+    const cycleImage = (index = 0) => {
+      if (!cycleStarted) return;
+
+      PowerGlitch.glitch(".rp-dp", {
+        playMode: "always",
+        createContainers: true,
+        hideOverflow: false,
+        timing: {
+          duration: 500,
+          iterations: 1,
+        },
+        glitchTimeSpan: {
+          start: 0,
+          end: 1,
+        },
+        shake: {
+          velocity: 15,
+          amplitudeX: 0.2,
+          amplitudeY: 0.2,
+        },
+      });
+
+      glitchTimeout = setTimeout(() => {
+        setCurrentImage(imageSequence[index].src);
+        setTimeout(() => {
+          PowerGlitch.glitch(".rp-dp", {
+            playMode: "manual",
+            createContainers: true,
+            hideOverflow: false,
+          });
+        }, 100);
+      }, 200);
+
+      cycleTimeout = setTimeout(() => {
+        cycleImage((index + 1) % imageSequence.length);
+      }, imageSequence[index].duration);
+    };
+
+    return () => {
+      if (cycleTimeout) clearTimeout(cycleTimeout);
+      if (glitchTimeout) clearTimeout(glitchTimeout);
+    };
   }, [navigate, isPlaying, pause]);
 
   return (
@@ -354,9 +422,9 @@ export default function Messages() {
           </div>
           <div className="six">
             <Image
-              src={MEDIA.RP_SKETCH}
+              src={currentImage}
               alt=""
-              className="rp-dp drop-shadow-xl hover:grayscale-[90%]  hover:brightness-125"
+              className="rp-dp drop-shadow-xl"
               height={500}
               width={500}
             />
