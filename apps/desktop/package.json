@@ -54,6 +54,7 @@
     "lucide-react": "^0.468.0",
     "p5": "^1.11.0",
     "posthog-js": "^1.181.0",
+    "powerglitch": "^2.4.0",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "react": "^18.3.1",

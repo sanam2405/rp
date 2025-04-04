@@ -19,6 +19,7 @@ import {
 } from "@mui/material";
 import DOMPurify from "isomorphic-dompurify";
 import { usePostHog } from "posthog-js/react";
+import { PowerGlitch } from "powerglitch";
 import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
@@ -103,6 +104,32 @@ export const Carousal: FC = () => {
       setIsLoading(false);
     }, 2500); // time for media assets to load
     return () => clearTimeout(timer);
+  }, []);
+
+  /*
+    She turns 22 this year, while I code this out 
+    From my recently rented studio apartment. 
+    HSR - BLR, March 31st, 2025
+  */
+  useEffect(() => {
+    PowerGlitch.glitch(".glitch", {
+      playMode: "hover",
+      createContainers: true,
+      hideOverflow: false,
+      timing: {
+        duration: 2000,
+        iterations: 1,
+      },
+      glitchTimeSpan: {
+        start: 0,
+        end: 1,
+      },
+      shake: {
+        velocity: 22,
+        amplitudeX: 0.314,
+        amplitudeY: 0.314,
+      },
+    });
   }, []);
 
   const handleLikeClick = () => {
@@ -249,7 +276,7 @@ export const Carousal: FC = () => {
                         className={`absolute inset-0 flex justify-center items-center transition-opacity cursor-pointer ${isLargeScreen ? "opacity-0 group-hover:opacity-100" : "group-hover:opacity-100"}`}
                       >
                         <button
-                          className="p-2 bg-slate-50 bg-opacity-100 rounded-full"
+                          className="p-2 bg-slate-50 bg-opacity-100 rounded-full glitch"
                           onClick={(e) => {
                             e.stopPropagation();
                             const video = e.currentTarget
