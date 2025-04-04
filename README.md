@@ -1,8 +1,15 @@
 [![Preface](/apps/web/public/preface.png)](https://rimjhim.manaspratimbiswas.com/preface)
 
-> _তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা_
+<p>
+<img align='right' src="./apps/web/public/rpoatghibli.png" width="100">
+<p>
+তুমি ক্রোধের আগুনে জমে থাকা ব্যাথা, <br> আমার শেষ বিকেলের ধোঁকা <br> কোন রোদেলা দুপুরে তোমায় ফিরে পাবো বলে <br> অর্থহীন খোঁজা
 
 [![Redit](/apps/web/public/redit.png)](https://rimjhim.manaspratimbiswas.com/redit)
+
+<p>
+<img align='right' src="https://raw.githubusercontent.com/sanam2405/sanam2405/main/assets/images/dp/convocation.png" height="250">
+<p>
 
 _[Preface](https://rimjhim.sanam.live/preface)_
 <br/>
@@ -518,11 +525,13 @@ Jutti Meri is a fun _Punjabi/Dogra_ folk song, depicting the feelings of a new b
 - [P5js](https://p5js.org/) for the canvas
 - [Swiper](https://swiperjs.com/) for the slider Instagram carousel
 - [MUI](https://mui.com/), [Shadcn](https://ui.shadcn.com/) for the UI components
+- [PowerGlitch](https://github.com/7PH/powerglitch) for glitchy transitions
 - [Phosphor Icons](https://phosphoricons.com/) and [MUI Icons](https://mui.com/material-ui/icons/) for the icons
 - [Tiptap](https://tiptap.dev/) for the customised text editor
 - [XTerm](https://xtermjs.org/) and [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) for the web terminal UI
 - [Express](https://expressjs.com/) and [Nodepty](https://github.com/microsoft/node-pty) for the terminal emulator
 - [GitHub Actions](https://github.com/features/actions) for CI/CD
+- [GPT-4o Image Generation](https://openai.com/index/introducing-4o-image-generation/) for Studio Ghibli styled arts
 
 ## Setting up locally
 
