@@ -82,6 +82,7 @@ export const Carousal: FC = () => {
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const posthog = usePostHog();
   const [isLoading, setIsLoading] = useState(true);
+  const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -159,10 +160,26 @@ export const Carousal: FC = () => {
     );
   };
 
-  const handleVideoPlay = (currentMedia: ICurrentMedia) => {
+  const handleVideoPause = () => {
+    setIsVideoPlaying(false);
+    setActiveVideoIndex(null);
+    resume();
+    posthog.capture("bokaboka.music_loop_started");
+  };
+
+  const handleVideoPlay = (currentMedia: ICurrentMedia, index: number) => {
     if (isPlaying) {
       pause();
     }
+
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video, idx) => {
+      if (idx !== index) {
+        video.pause();
+      }
+    });
+
+    setActiveVideoIndex(index);
     let newCaption = "";
     switch (currentMedia.src) {
       case MEDIA.RP_VIDEO:
@@ -188,16 +205,10 @@ export const Carousal: FC = () => {
         break;
       default:
         newCaption =
-          "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :)";
+          "তুমি শ্যামলা বঙ্গদেশ, তুমি ইঙ্গো SMS <br/> তুমি অং-বং ভবজলধি নুলিয়া আ... <br/> বধূ চোক্ষে এসো, অন্ধ হোক <br/> কক্ষে এসো নিন্দে হোক <br/> বক্ষে এসো গীতগোবিন্দ ভুলিয়া :)";
     }
     setCaption(newCaption);
     setIsVideoPlaying(true);
-  };
-
-  const handleVideoPause = () => {
-    setIsVideoPlaying(false);
-    resume();
-    posthog.capture("bokaboka.music_loop_started");
   };
 
   if (isLoading) {
@@ -259,7 +270,7 @@ export const Carousal: FC = () => {
                             mediaName: item.src,
                             caption: item.caption,
                           });
-                          handleVideoPlay(item);
+                          handleVideoPlay(item, index);
                         }}
                         onPause={() => {
                           posthog.capture("bokaboka.media_play_paused", {
@@ -273,7 +284,11 @@ export const Carousal: FC = () => {
                         Shey Je Boshe Ache Eka Eka
                       </video>
                       <div
-                        className={`absolute inset-0 flex justify-center items-center transition-opacity cursor-pointer ${isLargeScreen ? "opacity-0 group-hover:opacity-100" : "group-hover:opacity-100"}`}
+                        className={`absolute inset-0 flex justify-center items-center transition-opacity cursor-pointer ${
+                          isLargeScreen
+                            ? "opacity-0 group-hover:opacity-100"
+                            : "group-hover:opacity-100"
+                        }`}
                       >
                         <button
                           className="p-2 bg-slate-50 bg-opacity-100 rounded-full glitch"
@@ -283,13 +298,19 @@ export const Carousal: FC = () => {
                               .closest(".group")
                               ?.querySelector("video");
                             if (video) {
-                              if (isVideoPlaying) {
+                              if (
+                                isVideoPlaying &&
+                                activeVideoIndex === index
+                              ) {
                                 video.pause();
                                 posthog.capture("bokaboka.media_play_paused", {
                                   mediaName: item.src,
                                   caption: item.caption,
                                 });
                               } else {
+                                const allVideos =
+                                  document.querySelectorAll("video");
+                                allVideos.forEach((v) => v.pause());
                                 video.play();
                                 posthog.capture(
                                   "bokaboka.media_play_paused_resumed",
@@ -302,7 +323,7 @@ export const Carousal: FC = () => {
                             }
                           }}
                         >
-                          {isVideoPlaying ? (
+                          {isVideoPlaying && activeVideoIndex === index ? (
                             <PauseIcon className="text-red-600" />
                           ) : (
                             <PlayArrowIcon className="text-red-600" />
